@@ -18,6 +18,23 @@
     "featured": true
   },
   {
+    "id": "proj-adios-ads",
+    "name": "Adios ADs",
+    "description": "A small google chrome extension that blocks pop ups and other random ads on websites.",
+    "repo_url": "https://github.com/kevinjose06/Adios_ADs.git",
+    "tech_stack": [
+      "json"
+    ],
+    "stars": 12,
+    "forks": 0,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "kevinjose06",
+    "submitted_by_name": "Kevin Jose",
+    "batch": "2026",
+    "featured": true
+  },
+  {
     "id": "proj-tempspace",
     "name": "TempSpace",
     "description": "TempSpace is a temporary file-sharing web application designed for quick, frictionless collaboration. Unlike traditional cloud storage platforms, TempSpace does not require user accounts and does not store files permanently.",
@@ -50,9 +67,9 @@
       "Python",
       "Tailwind"
     ],
-    "stars": 5,
-    "forks": 5,
-    "open_issues": 0,
+    "stars": 7,
+    "forks": 7,
+    "open_issues": 1,
     "is_verified_student": true,
     "submitted_by_username": "vertigotalks7",
     "submitted_by_name": "Vertigo Talks",
@@ -92,7 +109,7 @@
       "Linux",
       "AppImage"
     ],
-    "stars": 1,
+    "stars": 2,
     "forks": 0,
     "open_issues": 0,
     "is_verified_student": true,

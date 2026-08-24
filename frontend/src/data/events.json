@@ -376,23 +376,5 @@
     "meet_url": "https://meet.google.com/qjx-frea-dme",
     "event_url": "https://tinkerhub.org/events/6GU8NE1P4K",
     "banner_url": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1756412618840597113Initial(2).jpg"
-  },
-  {
-    "id": "th-rit-2MGRJ6LQ5P",
-    "title": "O-pen mic: Me,Myself & My AI",
-    "description": "Me, Myself & My AI : O-pen mic for the upcoming women techies of our college by Women in Tech, Tinkerhub RIT.It is exclusively for women and an awesome opportunity for you to interact and learn. ",
-    "date_time": "Aug 23, 2025 \u2022 2:30 PM IST",
-    "raw_date": "2025-08-23T14:30:00Z",
-    "location": "Google Meet Virtual Session",
-    "capacity": 80,
-    "registered_count": 0,
-    "is_open": true,
-    "is_collab": true,
-    "is_upcoming": false,
-    "source": "tinkerhub",
-    "event_type": "Talk Session",
-    "meet_url": "https://meet.google.com/doc-upmi-tdy",
-    "event_url": "https://tinkerhub.org/events/2MGRJ6LQ5P",
-    "banner_url": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/17557828590572919051000248975.jpg"
   }
 ]
