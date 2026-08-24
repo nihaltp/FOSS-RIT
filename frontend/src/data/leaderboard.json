@@ -1,7 +1,7 @@
 {
   "status": "success",
   "timeframe": "all_time",
-  "total_contributors": 6,
+  "total_contributors": 7,
   "contributors": [
     {
       "user_id": "usr-vertigotalks7",
@@ -206,6 +206,44 @@
       "medal": "#5"
     },
     {
+      "user_id": "usr-ari2387q",
+      "username": "ari2387q",
+      "display_name": "Aryan Nair",
+      "avatar_url": "https://github.com/ari2387q.png",
+      "is_verified_student": true,
+      "xp": 230,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 65,
+      "total_projects": 1,
+      "total_stars": 4,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "icon": "\u26a1",
+          "color": "#EC4899"
+        }
+      ],
+      "rank": 6,
+      "medal": "#6"
+    },
+    {
       "user_id": "usr-callmekriztal",
       "username": "callmekriztal",
       "display_name": "Christy Cyril",
@@ -240,8 +278,8 @@
           "color": "#EC4899"
         }
       ],
-      "rank": 6,
-      "medal": "#6"
+      "rank": 7,
+      "medal": "#7"
     }
   ]
 }
