@@ -67,12 +67,32 @@
       "Python",
       "Tailwind"
     ],
-    "stars": 7,
-    "forks": 7,
+    "stars": 8,
+    "forks": 8,
     "open_issues": 0,
     "is_verified_student": true,
     "submitted_by_username": "vertigotalks7",
     "submitted_by_name": "Vertigo Talks",
+    "batch": "2026",
+    "featured": true
+  },
+  {
+    "id": "proj-gotodo",
+    "name": "GoTodo",
+    "description": "A lightweight command-line Todo application written in Go with persistent JSON storage and Linux AppImage support.",
+    "repo_url": "https://github.com/callmekriztal/Go_Todo",
+    "tech_stack": [
+      "Go",
+      "JSON",
+      "Linux",
+      "AppImage"
+    ],
+    "stars": 5,
+    "forks": 0,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "callmekriztal",
+    "submitted_by_name": "Christy Cyril",
     "batch": "2026",
     "featured": true
   },
@@ -122,23 +142,24 @@
     "featured": true
   },
   {
-    "id": "proj-gotodo",
-    "name": "GoTodo",
-    "description": "A lightweight command-line Todo application written in Go with persistent JSON storage and Linux AppImage support.",
-    "repo_url": "https://github.com/callmekriztal/Go_Todo",
+    "id": "proj-sbskip",
+    "name": "SB Skip",
+    "description": "Android app that automatically detects and skips SponsorBlock segments in downloaded YouTube videos.",
+    "repo_url": "https://github.com/nihaltp/SBSkip",
     "tech_stack": [
-      "Go",
-      "JSON",
-      "Linux",
-      "AppImage"
+      "Kotlin",
+      "Jetpack Compose",
+      "FFmpeg",
+      "NewPipe",
+      "SponsorBlock"
     ],
-    "stars": 2,
+    "stars": 3,
     "forks": 0,
-    "open_issues": 0,
+    "open_issues": 2,
     "is_verified_student": true,
-    "submitted_by_username": "callmekriztal",
-    "submitted_by_name": "Christy Cyril",
-    "batch": "2026",
+    "submitted_by_username": "nihaltp",
+    "submitted_by_name": "Nihal T P",
+    "batch": "2024",
     "featured": true
   },
   {

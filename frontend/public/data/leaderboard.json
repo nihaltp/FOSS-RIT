@@ -1,7 +1,7 @@
 {
   "status": "success",
   "timeframe": "all_time",
-  "total_contributors": 7,
+  "total_contributors": 8,
   "contributors": [
     {
       "user_id": "usr-vertigotalks7",
@@ -9,15 +9,15 @@
       "display_name": "Vertigo Talks",
       "avatar_url": "https://github.com/vertigotalks7.png",
       "is_verified_student": true,
-      "xp": 385,
+      "xp": 410,
       "level": 3,
       "title": "Byte Craftsman",
       "min_xp": 300,
       "max_xp": 699,
-      "progress": 21,
+      "progress": 27,
       "total_projects": 1,
-      "total_stars": 7,
-      "total_forks": 7,
+      "total_stars": 8,
+      "total_forks": 8,
       "badges": [
         {
           "id": "verified",
@@ -168,6 +168,44 @@
       "medal": "#4"
     },
     {
+      "user_id": "usr-callmekriztal",
+      "username": "callmekriztal",
+      "display_name": "Christy Cyril",
+      "avatar_url": "https://github.com/callmekriztal.png",
+      "is_verified_student": true,
+      "xp": 235,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 67,
+      "total_projects": 1,
+      "total_stars": 5,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "icon": "\u26a1",
+          "color": "#EC4899"
+        }
+      ],
+      "rank": 5,
+      "medal": "#5"
+    },
+    {
       "user_id": "usr-tejathomas64",
       "username": "TejaThomas64",
       "display_name": "Teja Thomas",
@@ -202,8 +240,8 @@
           "color": "#EC4899"
         }
       ],
-      "rank": 5,
-      "medal": "#5"
+      "rank": 6,
+      "medal": "#6"
     },
     {
       "user_id": "usr-ari2387q",
@@ -240,23 +278,23 @@
           "color": "#EC4899"
         }
       ],
-      "rank": 6,
-      "medal": "#6"
+      "rank": 7,
+      "medal": "#7"
     },
     {
-      "user_id": "usr-callmekriztal",
-      "username": "callmekriztal",
-      "display_name": "Christy Cyril",
-      "avatar_url": "https://github.com/callmekriztal.png",
+      "user_id": "usr-nihaltp",
+      "username": "nihaltp",
+      "display_name": "Nihal T P",
+      "avatar_url": "https://github.com/nihaltp.png",
       "is_verified_student": true,
-      "xp": 220,
+      "xp": 225,
       "level": 2,
       "title": "Open Source Novice",
       "min_xp": 100,
       "max_xp": 299,
-      "progress": 60,
+      "progress": 62,
       "total_projects": 1,
-      "total_stars": 2,
+      "total_stars": 3,
       "total_forks": 0,
       "badges": [
         {
@@ -278,8 +316,8 @@
           "color": "#EC4899"
         }
       ],
-      "rank": 7,
-      "medal": "#7"
+      "rank": 8,
+      "medal": "#8"
     }
   ]
 }
