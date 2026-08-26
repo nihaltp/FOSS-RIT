@@ -9,15 +9,15 @@
       "display_name": "Vertigo Talks",
       "avatar_url": "https://github.com/vertigotalks7.png",
       "is_verified_student": true,
-      "xp": 410,
+      "xp": 430,
       "level": 3,
       "title": "Byte Craftsman",
       "min_xp": 300,
       "max_xp": 699,
-      "progress": 27,
+      "progress": 32,
       "total_projects": 1,
       "total_stars": 8,
-      "total_forks": 8,
+      "total_forks": 9,
       "badges": [
         {
           "id": "verified",
