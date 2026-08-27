@@ -76,10 +76,36 @@ def fetch_github_repo_telemetry(repo_url: str) -> dict:
         with urllib.request.urlopen(req, timeout=8) as response:
             if response.status == 200:
                 payload = json.loads(response.read().decode("utf-8"))
+                open_issues = payload.get("open_issues_count", 0)
+                
+                if open_issues > 0:
+                    pulls_url = f"https://api.github.com/repos/{owner}/{repo}/pulls?state=open&per_page=1"
+                    pulls_req = urllib.request.Request(pulls_url, headers=headers)
+                    pulls_count = 0
+                    try:
+                        with urllib.request.urlopen(pulls_req, timeout=5) as p_res:
+                            if p_res.status == 200:
+                                pulls_data = json.loads(p_res.read().decode("utf-8"))
+                                if not pulls_data:
+                                    pulls_count = 0
+                                else:
+                                    link_header = p_res.getheader('Link')
+                                    if link_header:
+                                        last_match = re.search(r'<[^>]+[?&]page=(\d+)[^>]*>;\s*rel="last"', link_header)
+                                        if last_match:
+                                            pulls_count = int(last_match.group(1))
+                                        else:
+                                            pulls_count = 1
+                                    else:
+                                        pulls_count = 1
+                    except Exception:
+                        pass
+                    open_issues = max(0, open_issues - pulls_count)
+
                 return {
                     "stars": payload.get("stargazers_count", 0),
                     "forks": payload.get("forks_count", 0),
-                    "open_issues": payload.get("open_issues_count", 0),
+                    "open_issues": open_issues,
                     "language": payload.get("language") or "Code",
                     "pushed_at": payload.get("pushed_at", "")
                 }

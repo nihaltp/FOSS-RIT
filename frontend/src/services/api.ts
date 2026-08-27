@@ -90,11 +90,37 @@ export const api = {
               const ghRes = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
               if (ghRes.ok) {
                 const ghData = await ghRes.json();
+                
+                let actualIssues = ghData.open_issues_count ?? p.open_issues;
+                if (actualIssues > 0) {
+                  try {
+                    const pullsRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls?state=open&per_page=1`);
+                    if (pullsRes.ok) {
+                      const pullsData = await pullsRes.json();
+                      if (Array.isArray(pullsData) && pullsData.length > 0) {
+                        const linkHeader = pullsRes.headers.get('Link');
+                        if (linkHeader) {
+                          const lastMatch = linkHeader.match(/<[^>]+[?&]page=(\d+)[^>]*>;\s*rel="last"/);
+                          if (lastMatch) {
+                            actualIssues = Math.max(0, actualIssues - parseInt(lastMatch[1], 10));
+                          } else {
+                            actualIssues = Math.max(0, actualIssues - 1);
+                          }
+                        } else {
+                          actualIssues = Math.max(0, actualIssues - 1);
+                        }
+                      }
+                    }
+                  } catch (err) {
+                    // Ignore pulls fetch error
+                  }
+                }
+
                 return {
                   ...p,
                   stars: ghData.stargazers_count ?? p.stars,
                   forks: ghData.forks_count ?? p.forks,
-                  open_issues: ghData.open_issues_count ?? p.open_issues,
+                  open_issues: actualIssues,
                   description: ghData.description || p.description
                 };
               }
