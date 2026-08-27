@@ -1,4 +1,3 @@
-
 ---
 name: "ai mood predictor"
 description: "a loght weight machine learning application"
@@ -10,6 +9,7 @@ is_verified_student: true
 batch: "2028"
 featured: true
 ---
+
 about my project
 A lightweight machine learning application that predicts your mood score (1–10) based on daily habits like sleep duration, screen time, and exercise.
 Built using Scikit-learn, Python, and deployed with Gradio.
