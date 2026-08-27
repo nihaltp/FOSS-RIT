@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Interactive Physics Grid Canvas Background & Ambient Glow
+   ========================================================================== */
+
+.interactive-grid-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.interactive-grid-bg canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Background Developer Ambient Glow (Seamless & Diffused) */
+.ambient-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  max-width: 1400px;
+  height: 700px;
+  background: radial-gradient(
+    ellipse 75% 55% at 50% 0%,
+    var(--vibe-glow, rgba(8, 183, 79, 0.18)) 0%,
+    var(--vibe-subtle, rgba(8, 183, 79, 0.06)) 35%,
+    transparent 75%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.5s ease;
+}

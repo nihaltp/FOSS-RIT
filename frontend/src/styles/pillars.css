@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Pillars (About Club) Section Styles
+   ========================================================================== */
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-xl);
+}
+
+.pillar-card {
+  background: var(--open-gray);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.pixel-icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  border: 1px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--foss-mint);
+  margin-bottom: var(--space-lg);
+}
+
+.pillar-title {
+  margin-bottom: var(--space-xs);
+  font-size: 1.25rem;
+}
+
+.pillar-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
