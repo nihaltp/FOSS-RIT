@@ -68,7 +68,7 @@
       "Tailwind"
     ],
     "stars": 9,
-    "forks": 9,
+    "forks": 10,
     "open_issues": 0,
     "is_verified_student": true,
     "submitted_by_username": "vertigotalks7",
@@ -117,6 +117,25 @@
     "submitted_by_username": "ari2387q",
     "submitted_by_name": "Aryan Nair",
     "batch": "2026",
+    "featured": true
+  },
+  {
+    "id": "proj-github-stats-generator",
+    "name": "GitHub Stats Generator",
+    "description": "A highly customizable, embeddable GitHub stats card generator. Create beautiful, themeable SVG or PNG cards to display your GitHub profile statistics, languages, and activity.",
+    "repo_url": "https://github.com/AndrewJerryV/GitHub-Stats-Generator",
+    "tech_stack": [
+      "JavaScript",
+      "HTML",
+      "JSON"
+    ],
+    "stars": 4,
+    "forks": 1,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "AndrewJerryV",
+    "submitted_by_name": "Andrew Jerry V",
+    "batch": "2023",
     "featured": true
   },
   {
