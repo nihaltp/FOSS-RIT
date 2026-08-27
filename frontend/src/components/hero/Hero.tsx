@@ -8,12 +8,21 @@ export const Hero: React.FC = () => {
     <section className="hero-section">
       <div className="container hero-container">
         <div className="hero-centered">
-          <h1 className="hero-description">
-            The student Free and Open Source Software community at <strong>Rajiv Gandhi Institute of Technology (RIT), Kottayam</strong>, in active collaboration with <strong>TinkerHub</strong>. We believe knowledge should be free, open, and accessible to everyone.
+          <div className="hero-pill-badge">
+            <span className="hero-pill-dot"></span>
+            <span>RIT KOTTAYAM • FOSS COMMUNITY</span>
+          </div>
+
+          <h1 className="hero-title">
+            Ship Free &amp; Open Source.
           </h1>
 
+          <p className="hero-description">
+            The student Free and Open Source Software community at <strong>Rajiv Gandhi Institute of Technology (RIT), Kottayam</strong>, in active collaboration with <strong>TinkerHub</strong>. We believe knowledge should be free, open, and accessible to everyone.
+          </p>
+
           <blockquote className="hero-quote">
-            <Quote className="quote-icon" size={22} />
+            <Quote className="quote-icon" size={20} />
             <p className="hero-quote-text">
               “Information flow is what the Internet is about. Information sharing is power. If you don't share your ideas, smart people can't do anything about them, and you'll remain anonymous and powerless.”
             </p>

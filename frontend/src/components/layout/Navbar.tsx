@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import { 
   Sun, 
@@ -7,9 +7,7 @@ import {
   Menu, 
   X, 
   Compass, 
-  Calendar, 
   Layers, 
-  FileText, 
   Trophy, 
   ShieldAlert,
   Star
@@ -22,7 +20,6 @@ export const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const { activeVibe, setVibe } = useVibe();
   const location = useLocation();
-  const navigate = useNavigate();
   const [vibeMenuOpen, setVibeMenuOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -31,19 +28,6 @@ export const Navbar: React.FC = () => {
     setMobileMenuOpen(false);
     setVibeMenuOpen(false);
   }, [location.pathname, location.hash]);
-
-  const handleSectionClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault();
-    setMobileMenuOpen(false);
-    if (location.pathname === '/') {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      navigate(`/#${sectionId}`);
-    }
-  };
 
   return (
     <header className="navbar">
@@ -78,14 +62,6 @@ export const Navbar: React.FC = () => {
             </li>
             <li>
               <NavLink 
-                to="/events" 
-                className={({ isActive }) => `nav-link ${isActive ? 'active-nav-link' : ''}`}
-              >
-                Events
-              </NavLink>
-            </li>
-            <li>
-              <NavLink 
                 to="/projects" 
                 className={({ isActive }) => `nav-link ${isActive ? 'active-nav-link' : ''}`}
               >
@@ -99,15 +75,6 @@ export const Navbar: React.FC = () => {
               >
                 Leaderboard
               </NavLink>
-            </li>
-            <li>
-              <a 
-                href="/#about" 
-                className="nav-link"
-                onClick={(e) => handleSectionClick(e, 'about')}
-              >
-                About
-              </a>
             </li>
             <li>
               <NavLink 
@@ -249,13 +216,6 @@ export const Navbar: React.FC = () => {
               <Compass size={16} /> Overview
             </NavLink>
             <NavLink 
-              to="/events" 
-              className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <Calendar size={16} /> Workshops & Events
-            </NavLink>
-            <NavLink 
               to="/projects" 
               className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
               onClick={() => setMobileMenuOpen(false)}
@@ -269,13 +229,6 @@ export const Navbar: React.FC = () => {
             >
               <Trophy size={16} /> Leaderboard
             </NavLink>
-            <a 
-              href="/#about" 
-              className="mobile-nav-link"
-              onClick={(e) => handleSectionClick(e, 'about')}
-            >
-              <FileText size={16} /> About Club
-            </a>
             <NavLink 
               to="/manifesto" 
               className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}

@@ -200,7 +200,29 @@ export const GridBackground: React.FC = () => {
         }
       }
 
-      // 2. Draw Grid Lines with dynamic spotlight luminance
+      // 2. Draw Soft Circular Ambient Light Torch around Mouse
+      if (mouseX > -1000 && mouseY > -1000) {
+        const spotRadius = MOUSE_RADIUS * 1.6;
+        const grad = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, spotRadius);
+        const baseAlpha = isDark ? 0.16 : 0.10;
+        grad.addColorStop(0, `rgba(${vibeRgb}, ${baseAlpha})`);
+        grad.addColorStop(0.45, `rgba(${vibeRgb}, ${baseAlpha * 0.35})`);
+        grad.addColorStop(1, `rgba(${vibeRgb}, 0)`);
+
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(mouseX, mouseY, spotRadius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Refined concentric cursor halo
+        ctx.beginPath();
+        ctx.arc(mouseX, mouseY, 32, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(${vibeRgb}, ${isDark ? 0.22 : 0.12})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+
+      // 3. Draw Grid Lines with dynamic spotlight luminance
       ctx.lineWidth = 1.5;
 
       // Draw Horizontal Lines
