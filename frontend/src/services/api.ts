@@ -3,42 +3,25 @@ import GITOPS_PROJECTS from '../data/projects.json';
 import GITOPS_LEADERBOARD from '../data/leaderboard.json';
 import GITOPS_EVENTS from '../data/events.json';
 
-const API_BASE = '/api';
-
 const FALLBACK_EVENTS: Event[] = (GITOPS_EVENTS as unknown as Event[]) || [];
 
 export const api = {
-  // --- Events APIs ---
+  // --- Events APIs (Pure GitOps) ---
   async getEvents(): Promise<Event[]> {
-    try {
-      const res = await fetch(`${API_BASE}/events`);
-      if (res.ok) return await res.json();
-    } catch {
-      // Handled by GitOps static feed
-    }
     return (GITOPS_EVENTS as unknown as Event[]) || FALLBACK_EVENTS;
   },
 
   async syncTinkerhubEvents(): Promise<Event[]> {
-    try {
-      const res = await fetch(`${API_BASE}/events/sync-tinkerhub`, { method: 'POST' });
-      if (res.ok) return await res.json();
-    } catch {
-      // Handled by GitOps static feed
-    }
     return (GITOPS_EVENTS as unknown as Event[]) || FALLBACK_EVENTS;
   },
 
   async rsvpEvent(_eventId: string, rsvpData: EventRSVP): Promise<{ success: boolean; message: string }> {
     try {
-      const res = await fetch(`${API_BASE}/events/rsvp`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(rsvpData)
-      });
-      if (res.ok) return await res.json();
+      const existing = JSON.parse(localStorage.getItem('foss_campus_rsvps') || '[]');
+      existing.push({ ...rsvpData, timestamp: new Date().toISOString() });
+      localStorage.setItem('foss_campus_rsvps', JSON.stringify(existing));
     } catch {
-      // Handled by client
+      // Ignored
     }
     return {
       success: true,
@@ -46,27 +29,11 @@ export const api = {
     };
   },
 
-  // --- Projects APIs (GitOps Powered) ---
+  // --- Projects APIs (Pure GitOps with Client GitHub Sync) ---
   async getProjects(tech?: string, forceSync?: boolean): Promise<Project[]> {
-    try {
-      const queryParams = new URLSearchParams();
-      if (tech && tech !== 'all') queryParams.append('tech', tech);
-      if (forceSync) queryParams.append('sync', 'true');
-      
-      const qs = queryParams.toString();
-      const url = qs ? `${API_BASE}/projects?${qs}` : `${API_BASE}/projects`;
-      const res = await fetch(url);
-      if (res.ok) {
-        const data: Project[] = await res.json();
-        localStorage.setItem('foss_projects_cache', JSON.stringify(data));
-        return data;
-      }
-    } catch {
-      // Handled by GitOps fallback below
-    }
-
     const gitopsList = (GITOPS_PROJECTS as unknown as Project[]) || [];
     let baseList: Project[] = gitopsList;
+    
     const cached = localStorage.getItem('foss_projects_cache');
     if (cached) {
       try {
@@ -111,7 +78,7 @@ export const api = {
                         }
                       }
                     }
-                  } catch (err) {
+                  } catch {
                     // Ignore pulls fetch error
                   }
                 }
@@ -140,19 +107,6 @@ export const api = {
   },
 
   async syncProjects(): Promise<{ success: boolean; message: string; projects: Project[] }> {
-    try {
-      const res = await fetch(`${API_BASE}/projects/sync`, { method: 'POST' });
-      if (res.ok) {
-        const data = await res.json();
-        if (data.projects) {
-          localStorage.setItem('foss_projects_cache', JSON.stringify(data.projects));
-        }
-        return data;
-      }
-    } catch {
-      // Fallback: sync directly with GitHub public API
-    }
-
     const updated = await this.getProjects(undefined, true);
     return {
       success: true,
@@ -176,17 +130,8 @@ export const api = {
     };
   },
 
-  // --- Leaderboard & XP APIs (GitOps Powered) ---
+  // --- Leaderboard & XP APIs (Pure GitOps) ---
   async getLeaderboard(timeframe: 'all_time' | 'monthly' = 'all_time'): Promise<LeaderboardResponse> {
-    try {
-      const res = await fetch(`${API_BASE}/leaderboard?timeframe=${timeframe}`);
-      if (res.ok) {
-        return await res.json();
-      }
-    } catch {
-      // Handled by GitOps fallback
-    }
-
     if (GITOPS_LEADERBOARD && (GITOPS_LEADERBOARD as any).contributors) {
       return {
         ...(GITOPS_LEADERBOARD as any),
