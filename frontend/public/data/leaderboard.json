@@ -1,7 +1,7 @@
 {
   "status": "success",
   "timeframe": "all_time",
-  "total_contributors": 10,
+  "total_contributors": 11,
   "contributors": [
     {
       "user_id": "usr-vertigotalks7",
@@ -9,15 +9,15 @@
       "display_name": "Vertigo Talks",
       "avatar_url": "https://github.com/vertigotalks7.png",
       "is_verified_student": true,
-      "xp": 455,
+      "xp": 475,
       "level": 3,
       "title": "Byte Craftsman",
       "min_xp": 300,
       "max_xp": 699,
-      "progress": 38,
+      "progress": 43,
       "total_projects": 1,
       "total_stars": 9,
-      "total_forks": 10,
+      "total_forks": 11,
       "badges": [
         {
           "id": "verified",
@@ -394,6 +394,44 @@
       ],
       "rank": 10,
       "medal": "#10"
+    },
+    {
+      "user_id": "usr-aj-2007-sys",
+      "username": "AJ-2007-sys",
+      "display_name": "Amal Jayaprakash",
+      "avatar_url": "https://github.com/AJ-2007-sys.png",
+      "is_verified_student": true,
+      "xp": 210,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 55,
+      "total_projects": 1,
+      "total_stars": 0,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "icon": "\u26a1",
+          "color": "#EC4899"
+        }
+      ],
+      "rank": 11,
+      "medal": "#11"
     }
   ]
 }

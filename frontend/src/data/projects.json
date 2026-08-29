@@ -68,7 +68,7 @@
       "Tailwind"
     ],
     "stars": 9,
-    "forks": 10,
+    "forks": 11,
     "open_issues": 0,
     "is_verified_student": true,
     "submitted_by_username": "vertigotalks7",
@@ -215,6 +215,30 @@
     "is_verified_student": true,
     "submitted_by_username": "devusuresh197",
     "submitted_by_name": "Devu Suresh",
+    "batch": "2028",
+    "featured": true
+  },
+  {
+    "id": "proj-attendx",
+    "name": "AttendX",
+    "description": "Intelligent Face Recognition Attendance System built with FastAPI, YOLOv11-Pose, DeepFace, and MediaPipe liveness detection.",
+    "repo_url": "https://github.com/AJ-2007-sys/AttendX-Facial-Recognition-Attendance-System",
+    "tech_stack": [
+      "Python",
+      "FastAPI",
+      "YOLOv11",
+      "DeepFace",
+      "MediaPipe",
+      "SQLite",
+      "OpenCV",
+      "JavaScript"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "AJ-2007-sys",
+    "submitted_by_name": "Amal Jayaprakash",
     "batch": "2028",
     "featured": true
   },
