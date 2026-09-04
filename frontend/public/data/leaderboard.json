@@ -1,11 +1,7 @@
 {
   "status": "success",
   "timeframe": "all_time",
-<<<<<<< HEAD
-  "total_contributors": 13,
-=======
-  "total_contributors": 11,
->>>>>>> 09293c5a9276b89bacb8421439c326cd861b9e54
+  "total_contributors": 15,
   "contributors": [
     {
       "user_id": "usr-vertigotalks7",
@@ -56,7 +52,7 @@
       "user_id": "usr-andrewjerryv",
       "username": "AndrewJerryV",
       "display_name": "Andrew Jerry V",
-      "avatar_url": "https://github.com/AndrewJerryV.png",
+      "avatar_url": "https://github.com/andrewjerryv.png",
       "is_verified_student": true,
       "xp": 235,
       "level": 2,
@@ -65,6 +61,7 @@
       "max_xp": 299,
       "progress": 67,
       "total_projects": 1,
+      "total_creatives": 0,
       "total_stars": 4,
       "total_forks": 1,
       "badges": [
@@ -405,9 +402,8 @@
           "color": "#EC4899"
         }
       ],
-<<<<<<< HEAD
-      "rank": 9,
-      "medal": "#9"
+      "rank": 10,
+      "medal": "#10"
     },
     {
       "user_id": "usr-rahul_lens",
@@ -445,23 +441,14 @@
           "color": "#10B981"
         }
       ],
-=======
->>>>>>> 09293c5a9276b89bacb8421439c326cd861b9e54
-      "rank": 10,
-      "medal": "#10"
+      "rank": 11,
+      "medal": "#11"
     },
     {
-<<<<<<< HEAD
-      "user_id": "usr-ananya_s",
-      "username": "ananya_s",
-      "display_name": "Ananya S",
-      "avatar_url": "https://github.com/ananya_s.png",
-=======
       "user_id": "usr-aj-2007-sys",
       "username": "AJ-2007-sys",
       "display_name": "Amal Jayaprakash",
-      "avatar_url": "https://github.com/AJ-2007-sys.png",
->>>>>>> 09293c5a9276b89bacb8421439c326cd861b9e54
+      "avatar_url": "https://github.com/aj-2007-sys.png",
       "is_verified_student": true,
       "xp": 210,
       "level": 2,
@@ -469,12 +456,8 @@
       "min_xp": 100,
       "max_xp": 299,
       "progress": 55,
-<<<<<<< HEAD
-      "total_projects": 0,
-      "total_creatives": 1,
-=======
       "total_projects": 1,
->>>>>>> 09293c5a9276b89bacb8421439c326cd861b9e54
+      "total_creatives": 0,
       "total_stars": 0,
       "total_forks": 0,
       "badges": [
@@ -485,18 +468,6 @@
           "color": "#08B74F"
         },
         {
-<<<<<<< HEAD
-          "id": "pixel_architect",
-          "name": "Pixel Architect",
-          "icon": "\ud83c\udfa8",
-          "color": "#38BDF8"
-        },
-        {
-          "id": "foss_purist",
-          "name": "Open Creator",
-          "icon": "\ud83d\udc27",
-          "color": "#10B981"
-=======
           "id": "first_ship",
           "name": "First Ship",
           "icon": "\ud83d\ude80",
@@ -507,12 +478,49 @@
           "name": "Polyglot",
           "icon": "\u26a1",
           "color": "#EC4899"
->>>>>>> 09293c5a9276b89bacb8421439c326cd861b9e54
         }
       ],
-      "rank": 11,
-      "medal": "#11"
-<<<<<<< HEAD
+      "rank": 12,
+      "medal": "#12"
+    },
+    {
+      "user_id": "usr-ananya_s",
+      "username": "ananya_s",
+      "display_name": "Ananya S",
+      "avatar_url": "https://github.com/ananya_s.png",
+      "is_verified_student": true,
+      "xp": 210,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 55,
+      "total_projects": 0,
+      "total_creatives": 1,
+      "total_stars": 0,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "pixel_architect",
+          "name": "Pixel Architect",
+          "icon": "\ud83c\udfa8",
+          "color": "#38BDF8"
+        },
+        {
+          "id": "foss_purist",
+          "name": "Open Creator",
+          "icon": "\ud83d\udc27",
+          "color": "#10B981"
+        }
+      ],
+      "rank": 13,
+      "medal": "#13"
     },
     {
       "user_id": "usr-arjun_render",
@@ -550,8 +558,8 @@
           "color": "#10B981"
         }
       ],
-      "rank": 12,
-      "medal": "#12"
+      "rank": 14,
+      "medal": "#14"
     },
     {
       "user_id": "usr-kiran_edits",
@@ -595,10 +603,8 @@
           "color": "#10B981"
         }
       ],
-      "rank": 13,
-      "medal": "#13"
-=======
->>>>>>> 09293c5a9276b89bacb8421439c326cd861b9e54
+      "rank": 15,
+      "medal": "#15"
     }
   ]
 }
