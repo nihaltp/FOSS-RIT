@@ -1,7 +1,11 @@
 {
   "status": "success",
   "timeframe": "all_time",
+<<<<<<< HEAD
   "total_contributors": 13,
+=======
+  "total_contributors": 11,
+>>>>>>> 09293c5a9276b89bacb8421439c326cd861b9e54
   "contributors": [
     {
       "user_id": "usr-vertigotalks7",
@@ -49,6 +53,44 @@
       "medal": "\ud83e\udd47"
     },
     {
+      "user_id": "usr-andrewjerryv",
+      "username": "AndrewJerryV",
+      "display_name": "Andrew Jerry V",
+      "avatar_url": "https://github.com/AndrewJerryV.png",
+      "is_verified_student": true,
+      "xp": 235,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 67,
+      "total_projects": 1,
+      "total_stars": 4,
+      "total_forks": 1,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "icon": "\u26a1",
+          "color": "#EC4899"
+        }
+      ],
+      "rank": 2,
+      "medal": "\ud83e\udd48"
+    },
+    {
       "user_id": "usr-sabari-vijayan",
       "username": "Sabari-Vijayan",
       "display_name": "Sabari Vijayan",
@@ -84,8 +126,8 @@
           "color": "#EAB308"
         }
       ],
-      "rank": 2,
-      "medal": "\ud83e\udd48"
+      "rank": 3,
+      "medal": "\ud83e\udd49"
     },
     {
       "user_id": "usr-kevinjose06",
@@ -123,8 +165,8 @@
           "color": "#EAB308"
         }
       ],
-      "rank": 3,
-      "medal": "\ud83e\udd49"
+      "rank": 4,
+      "medal": "#4"
     },
     {
       "user_id": "usr-srinanth",
@@ -168,8 +210,8 @@
           "color": "#EAB308"
         }
       ],
-      "rank": 4,
-      "medal": "#4"
+      "rank": 5,
+      "medal": "#5"
     },
     {
       "user_id": "usr-nihaltp",
@@ -207,8 +249,8 @@
           "color": "#EC4899"
         }
       ],
-      "rank": 5,
-      "medal": "#5"
+      "rank": 6,
+      "medal": "#6"
     },
     {
       "user_id": "usr-callmekriztal",
@@ -246,8 +288,8 @@
           "color": "#EC4899"
         }
       ],
-      "rank": 6,
-      "medal": "#6"
+      "rank": 7,
+      "medal": "#7"
     },
     {
       "user_id": "usr-tejathomas64",
@@ -285,8 +327,8 @@
           "color": "#EC4899"
         }
       ],
-      "rank": 7,
-      "medal": "#7"
+      "rank": 8,
+      "medal": "#8"
     },
     {
       "user_id": "usr-ari2387q",
@@ -324,8 +366,8 @@
           "color": "#EC4899"
         }
       ],
-      "rank": 8,
-      "medal": "#8"
+      "rank": 9,
+      "medal": "#9"
     },
     {
       "user_id": "usr-devusuresh197",
@@ -363,6 +405,7 @@
           "color": "#EC4899"
         }
       ],
+<<<<<<< HEAD
       "rank": 9,
       "medal": "#9"
     },
@@ -402,14 +445,23 @@
           "color": "#10B981"
         }
       ],
+=======
+>>>>>>> 09293c5a9276b89bacb8421439c326cd861b9e54
       "rank": 10,
       "medal": "#10"
     },
     {
+<<<<<<< HEAD
       "user_id": "usr-ananya_s",
       "username": "ananya_s",
       "display_name": "Ananya S",
       "avatar_url": "https://github.com/ananya_s.png",
+=======
+      "user_id": "usr-aj-2007-sys",
+      "username": "AJ-2007-sys",
+      "display_name": "Amal Jayaprakash",
+      "avatar_url": "https://github.com/AJ-2007-sys.png",
+>>>>>>> 09293c5a9276b89bacb8421439c326cd861b9e54
       "is_verified_student": true,
       "xp": 210,
       "level": 2,
@@ -417,8 +469,12 @@
       "min_xp": 100,
       "max_xp": 299,
       "progress": 55,
+<<<<<<< HEAD
       "total_projects": 0,
       "total_creatives": 1,
+=======
+      "total_projects": 1,
+>>>>>>> 09293c5a9276b89bacb8421439c326cd861b9e54
       "total_stars": 0,
       "total_forks": 0,
       "badges": [
@@ -429,6 +485,7 @@
           "color": "#08B74F"
         },
         {
+<<<<<<< HEAD
           "id": "pixel_architect",
           "name": "Pixel Architect",
           "icon": "\ud83c\udfa8",
@@ -439,10 +496,23 @@
           "name": "Open Creator",
           "icon": "\ud83d\udc27",
           "color": "#10B981"
+=======
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "icon": "\u26a1",
+          "color": "#EC4899"
+>>>>>>> 09293c5a9276b89bacb8421439c326cd861b9e54
         }
       ],
       "rank": 11,
       "medal": "#11"
+<<<<<<< HEAD
     },
     {
       "user_id": "usr-arjun_render",
@@ -527,6 +597,8 @@
       ],
       "rank": 13,
       "medal": "#13"
+=======
+>>>>>>> 09293c5a9276b89bacb8421439c326cd861b9e54
     }
   ]
 }
