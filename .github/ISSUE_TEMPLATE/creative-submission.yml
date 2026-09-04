@@ -9,14 +9,6 @@ body:
         ### FOSS RIT Creative Studio Submission
         Submissions are reviewed by club leads and published to [fossrit.in/studio](https://fossrit.in/studio).
 
-  - type: input
-    id: title
-    attributes:
-      label: "Artwork / Project Title"
-      placeholder: "e.g., Campus Transit UI / TinkerHack Aftermovie / Midnight Hackers"
-    validations:
-      required: true
-
   - type: dropdown
     id: category
     attributes:

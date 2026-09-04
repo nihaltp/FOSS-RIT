@@ -73,14 +73,21 @@ def find_field(sections: dict, *candidates: str, default: str = "") -> str:
     return default
 
 
-def process_submission(body_text: str, submitter_username: str = "") -> str:
+def process_submission(body_text: str, submitter_username: str = "", issue_title: str = "") -> str:
     """
     Parses issue body, generates markdown file in content/creatives/, and returns the file path.
     """
     sections = parse_issue_form_body(body_text)
 
-    # Extract fields with fuzzy header matching
-    title = find_field(sections, "artwork / project title", "title", default="Untitled Artwork")
+    # Extract title from issue title or form body fallback
+    clean_title = ""
+    if issue_title:
+        clean_title = re.sub(r'^\[Showcase\]:?\s*', '', issue_title, flags=re.IGNORECASE).strip()
+
+    if not clean_title:
+        clean_title = find_field(sections, "artwork / project title", "title", default="Untitled Artwork")
+
+    title = clean_title or "Untitled Artwork"
     category = find_field(sections, "craft category", "category", default="design").lower()
     author_name = find_field(sections, "your full name", "name", default=submitter_username or "FOSS Maker")
     college_id = find_field(sections, "college roll", "student verification", default="")
@@ -159,6 +166,7 @@ def process_submission(body_text: str, submitter_username: str = "") -> str:
 def main():
     parser = argparse.ArgumentParser(description="Publish creative submission from issue form.")
     parser.add_argument("--body-file", help="Path to file containing raw issue body")
+    parser.add_argument("--title", default="", help="Title of the GitHub issue")
     parser.add_argument("--user", default="", help="GitHub username of the submitter")
     args = parser.parse_args()
 
@@ -170,11 +178,13 @@ def main():
         # Read from stdin
         body_text = sys.stdin.read()
 
+    issue_title = args.title or os.environ.get("ISSUE_TITLE", "")
+
     if not body_text.strip():
         print("Error: Issue body is empty.", file=sys.stderr)
         sys.exit(1)
 
-    created_path = process_submission(body_text, submitter_username=args.user)
+    created_path = process_submission(body_text, submitter_username=args.user, issue_title=issue_title)
     print(f"Successfully published: {created_path}")
 
 

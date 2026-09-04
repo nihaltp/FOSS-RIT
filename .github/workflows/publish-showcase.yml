@@ -32,10 +32,11 @@ jobs:
       - name: Parse Submission and Sync Data
         env:
           RAW_ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
           SUBMITTER_USER: ${{ github.event.issue.user.login }}
         run: |
           echo "$RAW_ISSUE_BODY" > issue_payload.txt
-          python scripts/publish_submission.py --body-file issue_payload.txt --user "$SUBMITTER_USER"
+          python scripts/publish_submission.py --body-file issue_payload.txt --title "$ISSUE_TITLE" --user "$SUBMITTER_USER"
           rm -f issue_payload.txt
 
       - name: Commit and Push Changes
