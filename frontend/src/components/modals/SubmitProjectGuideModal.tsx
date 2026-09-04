@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, GitFork, FileCode, GitPullRequest, Copy, Check, ExternalLink, Sparkles, Code, Palette, Send } from 'lucide-react';
+import { X, GitFork, FileCode, GitPullRequest, Copy, Check, ExternalLink, Sparkles, Code, Palette, Send, Info } from 'lucide-react';
 import { useToast } from '../../context/ToastContext';
 
 interface SubmitProjectGuideModalProps {
@@ -150,6 +150,25 @@ A brief 1-2 paragraph description explaining your design, video aftermovie, or p
                 <span>Open Submission Form on GitHub</span>
                 <ExternalLink size={13} />
               </a>
+
+              {/* GitHub Account Note for Creatives */}
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '8px 12px',
+                background: 'rgba(56, 189, 248, 0.08)',
+                border: '1px solid rgba(56, 189, 248, 0.22)',
+                borderRadius: 'var(--radius-sm)',
+                fontSize: '0.75rem',
+                color: 'var(--text-secondary)',
+                lineHeight: 1.4
+              }}>
+                <Info size={14} color="var(--pixel-blue)" style={{ flexShrink: 0 }} />
+                <span>
+                  <strong>Quick note:</strong> Requires a free GitHub account (takes &lt; 2 mins to sign up). No coding, Git, or terminal setup required!
+                </span>
+              </div>
             </div>
 
             {/* Manual PR Toggle Section */}

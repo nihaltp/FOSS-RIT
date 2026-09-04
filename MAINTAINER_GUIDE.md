@@ -2,36 +2,44 @@
 
 Welcome to the FOSS Club RIT core maintainer team!
 
-Your role is to help review and verify open-source projects and creative media submissions from students. This handbook outlines the review procedures for both code and creative media.
+Your role is to help review and verify open-source projects and creative media submissions from students. This handbook outlines the triage procedures for both **Issue Form Submissions** and **Pull Requests**.
 
 ---
 
-## 4-Step Review Workflow
+## 1. Issue Form Submissions (Creative Showcases)
 
-### Step 1: Check the Automated Review Card
-When a student opens a PR, GitHub Actions automatically runs `scripts/validate_pr.py` and posts a **Review Summary Card**.
-- **Green Pass:** All frontmatter syntax and required fields are present.
-- **Red Failure:** Identifies the exact problem (e.g. missing `media_url`, missing `repo_url`, or binary file committed to Git).
+When a student submits via the [Creative Showcase Form](https://github.com/vertigotalks7/FOSS-RIT/issues/new?template=creative-submission.yml):
+1. **Notification:** The issue arrives with labels `showcase-submission` and `triage`.
+2. **Review Checklist:**
+   - [ ] Click the **Media / Preview URL** to confirm it is valid, public, and safe for campus display.
+   - [ ] Check the **College Roll No. / KTU ID** (e.g. `RIT22CS045`) to confirm active student maker status.
+   - [ ] Confirm tools and license (`CC-BY-4.0`, etc.) are provided.
+3. **Approve & Publish (1 Click):**
+   - Attach the label **`approved`** to the issue.
+   - The automated GitHub Action ([`.github/workflows/publish-showcase.yml`](.github/workflows/publish-showcase.yml)) will:
+     - Generate `content/creatives/<slug>.md`.
+     - Set `is_verified_student: true` if roll number is valid.
+     - Recalculate leaderboard XP and sync feeds via `scripts/sync_data.py`.
+     - Commit and push to `main`.
+     - Comment thanking the contributor and close the issue automatically.
+4. **If Changes are Needed:**
+   - Comment on the issue: *"Hey @username! Loved the submission, but your Figma link is set to private. Please set it to 'Anyone with link can view' and we'll approve it right away!"*
 
-### Step 2: Verification by Category
+---
 
-#### For Code Projects (`content/projects/*.md`):
-1. **Public Repository:** Click the repo link—verify it is public and contains working code.
-2. **README:** Verify a README exists explaining how to run the project.
-3. **Student Maker:** Confirm the contributor is a student or alumnus of RIT.
+## 2. Pull Request Reviews (Code Projects)
 
-#### For Creative Showcases (`content/creatives/*.md`):
-1. **Media Preview:** Click the `media_url` or `thumbnail_url`—verify the link is accessible.
-2. **No Raw Binaries in Git:** Ensure the PR only contains a `.md` file, not large `.png`, `.jpg`, or `.mp4` files.
-3. **Authenticity & Licensing:** Confirm the work has an appropriate Creative Commons license (`CC-BY`, `CC0`, etc.) and does not violate copyright.
-
-### Step 3: Friendly Review & Feedback
-- **Approve:** *"Great work! Approved for the campus showcase."*
-- **Request Changes:** *"Hey @username! Please ensure your media is hosted on YouTube/Unsplash/Figma and linked via URL rather than committing raw video/photo files to Git."*
-
-### Step 4: Merge the Pull Request
-1. Click **Merge pull request** -> **Confirm merge**.
-2. GitHub Actions runs `scripts/sync_data.py`, recalculates Leaderboard XP, generates `projects.json` / `creatives.json`, and deploys the live site in ~10 seconds.
+When a developer opens a PR touching `content/projects/*.md`:
+1. **Automated Validation:** GitHub Actions runs `scripts/validate_pr.py` and posts a **Review Summary Card**.
+   - **Green Pass:** All frontmatter syntax and fields are valid.
+   - **Red Failure:** Identifies issues (e.g., missing `repo_url`, 404 repository, or binary files in Git).
+2. **Review Checklist:**
+   - [ ] **Public Repository:** Repo is public with original code.
+   - [ ] **README:** Clear explanation of how to run the project.
+   - [ ] **Student Maker:** Authentic student or alumnus of RIT.
+3. **Merge the PR:**
+   - Click **Merge pull request** -> **Confirm merge**.
+   - The site syncs and redeploys in ~10 seconds.
 
 ---
 
@@ -42,11 +50,11 @@ When a student opens a PR, GitHub Actions automatically runs `scripts/validate_p
 | **Empty repo or placeholder link** | Ask the student to add actual code/media before approval. |
 | **Raw binary file committed in PR** | Close or request change: ask student to remove the binary and use an external CDN link. |
 | **Unmodified clone of external work** | Politely decline: submissions must be original work or active contributions. |
-| **Spam / non-student submissions** | Close the PR with a brief explanation. |
+| **Spam / non-student submissions** | Close the issue/PR with a brief explanation. |
 
 ---
 
 ## Escalations & Architecture Guidelines
 
-- Only PRs touching `content/projects/*.md` and `content/creatives/*.md` should be merged by junior maintainers.
+- Only PRs/Issues touching `content/projects/*.md` and `content/creatives/*.md` should be merged by junior maintainers.
 - Any PR altering `scripts/`, `frontend/`, or `.github/` workflows requires senior core review from `@vertigotalks7`.

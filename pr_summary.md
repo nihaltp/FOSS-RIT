@@ -180,6 +180,19 @@
 
 ---
 
+### Creative Showcase Review: Attack On Titan video edit
+- **Category:** Video
+- **Creator:** @vertigotalks7
+- **Tools:** `'Alight motion'`
+- **Media Link:** [https://youtu.be/WwYtrSyWDjU](https://youtu.be/WwYtrSyWDjU)
+
+#### Maintainer Checklist:
+- [ ] Preview link is accessible and authentic student creative work.
+- [ ] Appropriate Creative Commons or open-source license declared.
+- [ ] No copyrighted assets used without permission.
+
+---
+
 ### Creative Showcase Review: FOSS RIT Campus Transit Design System
 - **Category:** Design
 - **Creator:** @ananya_s

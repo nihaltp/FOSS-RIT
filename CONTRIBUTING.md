@@ -4,23 +4,29 @@ Welcome to the **FOSS Club RIT** community platform! We showcase open-source sof
 
 ---
 
-## Submission Categories
+## Submission Methods
 
-We accept two types of student submissions via GitOps:
+We offer two frictionless ways to submit your work:
 
-1. **Code Projects (`content/projects/`):** Software applications, CLI tools, libraries, and hardware firmware.
-2. **Creative Showcases (`content/creatives/`):** UI/UX prototypes, event photography series, video edits, and 3D renders.
+### 1. 🎨 Fast Web Form (Recommended for Designers, Photographers & Video Editors)
+If you don't use Git or terminal tools, you can submit via our visual GitHub Issue Form:
+1. Open the [**Creative Showcase Submission Form**](https://github.com/vertigotalks7/FOSS-RIT/issues/new?template=creative-submission.yml).
+2. Fill in your artwork title, craft category, tools used, media URL (YouTube, Figma, Penpot, Unsplash), and college KTU roll number.
+3. Click **Submit new issue**.
+4. Our club maintainers will review the preview and apply the `approved` label, which triggers our automated publisher bot to commit your file and update the live website!
+
+*(Requires a free GitHub account — takes < 2 minutes to create).*
 
 ---
 
-## How to Submit (Step-by-Step)
+### 2. 💻 Git Pull Request (For Developers & Code Projects)
 
-### Step 1: Fork This Repository
-Click the **Fork** button at the top right of this repository to create your copy on GitHub.
+#### Step 1: Fork This Repository
+Click the **Fork** button at the top right of [github.com/vertigotalks7/FOSS-RIT](https://github.com/vertigotalks7/FOSS-RIT) to create your copy.
 
-### Step 2: Add Your Markdown Submission File
+#### Step 2: Add Your Markdown Submission File
 
-#### Option A: Software Project (`content/projects/your-project.md`)
+##### Option A: Software Project (`content/projects/your-project.md`)
 ```markdown
 ---
 name: "Campus Transit Radar"
@@ -35,7 +41,7 @@ featured: true
 ---
 ```
 
-#### Option B: Creative Showcase (`content/creatives/your-showcase.md`)
+##### Option B: Creative Showcase via PR (`content/creatives/your-showcase.md`)
 ```markdown
 ---
 title: "Campus Design System / Video Aftermovie"
@@ -58,7 +64,7 @@ featured: true
 > **Do NOT commit raw video, heavy photos, or .psd/.blend binary files into Git.**  
 > Upload your media to an external host (YouTube, Figma, Penpot, Unsplash, Imgur) and link the URL in your markdown file.
 
-### Step 3: Open a Pull Request
+#### Step 3: Open a Pull Request
 1. Commit your changes and push to your fork.
 2. Open a **Pull Request** to the `main` branch.
 3. Automated GitHub Actions will test and validate your file formatting.

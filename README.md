@@ -10,27 +10,35 @@ The official community platform for the Free and Open Source Software (FOSS) Clu
 
 ## What Can You Feature on the Platform?
 
-We showcase all student makers and creators across campus:
-1. **Code Repositories (`content/projects/`):** Web apps, AI models, mobile apps, hardware firmware, and automation scripts.
+We showcase student makers and creative creators across campus:
+1. **Code Repositories (`content/projects/`):** Web apps, AI/ML models, mobile apps, hardware firmware, and automation scripts.
 2. **Creative Showcases (`content/creatives/`):** UI/UX design systems (Penpot/Figma), event photography series, video aftermovies/teasers (DaVinci Resolve/Kdenlive), and 3D artwork (Blender).
 
 ---
 
-## How to Feature Your Work (3-Step GitOps Flow)
+## How to Feature Your Work
 
-You do not need to install local development tools. Submissions are processed via simple Markdown Pull Requests.
+### 🎨 Method 1: Web Form (Fastest for Designers, Photographers & Video Creators)
+No local terminal setup or Git commands required:
+1. Open the [**Creative Showcase Submission Form**](https://github.com/vertigotalks7/FOSS-RIT/issues/new?template=creative-submission.yml) on GitHub.
+2. Fill out your details (Title, Craft Category, Tools Used, Media URL, and KTU Roll No for verified status).
+3. Click **Submit new issue**.
+4. Once a club maintainer reviews and labels it `approved`, the automated bot commits your work and deploys it live in ~10 seconds!
 
-### Step 1: Fork This Repository
-1. Click the **Fork** button at the top right of this repository ([github.com/vertigotalks7/FOSS-RIT](https://github.com/vertigotalks7/FOSS-RIT)).
-2. This creates your personal copy of the project.
+*(Requires a free GitHub account — takes < 2 minutes to create).*
 
-### Step 2: Add Your Markdown File
-Choose the appropriate directory:
+---
 
+### 💻 Method 2: Git Pull Request (For Developers & Code Projects)
+
+#### Step 1: Fork This Repository
+Click the **Fork** button at the top right of this repository to create your copy on GitHub.
+
+#### Step 2: Add Your Markdown File
 - **For Software / Code Projects:** Create `content/projects/<project-name>.md`
-- **For Design, Photo, Video & 3D:** Create `content/creatives/<work-name>.md`
+- **For Creative Showcase via PR:** Create `content/creatives/<work-name>.md`
 
-#### Template A: Code Project (`content/projects/smart-parking.md`)
+##### Template: Code Project (`content/projects/smart-parking.md`)
 ```markdown
 ---
 name: "Smart Campus Parking Radar"
@@ -48,7 +56,7 @@ featured: true
 Summary of what the project does, key features, and how to run it.
 ```
 
-#### Template B: Creative Showcase (`content/creatives/campus-transit-ui.md`)
+##### Template: Creative Showcase (`content/creatives/campus-transit-ui.md`)
 ```markdown
 ---
 title: "Campus Transit App Design System"
@@ -61,7 +69,7 @@ tools: ["Penpot", "Inkscape"]
 media_url: "https://design.penpot.app/#/view/..."
 thumbnail_url: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800"
 aspect_ratio: "16:9" # Options: 16:9 | 3:2 | 1:1
-license: "CC-BY-SA-4.0"
+license: "CC-BY-SA-4.0" # Creative Commons: CC-BY-4.0, CC-BY-SA-4.0, CC0-1.0
 is_verified_student: true
 featured: true
 ---
@@ -69,10 +77,10 @@ featured: true
 A modern, open design system for campus navigation and transit schedules.
 ```
 
-### Step 3: Submit a Pull Request
+#### Step 3: Submit a Pull Request
 1. Commit the file and open a **Pull Request** to `main`.
 2. Automated GitHub Actions will validate your frontmatter, verify links, and block raw binary files to keep repository storage light.
-3. Once approved and merged, your work automatically goes live on the website!
+3. Once merged, your work automatically displays on the live website!
 
 ---
 
@@ -82,7 +90,7 @@ XP and achievement badges are awarded to developers and creative creators equall
 
 | Milestone / Metric | XP Award | Criteria |
 | :--- | :--- | :--- |
-| **Campus Verified** | `+50 XP` | Verified RIT student maker |
+| **Campus Verified** | `+50 XP` | Verified RIT student maker (via KTU ID) |
 | **First Submission** | `+100 XP` | First project or creative showcase featured |
 | **Additional Works** | `+75 XP` each | 2nd and 3rd featured works |
 | **Peer Forks** | `+20 XP` per fork | When peers fork your repository |
