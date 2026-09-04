@@ -9,14 +9,14 @@
       "display_name": "Vertigo Talks",
       "avatar_url": "https://github.com/vertigotalks7.png",
       "is_verified_student": true,
-      "xp": 475,
+      "xp": 590,
       "level": 3,
       "title": "Byte Craftsman",
       "min_xp": 300,
       "max_xp": 699,
-      "progress": 43,
+      "progress": 72,
       "total_projects": 1,
-      "total_creatives": 0,
+      "total_creatives": 1,
       "total_stars": 9,
       "total_forks": 11,
       "badges": [
@@ -43,6 +43,12 @@
           "name": "Polyglot",
           "icon": "\u26a1",
           "color": "#EC4899"
+        },
+        {
+          "id": "frame_crafter",
+          "name": "Frame Crafter",
+          "icon": "\ud83c\udfac",
+          "color": "#F43F5E"
         }
       ],
       "rank": 1,

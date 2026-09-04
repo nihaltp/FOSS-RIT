@@ -1,5 +1,28 @@
 [
   {
+    "id": "creative-attack-on-titan-video-edit",
+    "title": "Attack On Titan video edit",
+    "description": "A video edit i did a while back (during KEAM days)",
+    "category": "video",
+    "author": "vertigotalks7",
+    "author_name": "Angelo Joemon",
+    "avatar_url": "https://github.com/vertigotalks7.png",
+    "batch": "2028",
+    "department": "CSE",
+    "tools": [
+      "Alight motion"
+    ],
+    "license": "CC-BY-SA-4.0",
+    "media_url": "https://youtu.be/WwYtrSyWDjU",
+    "thumbnail_url": "https://img.youtube.com/vi/WwYtrSyWDjU/maxresdefault.jpg",
+    "youtube_id": "WwYtrSyWDjU",
+    "aspect_ratio": "16:9",
+    "duration": null,
+    "camera_meta": null,
+    "is_verified_student": true,
+    "featured": true
+  },
+  {
     "id": "creative-campus-transit-ui",
     "title": "FOSS RIT Campus Transit Design System",
     "description": "A modern, accessible transit app design system crafted for RIT Kottayam campus shuttles and student navigation. Built natively in Penpot adhering to open web design tokens and SVG standards.",
