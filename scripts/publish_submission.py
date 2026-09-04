@@ -97,7 +97,9 @@ def process_submission(body_text: str, submitter_username: str = "", issue_title
     media_url = find_field(sections, "media / preview url", "media url", default="")
     thumbnail_url = find_field(sections, "custom cover", "thumbnail", default="")
     aspect_ratio = find_field(sections, "aspect ratio", default="16:9")
-    license_type = find_field(sections, "license", default="CC-BY-4.0")
+    license_raw = find_field(sections, "license", default="CC-BY-4.0")
+    license_match = re.search(r'(CC-BY(?:-SA)?-4\.0|CC0-1\.0|MIT|Apache-2\.0)', license_raw, re.IGNORECASE)
+    license_type = license_match.group(1).upper() if license_match else (license_raw.split()[0] if license_raw else "CC-BY-4.0")
     description = find_field(sections, "short description", "description", default="")
 
     # Clean category

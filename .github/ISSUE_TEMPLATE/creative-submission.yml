@@ -7,12 +7,13 @@ body:
     attributes:
       value: |
         ### FOSS RIT Creative Studio Submission
-        Submissions are reviewed by club leads and published to [fossrit.in/studio](https://fossrit.in/studio).
+        Submissions are reviewed by club maintainers and published to [fossrit.in/studio](https://fossrit.in/studio).
 
   - type: dropdown
     id: category
     attributes:
       label: "Craft Category"
+      description: "Select the primary creative medium that best represents your work."
       options:
         - "design"
         - "photography"
@@ -25,6 +26,7 @@ body:
     id: author_name
     attributes:
       label: "Your Full Name"
+      description: "Your official name to be credited as the creator on the website and contributor leaderboard."
       placeholder: "e.g., Ananya S"
     validations:
       required: true
@@ -33,6 +35,7 @@ body:
     id: college_id
     attributes:
       label: "College Roll No. / KTU ID (Student Verification)"
+      description: "Used by club leads to verify active campus student status for the verified maker badge. (This is private and never published publicly)."
       placeholder: "e.g., RIT22CS045"
     validations:
       required: true
@@ -41,7 +44,8 @@ body:
     id: batch
     attributes:
       label: "Graduation Batch"
-      placeholder: "e.g., 2026"
+      description: "Your expected year of graduation."
+      placeholder: "e.g., 2026, 2027, 2028"
     validations:
       required: true
 
@@ -49,14 +53,16 @@ body:
     id: department
     attributes:
       label: "Department / Branch"
-      placeholder: "e.g., CSE, ECE, ME, CE, EEE, B.Arch"
+      description: "Your college academic branch or school."
+      placeholder: "e.g., CSE, ECE, ME, CE, EEE, B.Arch, MCA"
     validations:
       required: true
 
   - type: input
     id: tools
     attributes:
-      label: "Creative Tools Used (Comma-separated)"
+      label: "Creative Tools Used"
+      description: "List the open source or creative tools used, separated by commas."
       placeholder: "e.g., Penpot, Inkscape / Blender, DaVinci Resolve / Sony A7 III"
     validations:
       required: true
@@ -65,15 +71,17 @@ body:
     id: media_url
     attributes:
       label: "Media / Preview URL"
-      placeholder: "e.g., YouTube URL / Penpot or Figma view link / Unsplash or Imgur link"
+      description: "Direct link to view or play your work (YouTube video, Penpot/Figma public view link, or Unsplash/Imgur photo link)."
+      placeholder: "e.g., https://youtu.be/... / https://design.penpot.app/... / https://unsplash.com/..."
     validations:
       required: true
 
   - type: input
     id: thumbnail_url
     attributes:
-      label: "Custom Cover / Thumbnail URL (Optional for videos/designs)"
-      placeholder: "e.g., Direct image link (16:9 recommended)"
+      label: "Custom Cover / Thumbnail URL (Optional)"
+      description: "Optional direct image URL for the showcase cover art. (YouTube videos auto-extract their own high-res thumbnail)."
+      placeholder: "e.g., https://images.unsplash.com/... (16:9 recommended)"
     validations:
       required: false
 
@@ -81,6 +89,7 @@ body:
     id: aspect_ratio
     attributes:
       label: "Display Aspect Ratio"
+      description: "Recommended frame ratio for the gallery card: 16:9 (video/UI), 3:2 (photography), or 1:1 (square art)."
       options:
         - "16:9"
         - "3:2"
@@ -92,6 +101,11 @@ body:
     id: license
     attributes:
       label: "Creative Commons License"
+      description: |
+        Choose how others can share or use your work:
+        • CC-BY-4.0 (Recommended): Anyone can share/remix your work, as long as they give credit to you.
+        • CC-BY-SA-4.0: Anyone can remix your work, but their version must also use the same license and credit you.
+        • CC0-1.0 (Public Domain): No copyright reserved; open for anyone to use freely without attribution.
       options:
         - "CC-BY-4.0"
         - "CC-BY-SA-4.0"
@@ -103,6 +117,7 @@ body:
     id: description
     attributes:
       label: "Short Description"
+      description: "Briefly explain what you created, the tools/process used, or the story behind it (1–3 sentences)."
       placeholder: "A brief 1-2 sentence description explaining your work and the tools/process used."
     validations:
       required: true

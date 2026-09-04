@@ -26,6 +26,20 @@
 
 ---
 
+### Project Review: AttendX
+- **Submitted by:** @AJ-2007-sys (Batch: 2028)
+- **Repository:** [https://github.com/AJ-2007-sys/AttendX-Facial-Recognition-Attendance-System](https://github.com/AJ-2007-sys/AttendX-Facial-Recognition-Attendance-System)
+- **Status:** Public Repository (Stars: 0 | Forks: 0)
+- **Tech Stack:** `"Python", "FastAPI", "YOLOv11", "DeepFace", "MediaPipe", "SQLite", "OpenCV", "JavaScript"`
+
+
+#### Maintainer Checklist:
+- [ ] Public repository with original code.
+- [ ] README present explaining the project.
+- [ ] Contributor @AJ-2007-sys is an authentic student maker.
+
+---
+
 ### Project Review: FeedGuard
 - **Submitted by:** @ari2387q (Batch: 2026)
 - **Repository:** [https://github.com/ari2387q/feedguard-ai](https://github.com/ari2387q/feedguard-ai)
@@ -51,6 +65,20 @@
 - [ ] Public repository with original code.
 - [ ] README present explaining the project.
 - [ ] Contributor @vertigotalks7 is an authentic student maker.
+
+---
+
+### Project Review: GitHub Stats Generator
+- **Submitted by:** @AndrewJerryV (Batch: 2023)
+- **Repository:** [https://github.com/AndrewJerryV/GitHub-Stats-Generator](https://github.com/AndrewJerryV/GitHub-Stats-Generator)
+- **Status:** Public Repository (Stars: 4 | Forks: 1)
+- **Tech Stack:** `"JavaScript", "HTML", "JSON"`
+
+
+#### Maintainer Checklist:
+- [ ] Public repository with original code.
+- [ ] README present explaining the project.
+- [ ] Contributor @AndrewJerryV is an authentic student maker.
 
 ---
 
