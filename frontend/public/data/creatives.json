@@ -1,0 +1,99 @@
+[
+  {
+    "id": "creative-campus-transit-ui",
+    "title": "FOSS RIT Campus Transit Design System",
+    "description": "A modern, accessible transit app design system crafted for RIT Kottayam campus shuttles and student navigation. Built natively in Penpot adhering to open web design tokens and SVG standards.",
+    "category": "design",
+    "author": "ananya_s",
+    "author_name": "Ananya S",
+    "avatar_url": "https://github.com/ananya_s.png",
+    "batch": "2026",
+    "department": "CSE",
+    "tools": [
+      "Penpot",
+      "Inkscape"
+    ],
+    "license": "CC-BY-SA-4.0",
+    "media_url": "https://design.penpot.app/#/view/sample-transit-ui",
+    "thumbnail_url": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&auto=format&fit=crop&q=80",
+    "youtube_id": null,
+    "aspect_ratio": "16:9",
+    "duration": null,
+    "camera_meta": null,
+    "is_verified_student": true,
+    "featured": true
+  },
+  {
+    "id": "creative-foss-mascot-3d",
+    "title": "Cyber Tux: FOSS RIT 3D Low-Poly Mascot",
+    "description": "A cyberpunk-inspired low-poly 3D mascot designed and rigged in Blender 4.2 LTS, rendered with EEVEE Next. Released under public domain CC0 for the community.",
+    "category": "3d",
+    "author": "arjun_render",
+    "author_name": "Arjun V",
+    "avatar_url": "https://github.com/arjun_render.png",
+    "batch": "2026",
+    "department": "B.Arch",
+    "tools": [
+      "Blender",
+      "Krita"
+    ],
+    "license": "CC0-1.0",
+    "media_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1600&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80",
+    "youtube_id": null,
+    "aspect_ratio": "16:9",
+    "duration": null,
+    "camera_meta": null,
+    "is_verified_student": true,
+    "featured": true
+  },
+  {
+    "id": "creative-midnight-hackers-lens",
+    "title": "Midnight Hackers: Focus & Caffeine in Frames",
+    "description": "Candid documentary photography series capturing team brainstorming, hardware tinkering, and late-night commits during the annual campus coding retreat.",
+    "category": "photography",
+    "author": "rahul_lens",
+    "author_name": "Rahul M",
+    "avatar_url": "https://github.com/rahul_lens.png",
+    "batch": "2025",
+    "department": "ECE",
+    "tools": [
+      "Sony A7 III",
+      "RawTherapee",
+      "GIMP"
+    ],
+    "license": "CC-BY-4.0",
+    "media_url": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=80",
+    "youtube_id": null,
+    "aspect_ratio": "3:2",
+    "duration": null,
+    "camera_meta": null,
+    "is_verified_student": true,
+    "featured": true
+  },
+  {
+    "id": "creative-tinkerhack-aftermovie",
+    "title": "TinkerHack '26 24-Hour Hackathon Aftermovie",
+    "description": "Official high-energy campus aftermovie documenting the 24-hour non-stop hackathon co-hosted by FOSS Club & TinkerHub RIT. Color graded in DaVinci Resolve with 3D title motion tracks in Blender.",
+    "category": "video",
+    "author": "kiran_edits",
+    "author_name": "Kiran Joy",
+    "avatar_url": "https://github.com/kiran_edits.png",
+    "batch": "2026",
+    "department": "ME",
+    "tools": [
+      "DaVinci Resolve",
+      "Blender"
+    ],
+    "license": "CC-BY-4.0",
+    "media_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "thumbnail_url": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=80",
+    "youtube_id": "dQw4w9WgXcQ",
+    "aspect_ratio": "16:9",
+    "duration": "02:14",
+    "camera_meta": null,
+    "is_verified_student": true,
+    "featured": true
+  }
+]

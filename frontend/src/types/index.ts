@@ -33,6 +33,7 @@ export interface ContributorRank {
   max_xp: number;
   progress: number;
   total_projects: number;
+  total_creatives?: number;
   total_stars: number;
   total_forks: number;
   top_projects?: string[];
@@ -110,19 +111,43 @@ export interface Project {
   forks: number;
   open_issues: number;
   submitted_by_username?: string;
+  submitted_by_name?: string;
+  batch?: string;
   is_verified_student?: boolean;
+  featured?: boolean;
   last_synced_at?: string;
 }
 
-export interface ProjectCreate {
-  repo_url: string;
-  name?: string;
-  description?: string;
+export interface CreativeWork {
+  id: string;
+  title: string;
+  description: string;
+  category: 'design' | 'photography' | 'video' | '3d' | string;
+  author: string;
+  author_name?: string;
+  avatar_url?: string;
+  batch?: string;
+  department?: string;
+  tools: string[];
+  license?: string;
+  media_url: string;
+  thumbnail_url?: string;
+  youtube_id?: string | null;
+  aspect_ratio?: string;
+  duration?: string | null;
+  camera_meta?: {
+    camera?: string;
+    lens?: string;
+    iso?: string;
+  } | null;
+  is_verified_student?: boolean;
+  featured?: boolean;
 }
 
 export interface ClubStats {
   active_members: number;
   projects_built: number;
+  creative_works: number;
   workshops_hosted: number;
   open_pull_requests: number;
   lines_of_foss_code: string;

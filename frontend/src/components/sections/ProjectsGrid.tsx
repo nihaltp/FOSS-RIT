@@ -158,7 +158,7 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({
 
             <button className="btn btn-secondary btn-sm" onClick={onOpenSubmitProject}>
               <Plus size={14} />
-              Submit Project Link
+              Submit Repo
             </button>
           </div>
         </div>

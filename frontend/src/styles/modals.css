@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Modals, Forms, Mascot Banner & Toast Notifications
+   Modals, Forms, Media Viewer & Toast Notifications
    ========================================================================== */
 
 /* Mascot Banner */
@@ -85,6 +85,7 @@
   justify-content: center;
   cursor: pointer;
   transition: all var(--transition-fast);
+  z-index: 10;
 }
 
 .modal-close-btn:hover {
@@ -121,6 +122,73 @@
 .form-input:focus, .form-select:focus, .form-textarea:focus {
   border-color: var(--foss-mint);
   box-shadow: 0 0 0 2px var(--foss-mint-subtle);
+}
+
+/* --- Media Viewer Modal Styles --- */
+.media-viewer-modal {
+  padding: 0;
+  overflow: hidden;
+  background: #0D0F14;
+}
+
+.media-viewer-modal .modal-header {
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.media-embed-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background: #000;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.media-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.media-image-canvas {
+  width: 100%;
+  max-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #050608;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.media-canvas-img {
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+}
+
+.media-info-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  padding: var(--space-md) 0 0 0;
+}
+
+.media-author-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-left: auto;
 }
 
 /* Toast Notifications */

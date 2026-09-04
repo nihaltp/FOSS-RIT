@@ -6,6 +6,7 @@ import { Footer } from './components/layout/Footer';
 import { HomePage } from './pages/HomePage';
 import { EventsPage } from './pages/EventsPage';
 import { ProjectsPage } from './pages/ProjectsPage';
+import { CreativesPage } from './pages/CreativesPage';
 import { LeaderboardPage } from './pages/LeaderboardPage';
 import { ManifestoPage } from './pages/ManifestoPage';
 import { RsvpModal } from './components/modals/RsvpModal';
@@ -82,6 +83,15 @@ export const App: React.FC = () => {
               element={
                 <ProjectsPage 
                   onOpenSubmitProject={() => setIsSubmitGuideOpen(true)}
+                  refreshKey={refreshKey}
+                />
+              } 
+            />
+            <Route 
+              path="/studio" 
+              element={
+                <CreativesPage 
+                  onOpenSubmitCreative={() => setIsSubmitGuideOpen(true)}
                   refreshKey={refreshKey}
                 />
               } 

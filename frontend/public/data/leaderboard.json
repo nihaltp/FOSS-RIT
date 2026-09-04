@@ -1,7 +1,7 @@
 {
   "status": "success",
   "timeframe": "all_time",
-  "total_contributors": 9,
+  "total_contributors": 13,
   "contributors": [
     {
       "user_id": "usr-vertigotalks7",
@@ -9,15 +9,16 @@
       "display_name": "Vertigo Talks",
       "avatar_url": "https://github.com/vertigotalks7.png",
       "is_verified_student": true,
-      "xp": 435,
+      "xp": 475,
       "level": 3,
       "title": "Byte Craftsman",
       "min_xp": 300,
       "max_xp": 699,
-      "progress": 33,
+      "progress": 43,
       "total_projects": 1,
+      "total_creatives": 0,
       "total_stars": 9,
-      "total_forks": 9,
+      "total_forks": 11,
       "badges": [
         {
           "id": "verified",
@@ -51,7 +52,7 @@
       "user_id": "usr-sabari-vijayan",
       "username": "Sabari-Vijayan",
       "display_name": "Sabari Vijayan",
-      "avatar_url": "https://github.com/Sabari-Vijayan.png",
+      "avatar_url": "https://github.com/sabari-vijayan.png",
       "is_verified_student": true,
       "xp": 275,
       "level": 2,
@@ -60,6 +61,7 @@
       "max_xp": 299,
       "progress": 87,
       "total_projects": 1,
+      "total_creatives": 0,
       "total_stars": 19,
       "total_forks": 0,
       "badges": [
@@ -98,6 +100,7 @@
       "max_xp": 299,
       "progress": 62,
       "total_projects": 1,
+      "total_creatives": 0,
       "total_stars": 12,
       "total_forks": 0,
       "badges": [
@@ -127,7 +130,7 @@
       "user_id": "usr-srinanth",
       "username": "Srinanth",
       "display_name": "Srinanth MV",
-      "avatar_url": "https://github.com/Srinanth.png",
+      "avatar_url": "https://github.com/srinanth.png",
       "is_verified_student": true,
       "xp": 265,
       "level": 2,
@@ -136,6 +139,7 @@
       "max_xp": 299,
       "progress": 82,
       "total_projects": 1,
+      "total_creatives": 0,
       "total_stars": 11,
       "total_forks": 0,
       "badges": [
@@ -180,6 +184,7 @@
       "max_xp": 699,
       "progress": 5,
       "total_projects": 2,
+      "total_creatives": 0,
       "total_stars": 7,
       "total_forks": 0,
       "badges": [
@@ -218,6 +223,7 @@
       "max_xp": 299,
       "progress": 67,
       "total_projects": 1,
+      "total_creatives": 0,
       "total_stars": 5,
       "total_forks": 0,
       "badges": [
@@ -247,7 +253,7 @@
       "user_id": "usr-tejathomas64",
       "username": "TejaThomas64",
       "display_name": "Teja Thomas",
-      "avatar_url": "https://github.com/TejaThomas64.png",
+      "avatar_url": "https://github.com/tejathomas64.png",
       "is_verified_student": true,
       "xp": 305,
       "level": 3,
@@ -256,6 +262,7 @@
       "max_xp": 699,
       "progress": 1,
       "total_projects": 2,
+      "total_creatives": 0,
       "total_stars": 4,
       "total_forks": 0,
       "badges": [
@@ -294,6 +301,7 @@
       "max_xp": 299,
       "progress": 65,
       "total_projects": 1,
+      "total_creatives": 0,
       "total_stars": 4,
       "total_forks": 0,
       "badges": [
@@ -332,6 +340,7 @@
       "max_xp": 299,
       "progress": 52,
       "total_projects": 1,
+      "total_creatives": 0,
       "total_stars": 2,
       "total_forks": 0,
       "badges": [
@@ -356,6 +365,168 @@
       ],
       "rank": 9,
       "medal": "#9"
+    },
+    {
+      "user_id": "usr-rahul_lens",
+      "username": "rahul_lens",
+      "display_name": "Rahul M",
+      "avatar_url": "https://github.com/rahul_lens.png",
+      "is_verified_student": true,
+      "xp": 225,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 62,
+      "total_projects": 0,
+      "total_creatives": 1,
+      "total_stars": 0,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "lens_master",
+          "name": "Lens Master",
+          "icon": "\ud83d\udcf8",
+          "color": "#FB923C"
+        },
+        {
+          "id": "foss_purist",
+          "name": "Open Creator",
+          "icon": "\ud83d\udc27",
+          "color": "#10B981"
+        }
+      ],
+      "rank": 10,
+      "medal": "#10"
+    },
+    {
+      "user_id": "usr-ananya_s",
+      "username": "ananya_s",
+      "display_name": "Ananya S",
+      "avatar_url": "https://github.com/ananya_s.png",
+      "is_verified_student": true,
+      "xp": 210,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 55,
+      "total_projects": 0,
+      "total_creatives": 1,
+      "total_stars": 0,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "pixel_architect",
+          "name": "Pixel Architect",
+          "icon": "\ud83c\udfa8",
+          "color": "#38BDF8"
+        },
+        {
+          "id": "foss_purist",
+          "name": "Open Creator",
+          "icon": "\ud83d\udc27",
+          "color": "#10B981"
+        }
+      ],
+      "rank": 11,
+      "medal": "#11"
+    },
+    {
+      "user_id": "usr-arjun_render",
+      "username": "arjun_render",
+      "display_name": "Arjun V",
+      "avatar_url": "https://github.com/arjun_render.png",
+      "is_verified_student": true,
+      "xp": 210,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 55,
+      "total_projects": 0,
+      "total_creatives": 1,
+      "total_stars": 0,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "artisan_3d",
+          "name": "3D Artisan",
+          "icon": "\ud83e\uddca",
+          "color": "#F97316"
+        },
+        {
+          "id": "foss_purist",
+          "name": "Open Creator",
+          "icon": "\ud83d\udc27",
+          "color": "#10B981"
+        }
+      ],
+      "rank": 12,
+      "medal": "#12"
+    },
+    {
+      "user_id": "usr-kiran_edits",
+      "username": "kiran_edits",
+      "display_name": "Kiran Joy",
+      "avatar_url": "https://github.com/kiran_edits.png",
+      "is_verified_student": true,
+      "xp": 210,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 55,
+      "total_projects": 0,
+      "total_creatives": 1,
+      "total_stars": 0,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "frame_crafter",
+          "name": "Frame Crafter",
+          "icon": "\ud83c\udfac",
+          "color": "#F43F5E"
+        },
+        {
+          "id": "artisan_3d",
+          "name": "3D Artisan",
+          "icon": "\ud83e\uddca",
+          "color": "#F97316"
+        },
+        {
+          "id": "foss_purist",
+          "name": "Open Creator",
+          "icon": "\ud83d\udc27",
+          "color": "#10B981"
+        }
+      ],
+      "rank": 13,
+      "medal": "#13"
     }
   ]
 }

@@ -8,12 +8,12 @@
 ## 📌 Executive Summary
 
 This platform was engineered by [@vertigotalks7](https://github.com/vertigotalks7) on a **100% Pure GitOps / Jamstack Architecture**.  
-- **Data Source of Truth:** Flat Markdown files (`content/projects/*.md`).
-- **Telemetry Engine:** Python automated worker (`scripts/sync_data.py`).
+- **Data Source of Truth:** Flat Markdown files (`content/projects/*.md` and `content/creatives/*.md`).
+- **Telemetry & Media Engine:** Modular Python worker (`scripts/sync_data.py` + `scripts/engine/`).
 - **Hosting & CI/CD:** Vercel Global Edge CDN + GitHub Actions.
 - **Cost & Maintenance:** **$0/month, zero databases, zero servers to patch or maintain.**
 
-This document provides future maintainers with an exact technical roadmap for how to scale, optimize, and evolve the platform as student submissions grow from **tens of projects** to **thousands of projects over the next 10+ years**.
+This document provides future maintainers with an exact technical roadmap for how to scale, optimize, and evolve the platform as student software and creative submissions grow over the next 10+ years.
 
 ---
 

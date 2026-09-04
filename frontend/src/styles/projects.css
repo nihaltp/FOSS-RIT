@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Projects Section Styles (Slim Horizontal Cards, Badges & Filters)
+   Projects & Creative Showcase Section Styles (Minimalist Architecture)
    ========================================================================== */
 
 .projects-list {
@@ -56,6 +56,10 @@
   color: var(--foss-mint);
 }
 
+.creative-row-card .project-row-title:hover {
+  color: var(--pixel-blue);
+}
+
 .tag-badge-pill {
   font-size: 0.68rem;
   font-family: var(--font-mono);
@@ -67,50 +71,16 @@
   transition: all 0.3s ease;
 }
 
-.campus-dept-chip {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: var(--radius-full);
-  background: var(--surface-raised);
-  border: 1px solid var(--surface-border);
-  color: var(--text-secondary);
-  transition: all var(--transition-fast);
-}
-
-.campus-dept-chip:hover {
-  border-color: var(--foss-mint);
-  color: var(--text-primary);
-}
-
-.dept-badge-pill {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 1px 7px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--surface-border);
-  color: var(--text-primary);
-  letter-spacing: 0.04em;
-}
-
 .category-badge-pill {
   font-family: var(--font-mono);
   font-size: 0.68rem;
   font-weight: 600;
   padding: 1px 7px;
   border-radius: var(--radius-full);
-  background: rgba(245, 158, 11, 0.12);
-  border: 1px solid rgba(245, 158, 11, 0.35);
-  color: #F59E0B;
-}
-
-.filter-btn-subtle {
-  font-size: 0.76rem;
-  padding: 4px 10px;
-  opacity: 0.85;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: var(--pixel-blue);
+  text-transform: capitalize;
 }
 
 .verified-student-badge {
@@ -200,8 +170,73 @@
   flex-shrink: 0;
 }
 
-.project-author-label {
-  font-size: 0.75rem;
-  color: var(--text-muted);
+/* ==========================================================================
+   Creative Showcase Horizontal Media Row Layout
+   ========================================================================== */
+.creative-row-card {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.creative-thumb-wrapper {
+  position: relative;
+  width: 140px;
+  height: 82px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--surface-border);
+  background: #050608;
+  cursor: pointer;
+}
+
+.creative-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.creative-thumb-wrapper:hover .creative-thumb-img {
+  transform: scale(1.06);
+}
+
+.creative-play-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background var(--transition-fast);
+}
+
+.creative-thumb-wrapper:hover .creative-play-overlay {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.creative-duration-pill {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
   font-family: var(--font-mono);
+  font-size: 0.62rem;
+  padding: 1px 4px;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 640px) {
+  .creative-row-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .creative-thumb-wrapper {
+    width: 100%;
+    height: 140px;
+  }
 }

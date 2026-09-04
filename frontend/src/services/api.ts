@@ -1,9 +1,11 @@
-import { Event, EventRSVP, Project, ClubStats, LeaderboardResponse } from '../types';
+import { Event, EventRSVP, Project, CreativeWork, ClubStats, LeaderboardResponse } from '../types';
 import GITOPS_PROJECTS from '../data/projects.json';
+import GITOPS_CREATIVES from '../data/creatives.json';
 import GITOPS_LEADERBOARD from '../data/leaderboard.json';
 import GITOPS_EVENTS from '../data/events.json';
 
 const FALLBACK_EVENTS: Event[] = (GITOPS_EVENTS as unknown as Event[]) || [];
+const FALLBACK_CREATIVES: CreativeWork[] = (GITOPS_CREATIVES as unknown as CreativeWork[]) || [];
 
 export const api = {
   // --- Events APIs (Pure GitOps) ---
@@ -115,15 +117,26 @@ export const api = {
     };
   },
 
+  // --- Creative Showcase APIs (Pure GitOps) ---
+  async getCreatives(category?: string): Promise<CreativeWork[]> {
+    const list = (GITOPS_CREATIVES as unknown as CreativeWork[]) || FALLBACK_CREATIVES;
+    if (!category || category === 'all') {
+      return list;
+    }
+    return list.filter(c => c.category?.toLowerCase() === category.toLowerCase());
+  },
+
   // --- Stats APIs (Dynamically Computed from Datasets) ---
   async getStats(): Promise<ClubStats> {
     const projCount = (GITOPS_PROJECTS as unknown as Project[])?.length || 0;
+    const creativeCount = (GITOPS_CREATIVES as unknown as CreativeWork[])?.length || 0;
     const contribCount = (GITOPS_LEADERBOARD as any)?.contributors?.length || 0;
     const eventCount = (GITOPS_EVENTS as unknown as Event[])?.length || 0;
 
     return {
       active_members: Math.max(1, contribCount),
       projects_built: Math.max(1, projCount),
+      creative_works: creativeCount,
       workshops_hosted: Math.max(1, eventCount),
       open_pull_requests: 0,
       lines_of_foss_code: 'Genesis'

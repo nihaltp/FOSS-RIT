@@ -8,6 +8,7 @@ import {
   X, 
   Compass, 
   Layers, 
+  Palette,
   Trophy, 
   ShieldAlert,
   Star
@@ -66,6 +67,14 @@ export const Navbar: React.FC = () => {
                 className={({ isActive }) => `nav-link ${isActive ? 'active-nav-link' : ''}`}
               >
                 Projects
+              </NavLink>
+            </li>
+            <li>
+              <NavLink 
+                to="/studio" 
+                className={({ isActive }) => `nav-link ${isActive ? 'active-nav-link' : ''}`}
+              >
+                Studio
               </NavLink>
             </li>
             <li>
@@ -221,6 +230,13 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               <Layers size={16} /> Projects Radar
+            </NavLink>
+            <NavLink 
+              to="/studio" 
+              className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Palette size={16} /> Creative Studio
             </NavLink>
             <NavLink 
               to="/leaderboard" 

@@ -9,41 +9,34 @@ import {
   Layers, 
   CheckCircle2, 
   Search, 
-  SlidersHorizontal,
   RefreshCw, 
   HelpCircle,
   ExternalLink,
   ArrowLeft,
   Zap,
-  Sparkles
+  Sparkles,
+  Code,
+  Palette
 } from 'lucide-react';
 
 interface LeaderboardPageProps {
   onOpenSubmitProject?: () => void;
 }
 
+type LeaderboardTab = 'code' | 'creative';
+
 export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitProject }) => {
   const { showToast } = useToast();
-  const [timeframe, setTimeframe] = useState<'all_time' | 'monthly'>('all_time');
+  const [activeDomain, setActiveDomain] = useState<LeaderboardTab>('code');
   const [contributors, setContributors] = useState<ContributorRank[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeTier, setActiveTier] = useState<string>('all');
   const [showXpGuide, setShowXpGuide] = useState(false);
-
-  const tierFilters = [
-    { id: 'all', label: 'All Contributors' },
-    { id: '5', label: 'Level 5 (Kernel Overlord)' },
-    { id: '4', label: 'Level 4 (Systems Architect)' },
-    { id: '3', label: 'Level 3 (Byte Craftsman)' },
-    { id: '2', label: 'Level 2 (Novice)' },
-    { id: 'verified', label: 'RIT Verified' }
-  ];
 
   const fetchLeaderboard = async () => {
     setLoading(true);
     try {
-      const data = await api.getLeaderboard(timeframe);
+      const data = await api.getLeaderboard('all_time');
       setContributors(data.contributors || []);
     } catch (err: any) {
       showToast(err.message || 'Failed to load leaderboard', 'error');
@@ -54,30 +47,53 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
 
   useEffect(() => {
     fetchLeaderboard();
-  }, [timeframe]);
+  }, []);
 
-  // Filter contributors
-  const filteredContributors = contributors
+  // Filter for Code Contributors
+  const codeContributors = contributors
+    .filter(c => (c.total_projects || 0) > 0)
     .filter(c => {
-      if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase();
-        const matchName = c.username.toLowerCase().includes(q) || 
-                          c.display_name.toLowerCase().includes(q) || 
-                          c.title.toLowerCase().includes(q);
-        if (!matchName) return false;
-      }
-
-      if (activeTier === 'verified') return c.is_verified_student;
-      if (activeTier !== 'all') return c.level === parseInt(activeTier, 10);
-
-      return true;
+      if (!searchQuery.trim()) return true;
+      const q = searchQuery.toLowerCase();
+      return c.username.toLowerCase().includes(q) || 
+             c.display_name.toLowerCase().includes(q) || 
+             c.title.toLowerCase().includes(q);
     })
     .sort((a, b) => {
       if (b.total_forks !== a.total_forks) return b.total_forks - a.total_forks;
       if (b.total_stars !== a.total_stars) return b.total_stars - a.total_stars;
       if (b.total_projects !== a.total_projects) return b.total_projects - a.total_projects;
       return b.xp - a.xp;
-    });
+    })
+    .map((c, idx) => ({
+      ...c,
+      domainRank: idx + 1,
+      domainMedal: idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : `#${idx + 1}`
+    }));
+
+  // Filter for Creative Makers
+  const creativeContributors = contributors
+    .filter(c => (c.total_creatives || 0) > 0)
+    .filter(c => {
+      if (!searchQuery.trim()) return true;
+      const q = searchQuery.toLowerCase();
+      return c.username.toLowerCase().includes(q) || 
+             c.display_name.toLowerCase().includes(q) || 
+             c.title.toLowerCase().includes(q);
+    })
+    .sort((a, b) => {
+      if ((b.total_creatives || 0) !== (a.total_creatives || 0)) {
+        return (b.total_creatives || 0) - (a.total_creatives || 0);
+      }
+      return b.xp - a.xp;
+    })
+    .map((c, idx) => ({
+      ...c,
+      domainRank: idx + 1,
+      domainMedal: idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : `#${idx + 1}`
+    }));
+
+  const activeList = activeDomain === 'code' ? codeContributors : creativeContributors;
 
   const getTierColor = (level: number) => {
     switch (level) {
@@ -113,29 +129,125 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
           gap: 'var(--space-lg)'
         }}>
           <div style={{ maxWidth: '640px' }}>
-            <span className="event-badge">Campus Radar</span>
+            <span className="event-badge">Campus Hall of Fame</span>
             <h1 style={{ marginTop: '8px', fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
-              Contributor Hall of Fame
+              Contributor Rankings
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
-              Level up your open-source journey. Earn XP by shipping tools, getting peer forks, and earning stars across campus repositories.
+              Recognizing both open source software builders and creative visual artists at <strong>RIT Kottayam</strong>.
             </p>
           </div>
 
           {onOpenSubmitProject && (
             <button className="btn btn-primary" onClick={onOpenSubmitProject}>
               <Sparkles size={16} />
-              Feature Your Project
+              Feature Your Work
             </button>
           )}
+        </div>
+
+        {/* Dual Domain Selector Cards (Code vs Creatives) */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: 'var(--space-md)',
+          marginBottom: 'var(--space-2xl)'
+        }}>
+          {/* Card 1: Code Contributors */}
+          <div
+            onClick={() => setActiveDomain('code')}
+            className="interactive-hover-card"
+            style={{
+              background: 'var(--open-gray)',
+              border: activeDomain === 'code' ? '1.5px solid var(--foss-mint)' : '1px solid var(--surface-border)',
+              borderRadius: 'var(--radius-lg)',
+              padding: 'var(--space-lg)',
+              cursor: 'pointer',
+              boxShadow: activeDomain === 'code' ? '0 0 20px rgba(8, 183, 79, 0.12)' : 'none',
+              transition: 'all 0.2s ease'
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div style={{
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: 'var(--radius-sm)',
+                  background: activeDomain === 'code' ? 'var(--foss-mint-subtle)' : 'var(--surface-raised)',
+                  color: activeDomain === 'code' ? 'var(--foss-mint)' : 'var(--text-muted)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <Code size={17} />
+                </div>
+                <h3 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700 }}>Code Contributors</h3>
+              </div>
+              <span className="tag-badge-pill" style={{ opacity: activeDomain === 'code' ? 1 : 0.6 }}>
+                {contributors.filter(c => (c.total_projects || 0) > 0).length} Devs
+              </span>
+            </div>
+            <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.4 }}>
+              Ranked by peer repository forks, GitHub stars, and open source software shipped.
+            </p>
+          </div>
+
+          {/* Card 2: Creative Makers */}
+          <div
+            onClick={() => setActiveDomain('creative')}
+            className="interactive-hover-card"
+            style={{
+              background: 'var(--open-gray)',
+              border: activeDomain === 'creative' ? '1.5px solid var(--pixel-blue)' : '1px solid var(--surface-border)',
+              borderRadius: 'var(--radius-lg)',
+              padding: 'var(--space-lg)',
+              cursor: 'pointer',
+              boxShadow: activeDomain === 'creative' ? '0 0 20px rgba(56, 189, 248, 0.12)' : 'none',
+              transition: 'all 0.2s ease'
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div style={{
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: 'var(--radius-sm)',
+                  background: activeDomain === 'creative' ? 'rgba(56, 189, 248, 0.12)' : 'var(--surface-raised)',
+                  color: activeDomain === 'creative' ? 'var(--pixel-blue)' : 'var(--text-muted)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <Palette size={17} />
+                </div>
+                <h3 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700 }}>Creative Makers</h3>
+              </div>
+              <span 
+                className="category-badge-pill"
+                style={{ 
+                  opacity: activeDomain === 'creative' ? 1 : 0.6,
+                  borderColor: activeDomain === 'creative' ? 'var(--pixel-blue)' : 'var(--surface-border)'
+                }}
+              >
+                {contributors.filter(c => (c.total_creatives || 0) > 0).length} Creators
+              </span>
+            </div>
+            <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.4 }}>
+              Ranked by UI/UX design systems, event frames, video aftermovies, and 3D renders.
+            </p>
+          </div>
         </div>
 
         {/* Section Header & Controls */}
         <section className="section" style={{ padding: 0 }}>
           <div className="section-header">
             <div>
-              <div className="section-tag">CAMPUS DEVELOPER RADAR</div>
-              <h2>All Contributors & Rankings</h2>
+              <div className="section-tag" style={{ color: activeDomain === 'code' ? 'var(--foss-mint)' : 'var(--pixel-blue)' }}>
+                {activeDomain === 'code' ? 'SOFTWARE ENGINEERING RADAR' : 'CREATIVE STUDIO RADAR'}
+              </div>
+              <h2>
+                {activeDomain === 'code' ? 'Code Contributors Hall of Fame' : 'Designers, Photographers & Editors'}
+              </h2>
             </div>
 
             <div style={{ display: 'flex', gap: 'var(--space-sm)', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -144,26 +256,12 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
                 <Search size={15} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
                 <input
                   type="text"
-                  placeholder="Search contributor or title..."
+                  placeholder={activeDomain === 'code' ? 'Search developer...' : 'Search creator...'}
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
                   className="form-input"
                   style={{ paddingLeft: '34px', width: '100%', fontSize: '0.85rem' }}
                 />
-              </div>
-
-              {/* Timeframe Sort/Mode Dropdown */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <SlidersHorizontal size={14} color="var(--text-muted)" />
-                <select
-                  value={timeframe}
-                  onChange={e => setTimeframe(e.target.value as any)}
-                  className="form-select"
-                  style={{ padding: '6px 12px', fontSize: '0.82rem', fontFamily: 'var(--font-mono)' }}
-                >
-                  <option value="all_time">All-Time Hall of Fame</option>
-                  <option value="monthly">This Month's Sprint</option>
-                </select>
               </div>
 
               {/* How XP Works button */}
@@ -195,57 +293,40 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
           {showXpGuide && (
             <div style={{
               background: 'var(--open-gray)',
-              border: '1px solid var(--foss-mint-glow)',
+              border: '1px solid var(--surface-border)',
               borderRadius: 'var(--radius-md)',
               padding: '16px 20px',
               marginBottom: 'var(--space-xl)',
               animation: 'fadeIn 0.2s ease'
             }}>
-              <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--foss-mint)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <Zap size={15} /> Balanced Campus XP Formula (Boot.dev Style)
+              <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--text-primary)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <Zap size={15} color="var(--byte-yellow)" /> Balanced Contributor XP Formula
               </div>
               <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginBottom: '12px', lineHeight: 1.4 }}>
-                XP is engineered so newcomers and active builders level up quickly:
+                XP is awarded equally across code and creative contributions:
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '8px', fontSize: '0.78rem', fontFamily: 'var(--font-mono)' }}>
                 <div style={{ background: 'var(--surface-raised)', padding: '8px 10px', borderRadius: '4px', border: '1px solid var(--surface-border)' }}>
-                  <strong style={{ color: 'var(--foss-mint)' }}>+50 XP:</strong> Verify @rit.ac.in Email
+                  <strong style={{ color: 'var(--foss-mint)' }}>+50 XP:</strong> Campus Student Verified
                 </div>
                 <div style={{ background: 'var(--surface-raised)', padding: '8px 10px', borderRadius: '4px', border: '1px solid var(--surface-border)' }}>
-                  <strong style={{ color: '#2B7FFF' }}>+100 XP:</strong> Feature 1st Project
+                  <strong style={{ color: '#2B7FFF' }}>+100 XP:</strong> 1st Project / Creative Showcase
                 </div>
                 <div style={{ background: 'var(--surface-raised)', padding: '8px 10px', borderRadius: '4px', border: '1px solid var(--surface-border)' }}>
-                  <strong style={{ color: '#F5C040' }}>+75 XP:</strong> Feature 2nd & 3rd Project
+                  <strong style={{ color: '#F5C040' }}>+75 XP:</strong> Subsequent Featured Works
                 </div>
                 <div style={{ background: 'var(--surface-raised)', padding: '8px 10px', borderRadius: '4px', border: '1px solid var(--surface-border)' }}>
                   <strong style={{ color: '#A855F7' }}>+20 XP / fork:</strong> Peer Cloned Your Repo
                 </div>
                 <div style={{ background: 'var(--surface-raised)', padding: '8px 10px', borderRadius: '4px', border: '1px solid var(--surface-border)' }}>
-                  <strong style={{ color: '#EAB308' }}>+5 XP / star:</strong> GitHub Star (max 100/repo)
+                  <strong style={{ color: '#10B981' }}>+30 XP:</strong> Open Tools (Penpot/Blender/Krita)
                 </div>
                 <div style={{ background: 'var(--surface-raised)', padding: '8px 10px', borderRadius: '4px', border: '1px solid var(--surface-border)' }}>
-                  <strong style={{ color: '#EC4899' }}>+15 XP / tech:</strong> Multi-Stack Versatility
+                  <strong style={{ color: '#EC4899' }}>+15 XP / tech:</strong> Tool & Stack Versatility
                 </div>
-              </div>
-
-              <div style={{ marginTop: '12px', padding: '8px 12px', background: 'var(--surface-raised)', borderRadius: '4px', border: '1px solid var(--foss-mint-glow)', fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
-                <strong style={{ color: 'var(--foss-mint)' }}>📊 Ranking Priority:</strong> Peer Forks (🍴) &gt; GitHub Stars (⭐) &gt; Projects Built (🚀) &gt; Total XP
               </div>
             </div>
           )}
-
-          {/* Tier Filter Chips */}
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: 'var(--space-xl)' }}>
-            {tierFilters.map(t => (
-              <button
-                key={t.id}
-                className={`filter-btn ${activeTier === t.id ? 'active' : ''}`}
-                onClick={() => setActiveTier(t.id)}
-              >
-                {t.label}
-              </button>
-            ))}
-          </div>
 
           {/* Contributor Rows / Empty State */}
           {loading ? (
@@ -258,10 +339,10 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
             }}>
               <RefreshCw size={22} className="spin" style={{ margin: '0 auto 10px', color: 'var(--foss-mint)' }} />
               <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                Calculating live contributor ranks and XP scores...
+                Calculating live rankings and XP scores...
               </p>
             </div>
-          ) : filteredContributors.length === 0 ? (
+          ) : activeList.length === 0 ? (
             <div style={{
               background: 'var(--open-gray)',
               border: '1px solid var(--surface-border)',
@@ -270,32 +351,32 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
               textAlign: 'center'
             }}>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-                No contributors found matching your filter criteria.
+                No contributors found matching your search.
               </p>
             </div>
           ) : (
             <div className="projects-list">
-              {filteredContributors.map((c) => (
+              {activeList.map((c) => (
                 <div
                   key={c.user_id || c.username}
                   className="project-row-card"
                   style={{
-                    borderLeft: c.rank === 1 ? '3px solid #F5C040' : c.rank === 2 ? '3px solid silver' : c.rank === 3 ? '3px solid #CD7F32' : undefined
+                    borderLeft: c.domainRank === 1 ? '3px solid #F5C040' : c.domainRank === 2 ? '3px solid silver' : c.domainRank === 3 ? '3px solid #CD7F32' : undefined
                   }}
                 >
                   <div className="project-row-main">
-                    {/* Header Row */}
+                    {/* Header Line */}
                     <div className="project-row-header">
                       <div className="project-row-title-group">
                         <span style={{
                           fontFamily: 'var(--font-mono)',
                           fontWeight: 800,
-                          fontSize: c.rank <= 3 ? '1.15rem' : '0.92rem',
+                          fontSize: c.domainRank <= 3 ? '1.15rem' : '0.92rem',
                           minWidth: '28px',
                           textAlign: 'center',
-                          color: c.rank === 1 ? '#F5C040' : c.rank === 2 ? 'silver' : c.rank === 3 ? '#CD7F32' : 'var(--text-muted)'
+                          color: c.domainRank === 1 ? '#F5C040' : c.domainRank === 2 ? 'silver' : c.domainRank === 3 ? '#CD7F32' : 'var(--text-muted)'
                         }}>
-                          {c.medal || `#${c.rank}`}
+                          {c.domainMedal || `#${c.domainRank}`}
                         </span>
 
                         <img
@@ -306,6 +387,9 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
                             height: '28px',
                             borderRadius: '50%',
                             border: `1.5px solid ${getTierColor(c.level)}`
+                          }}
+                          onError={(e) => {
+                            (e.target as HTMLElement).style.display = 'none';
                           }}
                         />
 
@@ -339,18 +423,28 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
                       {/* Right side stats & action */}
                       <div className="project-row-actions">
                         <div className="project-stats-inline">
-                          <span className="project-stat" title="Featured Projects">
-                            <Layers size={13} color="var(--text-secondary)" />
-                            <strong>{c.total_projects}</strong>
-                          </span>
-                          <span className="project-stat" title="GitHub Stars">
-                            <Star size={13} color="var(--byte-yellow)" />
-                            <strong>{c.total_stars}</strong>
-                          </span>
-                          <span className="project-stat" title="Peer Forks">
-                            <GitFork size={13} color="var(--pixel-blue)" />
-                            <span>{c.total_forks}</span>
-                          </span>
+                          {activeDomain === 'code' ? (
+                            <>
+                              <span className="project-stat" title="Featured Repositories">
+                                <Layers size={13} color="var(--text-secondary)" />
+                                <strong>{c.total_projects}</strong>
+                              </span>
+                              <span className="project-stat" title="GitHub Stars">
+                                <Star size={13} color="var(--byte-yellow)" />
+                                <strong>{c.total_stars}</strong>
+                              </span>
+                              <span className="project-stat" title="Peer Forks">
+                                <GitFork size={13} color="var(--pixel-blue)" />
+                                <span>{c.total_forks}</span>
+                              </span>
+                            </>
+                          ) : (
+                            <span className="project-stat" title="Creative Showcases">
+                              <Palette size={13} color="var(--pixel-blue)" />
+                              <strong>{c.total_creatives} Works</strong>
+                            </span>
+                          )}
+
                           <span className="project-stat" title="Total XP" style={{ color: getTierColor(c.level), fontWeight: 800 }}>
                             <Zap size={13} color={getTierColor(c.level)} />
                             <strong>{c.xp} XP</strong>
@@ -362,7 +456,7 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn btn-secondary btn-sm project-view-btn"
-                          title="View GitHub Profile"
+                          title="View Profile"
                         >
                           <span>Profile</span>
                           <ExternalLink size={12} />

@@ -5,7 +5,8 @@ import { ClubStats } from '../../types';
 export const StatsRibbon: React.FC = () => {
   const [stats, setStats] = useState<ClubStats>({
     active_members: 40,
-    projects_built: 3,
+    projects_built: 11,
+    creative_works: 4,
     workshops_hosted: 20,
     open_pull_requests: 4,
     lines_of_foss_code: 'Genesis'

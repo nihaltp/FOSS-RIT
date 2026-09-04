@@ -1,0 +1,116 @@
+name: "🎨 Creative Showcase Submission"
+description: "Submit a UI/UX design, photography series, video aftermovie, or 3D artwork to FOSS Studio"
+title: "[Showcase]: "
+labels: ["showcase-submission", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### FOSS RIT Creative Studio Submission
+        Submissions are reviewed by club leads and published to [fossrit.in/studio](https://fossrit.in/studio).
+
+  - type: input
+    id: title
+    attributes:
+      label: "Artwork / Project Title"
+      placeholder: "e.g., Campus Transit UI / TinkerHack Aftermovie / Midnight Hackers"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Craft Category"
+      options:
+        - "design"
+        - "photography"
+        - "video"
+        - "3d"
+    validations:
+      required: true
+
+  - type: input
+    id: author_name
+    attributes:
+      label: "Your Full Name"
+      placeholder: "e.g., Ananya S"
+    validations:
+      required: true
+
+  - type: input
+    id: college_id
+    attributes:
+      label: "College Roll No. / KTU ID (Student Verification)"
+      placeholder: "e.g., RIT22CS045"
+    validations:
+      required: true
+
+  - type: input
+    id: batch
+    attributes:
+      label: "Graduation Batch"
+      placeholder: "e.g., 2026"
+    validations:
+      required: true
+
+  - type: input
+    id: department
+    attributes:
+      label: "Department / Branch"
+      placeholder: "e.g., CSE, ECE, ME, CE, EEE, B.Arch"
+    validations:
+      required: true
+
+  - type: input
+    id: tools
+    attributes:
+      label: "Creative Tools Used (Comma-separated)"
+      placeholder: "e.g., Penpot, Inkscape / Blender, DaVinci Resolve / Sony A7 III"
+    validations:
+      required: true
+
+  - type: input
+    id: media_url
+    attributes:
+      label: "Media / Preview URL"
+      placeholder: "e.g., YouTube URL / Penpot or Figma view link / Unsplash or Imgur link"
+    validations:
+      required: true
+
+  - type: input
+    id: thumbnail_url
+    attributes:
+      label: "Custom Cover / Thumbnail URL (Optional for videos/designs)"
+      placeholder: "e.g., Direct image link (16:9 recommended)"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: aspect_ratio
+    attributes:
+      label: "Display Aspect Ratio"
+      options:
+        - "16:9"
+        - "3:2"
+        - "1:1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: "Creative Commons License"
+      options:
+        - "CC-BY-4.0"
+        - "CC-BY-SA-4.0"
+        - "CC0-1.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Short Description"
+      placeholder: "A brief 1-2 sentence description explaining your work and the tools/process used."
+    validations:
+      required: true

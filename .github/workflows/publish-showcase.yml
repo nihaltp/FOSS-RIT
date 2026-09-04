@@ -1,0 +1,71 @@
+name: Publish Approved Showcase
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  publish:
+    if: github.event.label.name == 'approved' && contains(github.event.issue.labels.*.name, 'showcase-submission')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: |
+          pip install requests pyyaml
+
+      - name: Parse Submission and Sync Data
+        env:
+          RAW_ISSUE_BODY: ${{ github.event.issue.body }}
+          SUBMITTER_USER: ${{ github.event.issue.user.login }}
+        run: |
+          echo "$RAW_ISSUE_BODY" > issue_payload.txt
+          python scripts/publish_submission.py --body-file issue_payload.txt --user "$SUBMITTER_USER"
+          rm -f issue_payload.txt
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/creatives/ frontend/public/data/ frontend/src/data/
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "feat(showcase): publish approved showcase #${{ github.event.issue.number }} by @${{ github.event.issue.user.login }}"
+            git push origin main
+          fi
+
+      - name: Comment and Close Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const commentBody = `### 🎉 Published to FOSS Studio!\n\nAwesome work, @${context.payload.issue.user.login}! Your creative showcase submission has been approved and published to **[FOSS Studio](https://fossrit.in/studio)**.\n\nThank you for contributing to FOSS RIT!`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number,
+              body: commentBody
+            });
+
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number,
+              state: 'closed'
+            });
