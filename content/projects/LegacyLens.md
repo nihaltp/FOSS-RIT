@@ -1,6 +1,5 @@
 ---
-
-## name: "LegacyLens"
+name: "LegacyLens"
 description: "Intelligent context engineering tool combining deterministic static analysis and multi-agent verification for legacy code comprehension."
 repo_url: "https://github.com/knaaps/LegacyLens"
 tech_stack: ["Python", "JavaScript", "Flask"]
@@ -9,6 +8,7 @@ author_name: "Vinayak S"
 is_verified_student: true
 batch: "2026"
 featured: true
+---
 
 ### About the Project
 

@@ -6,7 +6,8 @@ on:
       - main
     paths:
       - 'content/**'
-      - 'scripts/sync_data.py'
+      - 'scripts/**'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
 
 jobs:
   sync:
@@ -36,6 +37,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No feed changes to commit."
           else
-            git commit -m "chore(gitops): auto-sync projects, leaderboard & events feeds [skip ci]"
+            git commit -m "chore(gitops): auto-sync projects, leaderboard & events feeds"
             git push
           fi

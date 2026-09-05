@@ -64,6 +64,15 @@ def validate():
                 hard_errors.append(f"content/projects/{f.name}: Missing frontmatter opening delimiter (---)")
                 continue
 
+            # Ensure frontmatter is properly closed
+            lines_after_first = text.splitlines()[1:]
+            if not any(l.strip() == "---" for l in lines_after_first):
+                hard_errors.append(f"content/projects/{f.name}: Missing frontmatter closing delimiter (---). Metadata must be enclosed between two `---` markers.")
+
+            # Check for accidental markdown headers on keys e.g. ## name:
+            if re.search(r"^\s*#+\s*[a-zA-Z0-9_-]+\s*:", text, re.MULTILINE):
+                hard_errors.append(f"content/projects/{f.name}: Frontmatter keys must not have heading markers (`#`). Use `name: ...` instead of `## name: ...`.")
+
             if "<script" in text.lower():
                 hard_errors.append(f"content/projects/{f.name}: Malicious or unsafe `<script>` tags are strictly prohibited.")
 
@@ -151,6 +160,14 @@ def validate():
             if not text.startswith("---"):
                 hard_errors.append(f"content/creatives/{f.name}: Missing frontmatter opening delimiter (---)")
                 continue
+
+            # Ensure frontmatter is properly closed
+            lines_after_first = text.splitlines()[1:]
+            if not any(l.strip() == "---" for l in lines_after_first):
+                hard_errors.append(f"content/creatives/{f.name}: Missing frontmatter closing delimiter (---). Metadata must be enclosed between two `---` markers.")
+
+            if re.search(r"^\s*#+\s*[a-zA-Z0-9_-]+\s*:", text, re.MULTILINE):
+                hard_errors.append(f"content/creatives/{f.name}: Frontmatter keys must not have heading markers (`#`).")
 
             if "<script" in text.lower():
                 hard_errors.append(f"content/creatives/{f.name}: Malicious `<script>` tags are strictly prohibited.")

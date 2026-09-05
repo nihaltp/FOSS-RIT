@@ -57,7 +57,7 @@
 ### Project Review: FOSS Club Website
 - **Submitted by:** @vertigotalks7 (Batch: 2026)
 - **Repository:** [https://github.com/vertigotalks7/FOSS-RIT](https://github.com/vertigotalks7/FOSS-RIT)
-- **Status:** Public Repository (Stars: 9 | Forks: 11)
+- **Status:** Public Repository (Stars: 9 | Forks: 12)
 - **Tech Stack:** `"React", "TypeScript", "FastAPI", "Python", "Tailwind"`
 
 
@@ -107,6 +107,20 @@
 - [ ] Public repository with original code.
 - [ ] README present explaining the project.
 - [ ] Contributor @TejaThomas64 is an authentic student maker.
+
+---
+
+### Project Review: LegacyLens
+- **Submitted by:** @knaaps (Batch: 2026)
+- **Repository:** [https://github.com/knaaps/LegacyLens](https://github.com/knaaps/LegacyLens)
+- **Status:** Public Repository (Stars: 2 | Forks: 0)
+- **Tech Stack:** `"Python", "JavaScript", "Flask"`
+
+
+#### Maintainer Checklist:
+- [ ] Public repository with original code.
+- [ ] README present explaining the project.
+- [ ] Contributor @knaaps is an authentic student maker.
 
 ---
 
