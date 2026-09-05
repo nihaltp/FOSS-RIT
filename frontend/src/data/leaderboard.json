@@ -9,16 +9,16 @@
       "display_name": "Angelo Joemon",
       "avatar_url": "https://github.com/vertigotalks7.png",
       "is_verified_student": true,
-      "xp": 325,
+      "xp": 515,
       "level": 3,
       "title": "Byte Craftsman",
       "min_xp": 300,
       "max_xp": 699,
-      "progress": 6,
+      "progress": 53,
       "total_projects": 1,
       "total_creatives": 1,
-      "total_stars": 0,
-      "total_forks": 0,
+      "total_stars": 9,
+      "total_forks": 12,
       "badges": [
         {
           "id": "verified",
@@ -31,6 +31,12 @@
           "name": "First Ship",
           "icon": "\ud83d\ude80",
           "color": "#2B7FFF"
+        },
+        {
+          "id": "peer_forked",
+          "name": "Peer Forked",
+          "icon": "\ud83c\udf74",
+          "color": "#A855F7"
         },
         {
           "id": "polyglot",
@@ -49,20 +55,20 @@
       "medal": "\ud83e\udd47"
     },
     {
-      "user_id": "usr-tejathomas64",
-      "username": "TejaThomas64",
-      "display_name": "Teja Thomas",
-      "avatar_url": "https://github.com/tejathomas64.png",
+      "user_id": "usr-nihaltp",
+      "username": "nihaltp",
+      "display_name": "Nihal T P",
+      "avatar_url": "https://github.com/nihaltp.png",
       "is_verified_student": true,
-      "xp": 270,
-      "level": 2,
-      "title": "Open Source Novice",
-      "min_xp": 100,
-      "max_xp": 299,
-      "progress": 85,
+      "xp": 340,
+      "level": 3,
+      "title": "Byte Craftsman",
+      "min_xp": 300,
+      "max_xp": 699,
+      "progress": 10,
       "total_projects": 2,
       "total_creatives": 0,
-      "total_stars": 0,
+      "total_stars": 7,
       "total_forks": 0,
       "badges": [
         {
@@ -88,20 +94,104 @@
       "medal": "\ud83e\udd48"
     },
     {
-      "user_id": "usr-nihaltp",
-      "username": "nihaltp",
-      "display_name": "Nihal T P",
-      "avatar_url": "https://github.com/nihaltp.png",
+      "user_id": "usr-sabari-vijayan",
+      "username": "Sabari-Vijayan",
+      "display_name": "Sabari Vijayan",
+      "avatar_url": "https://github.com/sabari-vijayan.png",
       "is_verified_student": true,
-      "xp": 270,
-      "level": 2,
-      "title": "Open Source Novice",
-      "min_xp": 100,
-      "max_xp": 299,
-      "progress": 85,
+      "xp": 330,
+      "level": 3,
+      "title": "Byte Craftsman",
+      "min_xp": 300,
+      "max_xp": 699,
+      "progress": 7,
+      "total_projects": 1,
+      "total_creatives": 0,
+      "total_stars": 19,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "star_hunter",
+          "name": "Star Hunter",
+          "icon": "\u2b50",
+          "color": "#EAB308"
+        }
+      ],
+      "rank": 3,
+      "medal": "\ud83e\udd49"
+    },
+    {
+      "user_id": "usr-srinanth",
+      "username": "Srinanth",
+      "display_name": "Srinanth MV",
+      "avatar_url": "https://github.com/srinanth.png",
+      "is_verified_student": true,
+      "xp": 320,
+      "level": 3,
+      "title": "Byte Craftsman",
+      "min_xp": 300,
+      "max_xp": 699,
+      "progress": 5,
+      "total_projects": 1,
+      "total_creatives": 0,
+      "total_stars": 11,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "icon": "\u26a1",
+          "color": "#EC4899"
+        },
+        {
+          "id": "star_hunter",
+          "name": "Star Hunter",
+          "icon": "\u2b50",
+          "color": "#EAB308"
+        }
+      ],
+      "rank": 4,
+      "medal": "#4"
+    },
+    {
+      "user_id": "usr-tejathomas64",
+      "username": "TejaThomas64",
+      "display_name": "Teja Thomas",
+      "avatar_url": "https://github.com/tejathomas64.png",
+      "is_verified_student": true,
+      "xp": 310,
+      "level": 3,
+      "title": "Byte Craftsman",
+      "min_xp": 300,
+      "max_xp": 699,
+      "progress": 2,
       "total_projects": 2,
       "total_creatives": 0,
-      "total_stars": 0,
+      "total_stars": 4,
       "total_forks": 0,
       "badges": [
         {
@@ -123,8 +213,164 @@
           "color": "#EC4899"
         }
       ],
-      "rank": 3,
-      "medal": "\ud83e\udd49"
+      "rank": 5,
+      "medal": "#5"
+    },
+    {
+      "user_id": "usr-kevinjose06",
+      "username": "kevinjose06",
+      "display_name": "Kevin Jose",
+      "avatar_url": "https://github.com/kevinjose06.png",
+      "is_verified_student": true,
+      "xp": 285,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 92,
+      "total_projects": 1,
+      "total_creatives": 0,
+      "total_stars": 12,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "star_hunter",
+          "name": "Star Hunter",
+          "icon": "\u2b50",
+          "color": "#EAB308"
+        }
+      ],
+      "rank": 6,
+      "medal": "#6"
+    },
+    {
+      "user_id": "usr-callmekriztal",
+      "username": "callmekriztal",
+      "display_name": "Christy Cyril",
+      "avatar_url": "https://github.com/callmekriztal.png",
+      "is_verified_student": true,
+      "xp": 260,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 80,
+      "total_projects": 1,
+      "total_creatives": 0,
+      "total_stars": 5,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "icon": "\u26a1",
+          "color": "#EC4899"
+        }
+      ],
+      "rank": 7,
+      "medal": "#7"
+    },
+    {
+      "user_id": "usr-andrewjerryv",
+      "username": "AndrewJerryV",
+      "display_name": "Andrew Jerry V",
+      "avatar_url": "https://github.com/andrewjerryv.png",
+      "is_verified_student": true,
+      "xp": 255,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 77,
+      "total_projects": 1,
+      "total_creatives": 0,
+      "total_stars": 4,
+      "total_forks": 1,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "icon": "\u26a1",
+          "color": "#EC4899"
+        }
+      ],
+      "rank": 8,
+      "medal": "#8"
+    },
+    {
+      "user_id": "usr-ari2387q",
+      "username": "ari2387q",
+      "display_name": "Aryan Nair",
+      "avatar_url": "https://github.com/ari2387q.png",
+      "is_verified_student": true,
+      "xp": 250,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 75,
+      "total_projects": 1,
+      "total_creatives": 0,
+      "total_stars": 4,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "icon": "\u26a1",
+          "color": "#EC4899"
+        }
+      ],
+      "rank": 9,
+      "medal": "#9"
     },
     {
       "user_id": "usr-rahul_lens",
@@ -162,8 +408,8 @@
           "color": "#10B981"
         }
       ],
-      "rank": 4,
-      "medal": "#4"
+      "rank": 10,
+      "medal": "#10"
     },
     {
       "user_id": "usr-ananya_s",
@@ -201,8 +447,8 @@
           "color": "#10B981"
         }
       ],
-      "rank": 5,
-      "medal": "#5"
+      "rank": 11,
+      "medal": "#11"
     },
     {
       "user_id": "usr-arjun_render",
@@ -240,8 +486,8 @@
           "color": "#10B981"
         }
       ],
-      "rank": 6,
-      "medal": "#6"
+      "rank": 12,
+      "medal": "#12"
     },
     {
       "user_id": "usr-kiran_edits",
@@ -285,8 +531,86 @@
           "color": "#10B981"
         }
       ],
-      "rank": 7,
-      "medal": "#7"
+      "rank": 13,
+      "medal": "#13"
+    },
+    {
+      "user_id": "usr-knaaps",
+      "username": "knaaps",
+      "display_name": "Vinayak S",
+      "avatar_url": "https://github.com/knaaps.png",
+      "is_verified_student": true,
+      "xp": 215,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 57,
+      "total_projects": 1,
+      "total_creatives": 0,
+      "total_stars": 2,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "icon": "\u26a1",
+          "color": "#EC4899"
+        }
+      ],
+      "rank": 14,
+      "medal": "#14"
+    },
+    {
+      "user_id": "usr-devusuresh197",
+      "username": "devusuresh197",
+      "display_name": "Devu Suresh",
+      "avatar_url": "https://github.com/devusuresh197.png",
+      "is_verified_student": true,
+      "xp": 215,
+      "level": 2,
+      "title": "Open Source Novice",
+      "min_xp": 100,
+      "max_xp": 299,
+      "progress": 57,
+      "total_projects": 1,
+      "total_creatives": 0,
+      "total_stars": 2,
+      "total_forks": 0,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "icon": "\u26a1",
+          "color": "#EC4899"
+        }
+      ],
+      "rank": 15,
+      "medal": "#15"
     },
     {
       "user_id": "usr-aj-2007-sys",
@@ -322,306 +646,6 @@
           "name": "Polyglot",
           "icon": "\u26a1",
           "color": "#EC4899"
-        }
-      ],
-      "rank": 8,
-      "medal": "#8"
-    },
-    {
-      "user_id": "usr-ari2387q",
-      "username": "ari2387q",
-      "display_name": "Aryan Nair",
-      "avatar_url": "https://github.com/ari2387q.png",
-      "is_verified_student": true,
-      "xp": 210,
-      "level": 2,
-      "title": "Open Source Novice",
-      "min_xp": 100,
-      "max_xp": 299,
-      "progress": 55,
-      "total_projects": 1,
-      "total_creatives": 0,
-      "total_stars": 0,
-      "total_forks": 0,
-      "badges": [
-        {
-          "id": "verified",
-          "name": "Campus Verified",
-          "icon": "\ud83c\udf93",
-          "color": "#08B74F"
-        },
-        {
-          "id": "first_ship",
-          "name": "First Ship",
-          "icon": "\ud83d\ude80",
-          "color": "#2B7FFF"
-        },
-        {
-          "id": "polyglot",
-          "name": "Polyglot",
-          "icon": "\u26a1",
-          "color": "#EC4899"
-        }
-      ],
-      "rank": 9,
-      "medal": "#9"
-    },
-    {
-      "user_id": "usr-callmekriztal",
-      "username": "callmekriztal",
-      "display_name": "Christy Cyril",
-      "avatar_url": "https://github.com/callmekriztal.png",
-      "is_verified_student": true,
-      "xp": 210,
-      "level": 2,
-      "title": "Open Source Novice",
-      "min_xp": 100,
-      "max_xp": 299,
-      "progress": 55,
-      "total_projects": 1,
-      "total_creatives": 0,
-      "total_stars": 0,
-      "total_forks": 0,
-      "badges": [
-        {
-          "id": "verified",
-          "name": "Campus Verified",
-          "icon": "\ud83c\udf93",
-          "color": "#08B74F"
-        },
-        {
-          "id": "first_ship",
-          "name": "First Ship",
-          "icon": "\ud83d\ude80",
-          "color": "#2B7FFF"
-        },
-        {
-          "id": "polyglot",
-          "name": "Polyglot",
-          "icon": "\u26a1",
-          "color": "#EC4899"
-        }
-      ],
-      "rank": 10,
-      "medal": "#10"
-    },
-    {
-      "user_id": "usr-srinanth",
-      "username": "Srinanth",
-      "display_name": "Srinanth MV",
-      "avatar_url": "https://github.com/srinanth.png",
-      "is_verified_student": true,
-      "xp": 210,
-      "level": 2,
-      "title": "Open Source Novice",
-      "min_xp": 100,
-      "max_xp": 299,
-      "progress": 55,
-      "total_projects": 1,
-      "total_creatives": 0,
-      "total_stars": 0,
-      "total_forks": 0,
-      "badges": [
-        {
-          "id": "verified",
-          "name": "Campus Verified",
-          "icon": "\ud83c\udf93",
-          "color": "#08B74F"
-        },
-        {
-          "id": "first_ship",
-          "name": "First Ship",
-          "icon": "\ud83d\ude80",
-          "color": "#2B7FFF"
-        },
-        {
-          "id": "polyglot",
-          "name": "Polyglot",
-          "icon": "\u26a1",
-          "color": "#EC4899"
-        }
-      ],
-      "rank": 11,
-      "medal": "#11"
-    },
-    {
-      "user_id": "usr-devusuresh197",
-      "username": "devusuresh197",
-      "display_name": "Devu Suresh",
-      "avatar_url": "https://github.com/devusuresh197.png",
-      "is_verified_student": true,
-      "xp": 195,
-      "level": 2,
-      "title": "Open Source Novice",
-      "min_xp": 100,
-      "max_xp": 299,
-      "progress": 47,
-      "total_projects": 1,
-      "total_creatives": 0,
-      "total_stars": 0,
-      "total_forks": 0,
-      "badges": [
-        {
-          "id": "verified",
-          "name": "Campus Verified",
-          "icon": "\ud83c\udf93",
-          "color": "#08B74F"
-        },
-        {
-          "id": "first_ship",
-          "name": "First Ship",
-          "icon": "\ud83d\ude80",
-          "color": "#2B7FFF"
-        },
-        {
-          "id": "polyglot",
-          "name": "Polyglot",
-          "icon": "\u26a1",
-          "color": "#EC4899"
-        }
-      ],
-      "rank": 12,
-      "medal": "#12"
-    },
-    {
-      "user_id": "usr-andrewjerryv",
-      "username": "AndrewJerryV",
-      "display_name": "Andrew Jerry V",
-      "avatar_url": "https://github.com/andrewjerryv.png",
-      "is_verified_student": true,
-      "xp": 195,
-      "level": 2,
-      "title": "Open Source Novice",
-      "min_xp": 100,
-      "max_xp": 299,
-      "progress": 47,
-      "total_projects": 1,
-      "total_creatives": 0,
-      "total_stars": 0,
-      "total_forks": 0,
-      "badges": [
-        {
-          "id": "verified",
-          "name": "Campus Verified",
-          "icon": "\ud83c\udf93",
-          "color": "#08B74F"
-        },
-        {
-          "id": "first_ship",
-          "name": "First Ship",
-          "icon": "\ud83d\ude80",
-          "color": "#2B7FFF"
-        },
-        {
-          "id": "polyglot",
-          "name": "Polyglot",
-          "icon": "\u26a1",
-          "color": "#EC4899"
-        }
-      ],
-      "rank": 13,
-      "medal": "#13"
-    },
-    {
-      "user_id": "usr-knaaps",
-      "username": "knaaps",
-      "display_name": "Vinayak S",
-      "avatar_url": "https://github.com/knaaps.png",
-      "is_verified_student": true,
-      "xp": 195,
-      "level": 2,
-      "title": "Open Source Novice",
-      "min_xp": 100,
-      "max_xp": 299,
-      "progress": 47,
-      "total_projects": 1,
-      "total_creatives": 0,
-      "total_stars": 0,
-      "total_forks": 0,
-      "badges": [
-        {
-          "id": "verified",
-          "name": "Campus Verified",
-          "icon": "\ud83c\udf93",
-          "color": "#08B74F"
-        },
-        {
-          "id": "first_ship",
-          "name": "First Ship",
-          "icon": "\ud83d\ude80",
-          "color": "#2B7FFF"
-        },
-        {
-          "id": "polyglot",
-          "name": "Polyglot",
-          "icon": "\u26a1",
-          "color": "#EC4899"
-        }
-      ],
-      "rank": 14,
-      "medal": "#14"
-    },
-    {
-      "user_id": "usr-sabari-vijayan",
-      "username": "Sabari-Vijayan",
-      "display_name": "Sabari Vijayan",
-      "avatar_url": "https://github.com/sabari-vijayan.png",
-      "is_verified_student": true,
-      "xp": 180,
-      "level": 2,
-      "title": "Open Source Novice",
-      "min_xp": 100,
-      "max_xp": 299,
-      "progress": 40,
-      "total_projects": 1,
-      "total_creatives": 0,
-      "total_stars": 0,
-      "total_forks": 0,
-      "badges": [
-        {
-          "id": "verified",
-          "name": "Campus Verified",
-          "icon": "\ud83c\udf93",
-          "color": "#08B74F"
-        },
-        {
-          "id": "first_ship",
-          "name": "First Ship",
-          "icon": "\ud83d\ude80",
-          "color": "#2B7FFF"
-        }
-      ],
-      "rank": 15,
-      "medal": "#15"
-    },
-    {
-      "user_id": "usr-kevinjose06",
-      "username": "kevinjose06",
-      "display_name": "Kevin Jose",
-      "avatar_url": "https://github.com/kevinjose06.png",
-      "is_verified_student": true,
-      "xp": 165,
-      "level": 2,
-      "title": "Open Source Novice",
-      "min_xp": 100,
-      "max_xp": 299,
-      "progress": 32,
-      "total_projects": 1,
-      "total_creatives": 0,
-      "total_stars": 0,
-      "total_forks": 0,
-      "badges": [
-        {
-          "id": "verified",
-          "name": "Campus Verified",
-          "icon": "\ud83c\udf93",
-          "color": "#08B74F"
-        },
-        {
-          "id": "first_ship",
-          "name": "First Ship",
-          "icon": "\ud83d\ude80",
-          "color": "#2B7FFF"
         }
       ],
       "rank": 16,

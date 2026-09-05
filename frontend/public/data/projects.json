@@ -1,5 +1,23 @@
 [
   {
+    "id": "proj-tinkerfetch",
+    "name": "tinkerfetch",
+    "description": "Tinkerfetch is a terminal-based 'TinkerHub' themed system information tool. It's a custom-designed 'skin' for the Fastfetch engine, featuring a dedicated mode to track upcoming community events.",
+    "repo_url": "https://github.com/Sabari-Vijayan/tinkerfetch",
+    "tech_stack": [
+      "Shell",
+      "Curl"
+    ],
+    "stars": 19,
+    "forks": 0,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "Sabari-Vijayan",
+    "submitted_by_name": "Sabari Vijayan",
+    "batch": "2023",
+    "featured": true
+  },
+  {
     "id": "proj-adios-ads",
     "name": "Adios ADs",
     "description": "A small google chrome extension that blocks pop ups and other random ads on websites.",
@@ -7,12 +25,196 @@
     "tech_stack": [
       "json"
     ],
-    "stars": 0,
+    "stars": 12,
     "forks": 0,
     "open_issues": 0,
     "is_verified_student": true,
     "submitted_by_username": "kevinjose06",
     "submitted_by_name": "Kevin Jose",
+    "batch": "2026",
+    "featured": true
+  },
+  {
+    "id": "proj-tempspace",
+    "name": "TempSpace",
+    "description": "TempSpace is a temporary file-sharing web application designed for quick, frictionless collaboration. Unlike traditional cloud storage platforms, TempSpace does not require user accounts and does not store files permanently.",
+    "repo_url": "https://github.com/Srinanth/TempSpace",
+    "tech_stack": [
+      "React",
+      "Tailwind",
+      "TypeScript",
+      "Node.js",
+      "Supabase"
+    ],
+    "stars": 11,
+    "forks": 0,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "Srinanth",
+    "submitted_by_name": "Srinanth MV",
+    "batch": "2024",
+    "featured": true
+  },
+  {
+    "id": "proj-foss-club-website",
+    "name": "FOSS Club Website",
+    "description": "Official web platform and campus open-source radar for FOSS Club at RIT Kottayam.",
+    "repo_url": "https://github.com/vertigotalks7/FOSS-RIT",
+    "tech_stack": [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "Python",
+      "Tailwind"
+    ],
+    "stars": 9,
+    "forks": 12,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "vertigotalks7",
+    "submitted_by_name": "Angelo Joemon",
+    "batch": "2026",
+    "featured": true
+  },
+  {
+    "id": "proj-gotodo",
+    "name": "GoTodo",
+    "description": "A lightweight command-line Todo application written in Go with persistent JSON storage and Linux AppImage support.",
+    "repo_url": "https://github.com/callmekriztal/Go_Todo",
+    "tech_stack": [
+      "Go",
+      "JSON",
+      "Linux",
+      "AppImage"
+    ],
+    "stars": 5,
+    "forks": 0,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "callmekriztal",
+    "submitted_by_name": "Christy Cyril",
+    "batch": "2026",
+    "featured": true
+  },
+  {
+    "id": "proj-feedguard_extension",
+    "name": "FeedGuard",
+    "description": "A Chrome MV3 extension for real-time content moderation on X/Twitter, using a three-layer ML pipeline (heuristics, spam ML, toxicity ML, and an LLM fallback) to flag harmful content.",
+    "repo_url": "https://github.com/ari2387q/feedguard-ai",
+    "tech_stack": [
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "FastAPI",
+      "scikit-learn",
+      "Chrome Extension (MV3)",
+      "Next.js"
+    ],
+    "stars": 4,
+    "forks": 0,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "ari2387q",
+    "submitted_by_name": "Aryan Nair",
+    "batch": "2026",
+    "featured": true
+  },
+  {
+    "id": "proj-github-stats-generator",
+    "name": "GitHub Stats Generator",
+    "description": "A highly customizable, embeddable GitHub stats card generator. Create beautiful, themeable SVG or PNG cards to display your GitHub profile statistics, languages, and activity.",
+    "repo_url": "https://github.com/AndrewJerryV/GitHub-Stats-Generator",
+    "tech_stack": [
+      "JavaScript",
+      "HTML",
+      "JSON"
+    ],
+    "stars": 4,
+    "forks": 1,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "AndrewJerryV",
+    "submitted_by_name": "Andrew Jerry V",
+    "batch": "2023",
+    "featured": true
+  },
+  {
+    "id": "proj-sbskip",
+    "name": "SB Skip",
+    "description": "Android app that automatically detects and skips SponsorBlock segments in downloaded YouTube videos.",
+    "repo_url": "https://github.com/nihaltp/SBSkip",
+    "tech_stack": [
+      "Kotlin",
+      "Jetpack Compose",
+      "FFmpeg",
+      "NewPipe",
+      "SponsorBlock"
+    ],
+    "stars": 4,
+    "forks": 0,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "nihaltp",
+    "submitted_by_name": "Nihal T P",
+    "batch": "2024",
+    "featured": true
+  },
+  {
+    "id": "proj-todo",
+    "name": "Todo app",
+    "description": "simple todo web app",
+    "repo_url": "https://github.com/TejaThomas64/todo-app",
+    "tech_stack": [
+      "React",
+      "Vite",
+      "React Router",
+      "Node.js",
+      "Express",
+      "Supabase"
+    ],
+    "stars": 4,
+    "forks": 0,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "TejaThomas64",
+    "submitted_by_name": "Teja Thomas",
+    "batch": "2026",
+    "featured": true
+  },
+  {
+    "id": "proj-smartringtone",
+    "name": "Smart Ringtone",
+    "description": "A smart, automated Android utility that dynamically changes and escalates contact ringtones based on call behavior (missed, rejected, or answered calls).",
+    "repo_url": "https://github.com/nihaltp/SmartRingtone",
+    "tech_stack": [
+      "Kotlin",
+      "Jetpack Compose"
+    ],
+    "stars": 3,
+    "forks": 0,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "nihaltp",
+    "submitted_by_name": "Nihal T P",
+    "batch": "2024",
+    "featured": true
+  },
+  {
+    "id": "proj-legacylens",
+    "name": "LegacyLens",
+    "description": "Intelligent context engineering tool combining deterministic static analysis and multi-agent verification for legacy code comprehension.",
+    "repo_url": "https://github.com/knaaps/LegacyLens",
+    "tech_stack": [
+      "Python",
+      "JavaScript",
+      "Flask"
+    ],
+    "stars": 2,
+    "forks": 0,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "knaaps",
+    "submitted_by_name": "Vinayak S",
     "batch": "2026",
     "featured": true
   },
@@ -26,7 +228,7 @@
       "scikit-learn",
       "gradio"
     ],
-    "stars": 0,
+    "stars": 2,
     "forks": 0,
     "open_issues": 0,
     "is_verified_student": true,
@@ -60,89 +262,6 @@
     "featured": true
   },
   {
-    "id": "proj-feedguard_extension",
-    "name": "FeedGuard",
-    "description": "A Chrome MV3 extension for real-time content moderation on X/Twitter, using a three-layer ML pipeline (heuristics, spam ML, toxicity ML, and an LLM fallback) to flag harmful content.",
-    "repo_url": "https://github.com/ari2387q/feedguard-ai",
-    "tech_stack": [
-      "TypeScript",
-      "Node.js",
-      "Express",
-      "FastAPI",
-      "scikit-learn",
-      "Chrome Extension (MV3)",
-      "Next.js"
-    ],
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "is_verified_student": true,
-    "submitted_by_username": "ari2387q",
-    "submitted_by_name": "Aryan Nair",
-    "batch": "2026",
-    "featured": true
-  },
-  {
-    "id": "proj-foss-club-website",
-    "name": "FOSS Club Website",
-    "description": "Official web platform and campus open-source radar for FOSS Club at RIT Kottayam.",
-    "repo_url": "https://github.com/vertigotalks7/FOSS-RIT",
-    "tech_stack": [
-      "React",
-      "TypeScript",
-      "FastAPI",
-      "Python",
-      "Tailwind"
-    ],
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "is_verified_student": true,
-    "submitted_by_username": "vertigotalks7",
-    "submitted_by_name": "Angelo Joemon",
-    "batch": "2026",
-    "featured": true
-  },
-  {
-    "id": "proj-github-stats-generator",
-    "name": "GitHub Stats Generator",
-    "description": "A highly customizable, embeddable GitHub stats card generator. Create beautiful, themeable SVG or PNG cards to display your GitHub profile statistics, languages, and activity.",
-    "repo_url": "https://github.com/AndrewJerryV/GitHub-Stats-Generator",
-    "tech_stack": [
-      "JavaScript",
-      "HTML",
-      "JSON"
-    ],
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "is_verified_student": true,
-    "submitted_by_username": "AndrewJerryV",
-    "submitted_by_name": "Andrew Jerry V",
-    "batch": "2023",
-    "featured": true
-  },
-  {
-    "id": "proj-gotodo",
-    "name": "GoTodo",
-    "description": "A lightweight command-line Todo application written in Go with persistent JSON storage and Linux AppImage support.",
-    "repo_url": "https://github.com/callmekriztal/Go_Todo",
-    "tech_stack": [
-      "Go",
-      "JSON",
-      "Linux",
-      "AppImage"
-    ],
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "is_verified_student": true,
-    "submitted_by_username": "callmekriztal",
-    "submitted_by_name": "Christy Cyril",
-    "batch": "2026",
-    "featured": true
-  },
-  {
     "id": "proj-interview-helper",
     "name": "Interview Helper",
     "description": "AI-powered interview preparation platform for practicing technical interviews and getting AI-based feedback.",
@@ -154,125 +273,6 @@
       "Node.js",
       "Express",
       "Groq API",
-      "Supabase"
-    ],
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "is_verified_student": true,
-    "submitted_by_username": "TejaThomas64",
-    "submitted_by_name": "Teja Thomas",
-    "batch": "2026",
-    "featured": true
-  },
-  {
-    "id": "proj-legacylens",
-    "name": "LegacyLens",
-    "description": "Intelligent context engineering tool combining deterministic static analysis and multi-agent verification for legacy code comprehension.",
-    "repo_url": "https://github.com/knaaps/LegacyLens",
-    "tech_stack": [
-      "Python",
-      "JavaScript",
-      "Flask"
-    ],
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "is_verified_student": true,
-    "submitted_by_username": "knaaps",
-    "submitted_by_name": "Vinayak S",
-    "batch": "2026",
-    "featured": true
-  },
-  {
-    "id": "proj-sbskip",
-    "name": "SB Skip",
-    "description": "Android app that automatically detects and skips SponsorBlock segments in downloaded YouTube videos.",
-    "repo_url": "https://github.com/nihaltp/SBSkip",
-    "tech_stack": [
-      "Kotlin",
-      "Jetpack Compose",
-      "FFmpeg",
-      "NewPipe",
-      "SponsorBlock"
-    ],
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "is_verified_student": true,
-    "submitted_by_username": "nihaltp",
-    "submitted_by_name": "Nihal T P",
-    "batch": "2024",
-    "featured": true
-  },
-  {
-    "id": "proj-smartringtone",
-    "name": "Smart Ringtone",
-    "description": "A smart, automated Android utility that dynamically changes and escalates contact ringtones based on call behavior (missed, rejected, or answered calls).",
-    "repo_url": "https://github.com/nihaltp/SmartRingtone",
-    "tech_stack": [
-      "Kotlin",
-      "Jetpack Compose"
-    ],
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "is_verified_student": true,
-    "submitted_by_username": "nihaltp",
-    "submitted_by_name": "Nihal T P",
-    "batch": "2024",
-    "featured": true
-  },
-  {
-    "id": "proj-tempspace",
-    "name": "TempSpace",
-    "description": "TempSpace is a temporary file-sharing web application designed for quick, frictionless collaboration. Unlike traditional cloud storage platforms, TempSpace does not require user accounts and does not store files permanently.",
-    "repo_url": "https://github.com/Srinanth/TempSpace",
-    "tech_stack": [
-      "React",
-      "Tailwind",
-      "TypeScript",
-      "Node.js",
-      "Supabase"
-    ],
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "is_verified_student": true,
-    "submitted_by_username": "Srinanth",
-    "submitted_by_name": "Srinanth MV",
-    "batch": "2024",
-    "featured": true
-  },
-  {
-    "id": "proj-tinkerfetch",
-    "name": "tinkerfetch",
-    "description": "Tinkerfetch is a terminal-based 'TinkerHub' themed system information tool. It's a custom-designed 'skin' for the Fastfetch engine, featuring a dedicated mode to track upcoming community events.",
-    "repo_url": "https://github.com/Sabari-Vijayan/tinkerfetch",
-    "tech_stack": [
-      "Shell",
-      "Curl"
-    ],
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "is_verified_student": true,
-    "submitted_by_username": "Sabari-Vijayan",
-    "submitted_by_name": "Sabari Vijayan",
-    "batch": "2023",
-    "featured": true
-  },
-  {
-    "id": "proj-todo",
-    "name": "Todo app",
-    "description": "simple todo web app",
-    "repo_url": "https://github.com/TejaThomas64/todo-app",
-    "tech_stack": [
-      "React",
-      "Vite",
-      "React Router",
-      "Node.js",
-      "Express",
       "Supabase"
     ],
     "stars": 0,
