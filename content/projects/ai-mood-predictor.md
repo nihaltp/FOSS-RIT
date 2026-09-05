@@ -1,6 +1,6 @@
 ---
 name: "ai mood predictor"
-description: "a loght weight machine learning application"
+description: "a light weight machine learning application"
 repo_url: "https://github.com/devusuresh197/ai_mood_predictor.git"
 tech_stack: ["Python", "scikit-learn", "gradio"]
 author: "devusuresh197"

@@ -13,6 +13,7 @@
   background-color: var(--paper-lift);
   background-image: var(--paper-grain);
   background-repeat: repeat;
+  background-size: 160px 160px;
   border: 1.5px solid var(--border-tech);
   border-radius: 0;
   padding: var(--space-xl);
@@ -121,8 +122,23 @@
 .event-tagline {
   font-size: 0.88rem;
   color: var(--ink-soft);
-  margin-bottom: var(--space-md);
   line-height: 1.5;
+}
+
+.event-tagline.is-short {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: var(--space-md);
+  line-height: 1.45;
+  min-height: 2.6em;
+}
+
+.event-tagline.is-full {
+  margin-bottom: var(--space-md);
+  white-space: pre-line;
 }
 
 .event-meta-list {

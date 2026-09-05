@@ -8,20 +8,15 @@ export const Hero: React.FC = () => {
     <section className="hero-section">
       <div className="container hero-container">
         <div className="hero-centered">
-          {/* Header Index Stamp — Vintage Computing Document Marker */}
+          {/* Header Index Stamp */}
           <div className="hero-tech-stamp">
             <span className="hero-tech-stamp-dot"></span>
-            <span>// DOC_REF: RIT-FOSS-2026 // CHAPTER 2160 // KOTTAYAM, KERALA</span>
+            <span>FOSS CELL • RIT KOTTAYAM</span>
           </div>
 
           <h1 className="hero-title">
             Ship Free &amp;<br />Open Source.
           </h1>
-
-          {/* Technical Ruled Divider */}
-          <div className="hero-editorial-rule">
-            <span className="hero-editorial-rule-label">[ SEC. 01 // ABOUT THE COMMUNITY ]</span>
-          </div>
 
           <p className="hero-description">
             The student Free and Open Source Software community at <strong>Rajiv Gandhi Institute of Technology (RIT), Kottayam</strong>, in active collaboration with <strong>TinkerHub</strong>. We believe knowledge, source code, and creative tools should be free, open, and accessible to everyone.

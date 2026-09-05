@@ -49,7 +49,7 @@
 }
 
 .hero-centered {
-  max-width: 860px;
+  max-width: 980px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -59,18 +59,18 @@
 /* Header Document Marker Stamp */
 .hero-tech-stamp {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 0;
   background: var(--paper-warm);
   color: var(--vibe-accent);
   border: 1px solid var(--border-tech);
   box-shadow: 1px 1px 0 var(--border-tech);
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -81,19 +81,18 @@
   border-radius: 0;
   background: var(--vibe-accent);
   flex-shrink: 0;
-  margin-top: 4px;
 }
 
 /* Large Typographic Headline */
 .hero-title {
   font-family: var(--font-ndot);
-  font-size: clamp(2.6rem, 6.2vw, 4.6rem);
+  font-size: clamp(3.5rem, 7.8vw, 5.8rem);
   font-weight: 400;
-  letter-spacing: 0.03em;
-  line-height: 1.05;
+  letter-spacing: 0.02em;
+  line-height: 1.0;
   text-transform: uppercase;
   color: var(--ink-black);
-  margin-bottom: 8px;
+  margin-bottom: 24px;
 }
 
 /* Technical Ruled Divider */
@@ -150,6 +149,7 @@
   background-color: var(--paper-lift);
   background-image: var(--paper-grain);
   background-repeat: repeat;
+  background-size: 160px 160px;
   border: 1.5px solid var(--border-tech);
   border-left: 5px solid var(--vibe-accent);
   border-radius: 0;
@@ -297,35 +297,24 @@
     padding: 32px 0 24px 0;
   }
   .hero-tech-stamp {
-    font-size: 0.62rem;
-    padding: 3px 8px;
-    margin-bottom: 12px;
-    letter-spacing: 0.05em;
-    line-height: 1.4;
+    font-size: 0.65rem;
+    padding: 4px 10px;
+    margin-bottom: 16px;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
     max-width: 100%;
   }
   .hero-title {
-    font-size: clamp(1.8rem, 7.6vw, 2.35rem);
-    letter-spacing: 0.02em;
-    line-height: 1.08;
-    margin-bottom: 12px;
+    font-size: clamp(2.4rem, 10.2vw, 3.25rem);
+    letter-spacing: 0.01em;
+    line-height: 1.04;
+    margin-bottom: 18px;
     word-break: break-word;
   }
-  .hero-editorial-rule {
-    gap: 8px;
-    margin: 12px 0 14px 0;
-  }
-  .hero-editorial-rule::before {
-    width: 12px;
-  }
-  .hero-editorial-rule-label {
-    font-size: 0.64rem;
-    letter-spacing: 0.06em;
-  }
   .hero-description {
-    font-size: 0.94rem;
+    font-size: 0.98rem;
     line-height: 1.62;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
   .hero-quote {
     padding: 12px 14px;

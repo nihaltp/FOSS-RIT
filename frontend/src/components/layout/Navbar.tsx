@@ -42,7 +42,7 @@ export const Navbar: React.FC = () => {
           </div>
           <div className="brand-logo-text">
             <span className="brand-logo-title">FOSS CLUB RIT</span>
-            <span className="brand-logo-sub">[SYS.2160 // TINKERHUB]</span>
+            <span className="brand-logo-sub">[RIT KOTTAYAM • TINKERHUB]</span>
           </div>
         </Link>
 
@@ -107,7 +107,7 @@ export const Navbar: React.FC = () => {
               <span className="vibe-switch-label">
                 SYS: {activeVibe.id.toUpperCase()}
               </span>
-              <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: activeVibe.color, fontWeight: 700 }}>
+              <span className="vibe-switch-emoticon" style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: activeVibe.color, fontWeight: 700 }}>
                 {activeVibe.emoticon}
               </span>
             </button>

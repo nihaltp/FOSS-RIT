@@ -1,6 +1,5 @@
 import React from 'react';
 import { Hero } from '../components/hero/Hero';
-import { Pillars } from '../components/sections/Pillars';
 import { EventsGrid } from '../components/sections/EventsGrid';
 import { ProjectsGrid } from '../components/sections/ProjectsGrid';
 import { CreativeShowcase } from '../components/sections/CreativeShowcase';
@@ -22,17 +21,8 @@ export const HomePage: React.FC<HomePageProps> = ({
   return (
     <div>
       <Hero />
-      <Pillars />
       
-      {/* 1. Featured Campus Workshops & Events */}
-      <EventsGrid 
-        key={`home-events-${refreshKey}`}
-        limit={3}
-        showViewAll={true}
-        onOpenRsvp={onOpenRsvp}
-      />
-
-      {/* 2. Featured Open Source Software Repositories */}
+      {/* 1. Featured Open Source Software Repositories */}
       <ProjectsGrid 
         key={`home-projects-${refreshKey}`}
         limit={3}
@@ -40,7 +30,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         onOpenSubmitProject={onOpenSubmitProject}
       />
 
-      {/* 3. Featured Creative Media, Design & Video Studio */}
+      {/* 2. Featured Creative Media, Design & Video Studio */}
       <CreativeShowcase
         key={`home-creatives-${refreshKey}`}
         limit={4}
@@ -48,7 +38,18 @@ export const HomePage: React.FC<HomePageProps> = ({
         onOpenSubmitCreative={onOpenSubmitProject}
       />
 
+      {/* 3. Featured Campus Workshops & Events (3rd last section, above Vibe Selector) */}
+      <EventsGrid 
+        key={`home-events-${refreshKey}`}
+        limit={3}
+        showViewAll={true}
+        onOpenRsvp={onOpenRsvp}
+      />
+
+      {/* 4. Choose Your Builder Vibe (2nd last section) */}
       <MascotBanner />
+
+      {/* 5. Manifesto (Last section) */}
       <Manifesto />
     </div>
   );

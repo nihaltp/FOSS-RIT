@@ -1,4 +1,5 @@
 import React from 'react';
+import { RetroBarcode } from '../ui/RetroBarcode';
 
 export const Pillars: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ export const Pillars: React.FC = () => {
 
         <div className="pillars-grid">
           {/* Pillar 1: Hands-on Bootcamps */}
-          <div className="pillar-card interactive-hover-card">
+          <div className="pillar-card interactive-hover-card" style={{ display: 'flex', flexDirection: 'column' }}>
             <div className="pixel-icon-container">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10z"></path>
@@ -26,10 +27,13 @@ export const Pillars: React.FC = () => {
             <p className="pillar-desc">
               No prior coding background required. We guide you step-by-step through Git, GitHub branching, command-line basics, and submitting your first pull request.
             </p>
+            <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px dashed var(--border-tech)' }}>
+              <RetroBarcode value="*PIL-001*" width={80} height={20} />
+            </div>
           </div>
 
           {/* Pillar 2: TinkerHub Learning Circles */}
-          <div className="pillar-card interactive-hover-card">
+          <div className="pillar-card interactive-hover-card" style={{ display: 'flex', flexDirection: 'column' }}>
             <div className="pixel-icon-container">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="4 17 10 11 4 5"></polyline>
@@ -40,10 +44,13 @@ export const Pillars: React.FC = () => {
             <p className="pillar-desc">
               Tap into Kerala's largest tech community network. Join peer learning tracks covering Python, Web, Linux, Open Hardware, and modern dev stacks.
             </p>
+            <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px dashed var(--border-tech)' }}>
+              <RetroBarcode value="*PIL-002*" width={80} height={20} />
+            </div>
           </div>
 
           {/* Pillar 3: Build for RIT Kottayam */}
-          <div className="pillar-card interactive-hover-card">
+          <div className="pillar-card interactive-hover-card" style={{ display: 'flex', flexDirection: 'column' }}>
             <div className="pixel-icon-container">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
@@ -56,10 +63,13 @@ export const Pillars: React.FC = () => {
             <p className="pillar-desc">
               Help build useful, open-source utilities for our college—like KTU GPA calculators, hostel LAN sharing tools, and student notice portals.
             </p>
+            <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px dashed var(--border-tech)' }}>
+              <RetroBarcode value="*PIL-003*" width={80} height={20} />
+            </div>
           </div>
 
           {/* Pillar 4: Sprints & Hackathons */}
-          <div className="pillar-card interactive-hover-card">
+          <div className="pillar-card interactive-hover-card" style={{ display: 'flex', flexDirection: 'column' }}>
             <div className="pixel-icon-container">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
@@ -72,6 +82,9 @@ export const Pillars: React.FC = () => {
             <p className="pillar-desc">
               Fast-paced campus hackathons and sprint weekends where code is 100% libre. Team up across branches to build and showcase cool projects.
             </p>
+            <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px dashed var(--border-tech)' }}>
+              <RetroBarcode value="*PIL-004*" width={80} height={20} />
+            </div>
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@
   background-color: var(--paper-base);
   background-image: var(--paper-grain);
   background-repeat: repeat;
+  background-size: 160px 160px;
   border-top: 3px solid var(--vibe-accent);
   border-bottom: 2px solid var(--border-tech);
   transition: border-color var(--transition-normal);
@@ -74,6 +75,28 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .brand-logo {
+    gap: 6px;
+    min-width: 0;
+  }
+  .brand-logo-icon {
+    width: 26px;
+    height: 26px;
+  }
+  .brand-logo-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .brand-logo-title {
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+  }
+  .brand-logo-sub {
+    display: none !important;
+  }
 }
 
 /* ── Desktop Nav ──────────────────────────────────────────────────────── */
@@ -174,8 +197,17 @@
   letter-spacing: 0.05em;
 }
 
-@media (max-width: 580px) {
-  .vibe-switch-label { display: none; }
+@media (max-width: 640px) {
+  .vibe-switch-label,
+  .vibe-switch-emoticon {
+    display: none !important;
+  }
+  .vibe-switch-btn {
+    padding: 0 7px;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+  }
 }
 
 .user-dropdown-menu {
@@ -222,8 +254,29 @@
 }
 
 @media (max-width: 640px) {
-  .signin-text { display: none; }
-  .nav-signin-btn { padding: 6px 8px; }
+  .nav-container {
+    padding: 0 12px;
+    gap: 8px;
+  }
+  .nav-actions {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .signin-text,
+  .nav-signin-btn svg:last-child {
+    display: none !important;
+  }
+  .nav-signin-btn {
+    padding: 0 7px;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+  }
+  .mobile-menu-toggle {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
 }
 
 /* ── Mobile Hamburger ─────────────────────────────────────────────────── */
@@ -297,6 +350,7 @@
   background-color: var(--paper-warm);
   background-image: var(--paper-grain);
   background-repeat: repeat;
+  background-size: 160px 160px;
   border-top: 3px double var(--border-tech);
   padding: var(--space-3xl) 0 var(--space-2xl) 0;
 }

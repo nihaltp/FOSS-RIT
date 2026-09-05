@@ -35,7 +35,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenSubmitProject,
           gap: 'var(--space-lg)'
         }}>
           <div style={{ maxWidth: '660px' }}>
-            <div className="section-tag">[ARCHIVE // RIT-REPO-INDEX]</div>
+            <div className="section-tag">[CAMPUS REPOSITORY DIRECTORY]</div>
             <h1 style={{ marginTop: '8px', fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
               Open Source Showcase
             </h1>
@@ -57,7 +57,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenSubmitProject,
           showSorting={true}
           showViewAll={false}
           title="Campus Technical Registry"
-          tagline="[INDEX // VERIFIED REPOSITORIES]"
+          tagline="VERIFIED REPOSITORIES"
           onOpenSubmitProject={onOpenSubmitProject}
         />
       </div>

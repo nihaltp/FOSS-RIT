@@ -18,6 +18,7 @@ import {
   Code,
   Palette
 } from 'lucide-react';
+import { RetroBarcode } from '../components/ui/RetroBarcode';
 
 interface LeaderboardPageProps {
   onOpenSubmitProject?: () => void;
@@ -131,7 +132,7 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
           gap: 'var(--space-lg)'
         }}>
           <div style={{ maxWidth: '660px' }}>
-            <div className="section-tag">[HALL OF FAME // CAMPUS LEDGER]</div>
+            <div className="section-tag">[CAMPUS CONTRIBUTOR LEDGER]</div>
             <h1 style={{ fontFamily: 'var(--font-ndot)', fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 400, letterSpacing: '0.03em', color: 'var(--ink-black)', textTransform: 'uppercase', marginTop: '6px' }}>
               Contributor Rankings
             </h1>
@@ -360,7 +361,16 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
                     borderLeft: c.domainRank === 1 ? '3px solid #F5C040' : c.domainRank === 2 ? '3px solid silver' : c.domainRank === 3 ? '3px solid #CD7F32' : undefined
                   }}
                 >
-                  <div className="project-row-main">
+                  <div className="card-barcode-spine">
+                    <RetroBarcode 
+                      value={`*RNK-${String(c.domainRank).padStart(2, '0')}*`}
+                      orientation="responsive"
+                      width={18}
+                      height={68}
+                    />
+                  </div>
+
+                  <div className="project-row-main" style={{ flex: 1, minWidth: 0 }}>
                     {/* Header Line */}
                     <div className="project-row-header">
                       <div className="project-row-title-group">

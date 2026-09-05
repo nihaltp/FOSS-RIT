@@ -15,6 +15,7 @@
   background-color: var(--paper-lift);
   background-image: var(--paper-grain);
   background-repeat: repeat;
+  background-size: 160px 160px;
   border: 1.5px solid var(--border-tech);
   border-radius: 0;
   box-shadow: 2px 2px 0 var(--border-tech);
@@ -24,6 +25,21 @@
     box-shadow var(--transition-fast),
     border-color var(--transition-fast);
   position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-md);
+}
+
+.card-barcode-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px dashed var(--border-tech);
+  padding-right: var(--space-md);
+  margin-right: 2px;
+  flex-shrink: 0;
+  user-select: none;
 }
 
 .project-row-card:hover {
@@ -36,6 +52,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex: 1;
+  min-width: 0;
 }
 
 .project-row-header {

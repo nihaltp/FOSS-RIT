@@ -38,7 +38,7 @@ export const CreativesPage: React.FC<CreativesPageProps> = ({
           gap: 'var(--space-lg)'
         }}>
           <div style={{ maxWidth: '660px' }}>
-            <div className="section-tag">[STUDIO // PRINT ROOM ARCHIVE]</div>
+            <div className="section-tag">[CAMPUS CREATIVE ARCHIVE]</div>
             <h1 style={{ marginTop: '8px', fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
               Design &amp; Media Specimen
             </h1>
@@ -60,7 +60,7 @@ export const CreativesPage: React.FC<CreativesPageProps> = ({
           showViewAll={false}
           onOpenSubmitCreative={onOpenSubmitCreative}
           title="Creative Archive Specimens"
-          tagline="[GALLERY // MEDIA REGISTRY]"
+          tagline="MEDIA ARCHIVE"
         />
       </div>
     </div>

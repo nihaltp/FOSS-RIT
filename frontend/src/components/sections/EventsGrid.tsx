@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { api } from '../../services/api';
 import { Event } from '../../types';
 import { Calendar, MapPin, Ticket, ArrowRight, Search, Zap, ExternalLink, Sparkles, Flame } from 'lucide-react';
+import { RetroBarcode } from '../ui/RetroBarcode';
 
 interface EventsGridProps {
   onOpenRsvp: (event: Event) => void;
@@ -11,6 +12,7 @@ interface EventsGridProps {
   showSearch?: boolean;
   title?: string;
   tagline?: string;
+  fullDescription?: boolean;
 }
 
 export const EventsGrid: React.FC<EventsGridProps> = ({
@@ -19,7 +21,8 @@ export const EventsGrid: React.FC<EventsGridProps> = ({
   showViewAll = false,
   showSearch = false,
   title = "Events",
-  tagline = "TINKERHUB RIT SESSIONS"
+  tagline = "TINKERHUB RIT SESSIONS",
+  fullDescription = false
 }) => {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(false);
@@ -175,6 +178,19 @@ export const EventsGrid: React.FC<EventsGridProps> = ({
                   className={`event-card interactive-hover-card ${event.is_upcoming ? 'is-upcoming' : ''}`}
                 >
                   <div className="event-top">
+                    {/* Top Ticket Barcode Strip */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px dashed var(--border-tech)', paddingBottom: '8px', marginBottom: '12px' }}>
+                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', fontWeight: 700, color: 'var(--vibe-accent)', letterSpacing: '0.06em' }}>
+                        EVENT ADMISSION PASS
+                      </span>
+                      <RetroBarcode 
+                        value={`*EVT-${event.id.toUpperCase().slice(0, 8)}*`}
+                        orientation="horizontal"
+                        width={86}
+                        height={16}
+                      />
+                    </div>
+
                     {/* Banner Image if available */}
                     {event.banner_url && (
                       <img 
@@ -214,9 +230,18 @@ export const EventsGrid: React.FC<EventsGridProps> = ({
                     </div>
 
                     <h3 className="event-title">{event.title}</h3>
-                    <p className="event-tagline" style={{ marginTop: '6px', marginBottom: '16px' }}>
-                      {event.description}
-                    </p>
+                    {fullDescription ? (
+                      <p className="event-tagline is-full" style={{ marginTop: '6px' }}>
+                        {event.description}
+                      </p>
+                    ) : (
+                      <p className="event-tagline is-short" style={{ marginTop: '6px' }} title={event.description}>
+                        {(() => {
+                          const clean = (event.description || '').replace(/\s+/g, ' ').trim();
+                          return clean.length > 130 ? `${clean.slice(0, 125)}...` : clean;
+                        })()}
+                      </p>
+                    )}
 
                     <div className="event-meta-list">
                       <div className="event-meta-item">

@@ -33,7 +33,7 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenRsvp, refreshKey }
           position: 'relative',
         }}>
           <div style={{ maxWidth: '680px' }}>
-            <div className="section-tag">[CAMPUS SCHEDULE // SESSIONS]</div>
+            <div className="section-tag">[CAMPUS SCHEDULE &amp; SESSIONS]</div>
             <h1 style={{ marginTop: '8px', fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
               Workshops, Hackathons &amp; Bootcamps
             </h1>
@@ -51,6 +51,7 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenRsvp, refreshKey }
           title="All Scheduled Sessions"
           tagline="COMPLETE WORKSHOP ROSTER"
           onOpenRsvp={onOpenRsvp}
+          fullDescription={true}
         />
       </div>
     </div>

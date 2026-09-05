@@ -13,6 +13,7 @@ import {
   Camera
 } from 'lucide-react';
 import { MediaViewerModal } from '../modals/MediaViewerModal';
+import { RetroBarcode } from '../ui/RetroBarcode';
 
 interface CreativeShowcaseProps {
   onOpenSubmitCreative: () => void;
@@ -145,6 +146,16 @@ export const CreativeShowcase: React.FC<CreativeShowcaseProps> = ({
           <div className="projects-list">
             {displayed.map(item => (
               <div key={item.id} className="project-row-card interactive-hover-card creative-row-card">
+                {/* Left Spine: Technical Archival Barcode */}
+                <div className="card-barcode-spine">
+                  <RetroBarcode 
+                    value={`*CRF-${String(item.id).toUpperCase().slice(0, 6)}*`}
+                    orientation="responsive"
+                    width={18}
+                    height={78}
+                  />
+                </div>
+
                 {/* Left: Compact 16:9 Thumbnail with Subtle Action Overlay */}
                 <div 
                   className="creative-thumb-wrapper"

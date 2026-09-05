@@ -5,6 +5,7 @@ import { Project } from '../../types';
 import { useToast } from '../../context/ToastContext';
 import { Star, GitFork, AlertCircle, Plus, ExternalLink, ArrowRight, Search, SlidersHorizontal, CheckCircle2, RefreshCw } from 'lucide-react';
 import { GitHubIcon } from '../ui/GitHubIcon';
+import { RetroBarcode } from '../ui/RetroBarcode';
 
 interface ProjectsGridProps {
   onOpenSubmitProject: () => void;
@@ -190,6 +191,16 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({
           <div className="projects-list">
             {displayedProjects.map((proj, idx) => (
               <div key={proj.id} className="project-row-card interactive-hover-card">
+                {/* Left Spine: Technical Archival Barcode */}
+                <div className="card-barcode-spine">
+                  <RetroBarcode 
+                    value={`*PRJ-${String(idx + 1).padStart(3, '0')}*`}
+                    orientation="responsive"
+                    width={18}
+                    height={78}
+                  />
+                </div>
+
                 <div className="project-row-main">
                   {/* Top Line: Name, Badges, Stats & Repo Button */}
                   <div className="project-row-header">

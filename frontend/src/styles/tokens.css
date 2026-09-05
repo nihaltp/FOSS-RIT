@@ -30,20 +30,20 @@
 }
 
 :root {
-  /* ── Core Dark Gruvbox / Warm Charcoal Surfaces ────────────────────────── */
-  --bg-dark:        #1F1C18;     /* Warmer deep espresso-charcoal background */
-  --bg-lift:        #28241F;     /* Warm lifted card / window surface */
-  --bg-surface:     #231F1A;     /* Warm intermediate section surface */
-  --bg-darker:      #171511;     /* Warm recessed well / input background */
+  /* ── Core Dark Gruvbox / Warm Ticket Surfaces ──────────────────────────── */
+  --bg-dark:        #1E1B17;     /* Deep Gruvbox espresso background */
+  --bg-lift:        #2B2520;     /* Rich warm Gruvbox ticket / card surface */
+  --bg-surface:     #24201B;     /* Warm intermediate section surface */
+  --bg-darker:      #181512;     /* Warm recessed well / input background */
 
   /* ── Hard Terminal Borders ─────────────────────────────────────────────── */
-  --border-tech:    #453E36;     /* Warmer terminal border / ruled divider */
-  --border-subtle:  #332D26;     /* Subtle interior divider */
-  --border-dashed:  #594F45;     /* Dashed terminal separator */
+  --border-tech:    #4D443B;     /* Warmer vintage ticket border / ruled divider */
+  --border-subtle:  #38312A;     /* Subtle interior divider */
+  --border-dashed:  #63574A;     /* Dashed ticket separator */
   --border-active:  #FBB829;     /* Active terminal highlight */
 
-  /* ── Tactile Dark Paper Grain Texture (SVG Noise) ───────────────────────── */
-  --paper-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.9 0 0 0 0.05  0 0.82 0 0 0.04  0 0 0.7 0 0.03  0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+  /* ── Tactile Gruvbox Ticket Paper Grain Texture ────────────────────────── */
+  --paper-grain: url('/textures/paper-grain.png');
 
   /* ── Warm Terminal Foreground / Typography ─────────────────────────────── */
   --text-primary:   #FFF1D6;     /* Warm ivory cream foreground */
