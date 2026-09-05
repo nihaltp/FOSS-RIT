@@ -61,10 +61,12 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
              c.title.toLowerCase().includes(q);
     })
     .sort((a, b) => {
-      if (b.total_forks !== a.total_forks) return b.total_forks - a.total_forks;
-      if (b.total_stars !== a.total_stars) return b.total_stars - a.total_stars;
+      if (b.xp !== a.xp) return b.xp - a.xp;
       if (b.total_projects !== a.total_projects) return b.total_projects - a.total_projects;
-      return b.xp - a.xp;
+      const bImpact = (b.total_forks || 0) + (b.total_stars || 0);
+      const aImpact = (a.total_forks || 0) + (a.total_stars || 0);
+      if (bImpact !== aImpact) return bImpact - aImpact;
+      return a.username.localeCompare(b.username);
     })
     .map((c, idx) => ({
       ...c,
@@ -83,10 +85,11 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
              c.title.toLowerCase().includes(q);
     })
     .sort((a, b) => {
+      if (b.xp !== a.xp) return b.xp - a.xp;
       if ((b.total_creatives || 0) !== (a.total_creatives || 0)) {
         return (b.total_creatives || 0) - (a.total_creatives || 0);
       }
-      return b.xp - a.xp;
+      return a.username.localeCompare(b.username);
     })
     .map((c, idx) => ({
       ...c,
@@ -300,7 +303,7 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
                 <Zap size={15} color="var(--byte-yellow)" /> Balanced Contributor XP Formula
               </div>
               <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginBottom: '12px', lineHeight: 1.4 }}>
-                XP is awarded equally across code and creative contributions:
+                Rankings are strictly XP-driven. XP is balanced equally across software builders and creative makers:
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '8px', fontSize: '0.78rem', fontFamily: 'var(--font-mono)' }}>
                 <div style={{ background: 'var(--surface-raised)', padding: '8px 10px', borderRadius: '4px', border: '1px solid var(--surface-border)' }}>
@@ -310,13 +313,16 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
                   <strong style={{ color: '#2B7FFF' }}>+100 XP:</strong> 1st Project / Creative Showcase
                 </div>
                 <div style={{ background: 'var(--surface-raised)', padding: '8px 10px', borderRadius: '4px', border: '1px solid var(--surface-border)' }}>
-                  <strong style={{ color: '#F5C040' }}>+75 XP:</strong> Subsequent Featured Works
+                  <strong style={{ color: '#F5C040' }}>+60/+40/+25 XP:</strong> Progressive Works Shipped
                 </div>
                 <div style={{ background: 'var(--surface-raised)', padding: '8px 10px', borderRadius: '4px', border: '1px solid var(--surface-border)' }}>
-                  <strong style={{ color: '#A855F7' }}>+20 XP / fork:</strong> Peer Cloned Your Repo
+                  <strong style={{ color: '#EAB308' }}>+10 XP / star:</strong> GitHub Star (max 150/repo)
                 </div>
                 <div style={{ background: 'var(--surface-raised)', padding: '8px 10px', borderRadius: '4px', border: '1px solid var(--surface-border)' }}>
-                  <strong style={{ color: '#10B981' }}>+30 XP:</strong> Open Tools (Penpot/Blender/Krita)
+                  <strong style={{ color: '#A855F7' }}>+20 XP / fork:</strong> Peer Fork (max 100/repo)
+                </div>
+                <div style={{ background: 'var(--surface-raised)', padding: '8px 10px', borderRadius: '4px', border: '1px solid var(--surface-border)' }}>
+                  <strong style={{ color: '#10B981' }}>+40 XP:</strong> FOSS Tools (Penpot/Blender/Krita)
                 </div>
                 <div style={{ background: 'var(--surface-raised)', padding: '8px 10px', borderRadius: '4px', border: '1px solid var(--surface-border)' }}>
                   <strong style={{ color: '#EC4899' }}>+15 XP / tech:</strong> Tool & Stack Versatility

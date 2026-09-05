@@ -28,28 +28,32 @@ def compute_contributor_rank(user_data: dict, projects: list, creatives: list) -
     if is_verified:
         xp += 50  # Campus student verified
 
-    # Project submission XP
+    # Project submission XP: progressive scaling
     if proj_count >= 1:
         xp += 100
     if proj_count >= 2:
-        xp += 75
+        xp += 60
     if proj_count >= 3:
-        xp += 75
+        xp += 40
+    if proj_count > 3:
+        xp += (proj_count - 3) * 25
 
-    # Creative submission XP
+    # Creative submission XP: progressive scaling
     if creative_count >= 1:
         xp += 100
     if creative_count >= 2:
-        xp += 75
+        xp += 60
     if creative_count >= 3:
-        xp += 75
+        xp += 40
+    if creative_count > 3:
+        xp += (creative_count - 3) * 25
 
-    # Peer engagement XP
-    xp += total_forks * 20
-
-    # Star XP capped at 100 XP per repo
+    # Peer engagement XP: Stars & Forks capped per repository to reward authentic impact and prevent gaming
     for p in projects:
-        xp += min(p.get("stars", 0) * 5, 100)
+        # Forks: 20 XP per fork, capped at 100 XP per repo (prevents bot/self-fork spamming)
+        xp += min(p.get("forks", 0) * 20, 100)
+        # Stars: 10 XP per star, capped at 150 XP per repo (rewards community appreciation with safe upper limit)
+        xp += min(p.get("stars", 0) * 10, 150)
 
     # Tech stack & tool versatility
     xp += min(len(all_techs) * 15, 60)
@@ -58,7 +62,7 @@ def compute_contributor_rank(user_data: dict, projects: list, creatives: list) -
     # FOSS creative tool adoption bonus
     foss_tools = {"penpot", "blender", "krita", "gimp", "inkscape", "kdenlive", "rawtherapee", "darktable"}
     if any(t in foss_tools for t in creative_tools):
-        xp += 30
+        xp += 40
 
     # --- Level & Tier Mapping ---
     if xp >= 1500:
@@ -140,9 +144,15 @@ def generate_leaderboard(contributors_map: dict) -> dict:
             "badges": stats["badges"]
         })
 
-    # Sort contributors by priority: forks > stars > works count > xp
+    # Sort contributors primarily by XP.
+    # Tie-breakers: total works shipped > total peer impact (stars + forks) > verified status
     ranked_list.sort(
-        key=lambda x: (x["total_forks"], x["total_stars"], x["total_projects"] + x["total_creatives"], x["xp"]),
+        key=lambda x: (
+            x["xp"],
+            x["total_projects"] + x["total_creatives"],
+            x["total_forks"] + x["total_stars"],
+            1 if x.get("is_verified_student") else 0
+        ),
         reverse=True
     )
 

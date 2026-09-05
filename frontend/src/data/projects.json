@@ -72,7 +72,7 @@
     "open_issues": 0,
     "is_verified_student": true,
     "submitted_by_username": "vertigotalks7",
-    "submitted_by_name": "Vertigo Talks",
+    "submitted_by_name": "Angelo Joemon",
     "batch": "2026",
     "featured": true
   },
@@ -202,7 +202,7 @@
   {
     "id": "proj-ai-mood-predictor",
     "name": "ai mood predictor",
-    "description": "a loght weight machine learning application",
+    "description": "a light weight machine learning application",
     "repo_url": "https://github.com/devusuresh197/ai_mood_predictor.git",
     "tech_stack": [
       "Python",
