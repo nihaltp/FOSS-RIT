@@ -2,7 +2,7 @@
 
 ## name: "LegacyLens"
 description: "Intelligent context engineering tool combining deterministic static analysis and multi-agent verification for legacy code comprehension."
-repo_url: "[https://github.com/knaaps/LegacyLens](https://github.com/knaaps/LegacyLens)"
+repo_url: "https://github.com/knaaps/LegacyLens"
 tech_stack: ["Python", "JavaScript", "Flask"]
 author: "knaaps"
 author_name: "Vinayak S"
