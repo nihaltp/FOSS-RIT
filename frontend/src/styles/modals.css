@@ -4,9 +4,9 @@
 
 /* Mascot Banner */
 .mascot-banner {
-  background: linear-gradient(135deg, var(--vibe-subtle, rgba(8, 183, 79, 0.08)) 0%, var(--surface-raised) 100%);
-  border: 1px solid var(--surface-border);
-  border-radius: var(--radius-xl);
+  background: var(--ink-2);
+  border: 2px solid var(--ink-4);
+  border-radius: 0;
   padding: var(--space-2xl);
   display: flex;
   align-items: center;
@@ -24,20 +24,20 @@
 .mascot-badge {
   width: 58px;
   height: 58px;
-  border-radius: var(--radius-md);
-  background: var(--surface-raised);
-  border: 1px solid var(--surface-border);
+  border-radius: 0;
+  background: var(--ink-3);
+  border: 2px solid var(--ink-4);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all var(--transition-normal);
+  transition: all var(--transition-fast);
 }
 
 .mascot-badge:hover {
-  transform: translateY(-4px) scale(1.1);
-  border-color: var(--foss-mint);
-  box-shadow: var(--shadow-mint);
+  border-color: var(--acid);
+  box-shadow: 3px 3px 0 var(--acid);
+  transform: translate(-2px, -2px);
 }
 
 /* Modals */
@@ -60,9 +60,9 @@
 }
 
 .modal-content {
-  background: var(--open-gray);
-  border: 1px solid var(--surface-border);
-  border-radius: var(--radius-xl);
+  background: var(--ink-2);
+  border: 2px solid var(--ink-4);
+  border-radius: 0;
   width: 100%;
   max-width: 520px;
   max-height: 90vh;
@@ -70,7 +70,7 @@
   -webkit-overflow-scrolling: touch;
   padding: var(--space-2xl);
   position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.6);
   margin: auto;
 }
 
@@ -78,12 +78,12 @@
   position: absolute;
   top: var(--space-lg);
   right: var(--space-lg);
-  background: var(--surface-raised);
-  border: 1px solid var(--surface-border);
+  background: var(--ink-3);
+  border: 2px solid var(--ink-4);
   color: var(--text-secondary);
   width: 32px;
   height: 32px;
-  border-radius: 50%;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,8 +94,9 @@
 }
 
 .modal-close-btn:hover {
-  color: var(--text-primary);
-  border-color: var(--flame-red);
+  color: var(--paper);
+  border-color: var(--rust);
+  background: var(--rust-dim);
 }
 
 /* Forms */
@@ -113,9 +114,9 @@
 }
 
 .form-input, .form-select, .form-textarea {
-  background: var(--surface-raised);
-  border: 1px solid var(--surface-border);
-  border-radius: var(--radius-md);
+  background: var(--ink-3);
+  border: 2px solid var(--ink-4);
+  border-radius: 0;
   padding: 10px 14px;
   color: var(--text-primary);
   font-family: var(--font-sans);
@@ -125,8 +126,8 @@
 }
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
-  border-color: var(--foss-mint);
-  box-shadow: 0 0 0 2px var(--foss-mint-subtle);
+  border-color: var(--acid);
+  box-shadow: none;
 }
 
 /* --- Media Viewer Modal Styles --- */
@@ -256,12 +257,12 @@
 }
 
 .toast {
-  background: var(--surface-raised);
-  border: 1px solid var(--foss-mint);
-  color: var(--text-primary);
+  background: var(--ink-3);
+  border: 2px solid var(--acid);
+  color: var(--paper);
   padding: 12px 20px;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
+  border-radius: 0;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
   font-size: 0.9rem;
   display: flex;
   align-items: center;

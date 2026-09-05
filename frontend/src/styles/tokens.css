@@ -1,93 +1,127 @@
 /* ==========================================================================
    FOSS Club Design System - Tokens & CSS Variables
-   Strictly derived from the Official FOSS Club Brand Guidelines
+   Neo-Brutalist / Editorial / Creative Technology Edition
    ========================================================================== */
 
 :root {
-  /* Dynamic Vibe Builder Theme Tokens */
-  --vibe-accent: #08B74F;
-  --vibe-hover: #069e43;
-  --vibe-rgb: 8, 183, 79;
-  --vibe-glow: rgba(8, 183, 79, 0.35);
-  --vibe-subtle: rgba(8, 183, 79, 0.12);
+  /* ── Core Palette ─────────────────────────────────────────────────────── */
+  --ink:    #0D0D0D;       /* Primary dark background */
+  --ink-2:  #161616;       /* Slightly lifted dark surface */
+  --ink-3:  #1F1F1F;       /* Card surface */
+  --ink-4:  #2A2A2A;       /* Card border / dividers */
+  --ink-5:  #3D3D3D;       /* Muted border */
 
-  /* Primary Brand Colors (Dynamically Linked to Builder Vibe Theme) */
-  --foss-mint: var(--vibe-accent, #08B74F);
-  --foss-mint-hover: var(--vibe-hover, #069e43);
-  --foss-mint-glow: var(--vibe-glow, rgba(8, 183, 79, 0.28));
-  --foss-mint-subtle: var(--vibe-subtle, rgba(8, 183, 79, 0.12));
-  
-  --code-night: #1A1A1A;
-  --open-gray: #1E1E1E;
-  --surface-raised: #242424;
-  --surface-border: #2E2E2E;
-  --surface-border-hover: #404040;
-  
-  --libre-white: #FFFFFF;
-  --text-primary: #FFFFFF;
-  --text-secondary: #A0A0A0;
-  --text-muted: #6B6B6B;
-  
-  /* Secondary Brand Accents */
-  --pixel-blue: #2B7FFF;
-  --pixel-blue-subtle: rgba(43, 127, 255, 0.12);
-  --flame-red: #E84A36;
-  --flame-red-subtle: rgba(232, 74, 54, 0.12);
-  --byte-yellow: #F5C040;
-  --byte-yellow-subtle: rgba(245, 192, 64, 0.12);
+  --paper:  #F5F1EB;       /* Warm off-white — editorial key tone */
+  --chalk:  #FAFAF7;       /* Lighter paper */
+  --dust:   #8A8780;       /* Muted text on light backgrounds */
 
-  /* Typography */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --forest: #1A3D2B;       /* Deep green surface */
+  --moss:   #2E6B4A;       /* Mid green accent */
+
+  /* --acid is driven by the Builder Vibe switcher via VibeContext.
+     Default is electric lime (hacker vibe). Changed at runtime via JS. */
+  --vibe-accent:  #BEFF5A;
+  --vibe-hover:   #A8E847;
+  --vibe-glow:    rgba(190, 255, 90, 0.35);
+  --vibe-subtle:  rgba(190, 255, 90, 0.12);
+
+  --acid:     var(--vibe-accent);
+  --acid-dim: var(--vibe-subtle);
+  --acid-glow: var(--vibe-glow);
+
+  --rust:   #C94B2B;       /* Warm red accent */
+  --rust-dim: rgba(201, 75, 43, 0.12);
+  --gold:   #E8B84B;       /* Warm gold (replaces byte-yellow) */
+  --gold-dim: rgba(232, 184, 75, 0.12);
+  --cobalt: #3B6EF0;       /* Electric blue (replaces pixel-blue) */
+  --cobalt-dim: rgba(59, 110, 240, 0.12);
+
+  /* ── Legacy aliases (keeps old code working) ──────────────────────────── */
+  --foss-mint:         var(--acid);
+  --foss-mint-hover:   #A8E847;
+  --foss-mint-glow:    var(--acid-glow);
+  --foss-mint-subtle:  var(--acid-dim);
+  --code-night:        var(--ink);
+  --open-gray:         var(--ink-2);
+  --surface-raised:    var(--ink-3);
+  --surface-border:    var(--ink-4);
+  --surface-border-hover: var(--ink-5);
+  --libre-white:       var(--paper);
+  --text-primary:      var(--paper);
+  --text-secondary:    #B0ADA8;
+  --text-muted:        #6B6864;
+  --pixel-blue:        var(--cobalt);
+  --pixel-blue-subtle: var(--cobalt-dim);
+  --flame-red:         var(--rust);
+  --flame-red-subtle:  var(--rust-dim);
+  --byte-yellow:       var(--gold);
+  --byte-yellow-subtle: var(--gold-dim);
+
+  /* ── Typography ───────────────────────────────────────────────────────── */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
 
   --tracking-tighter: -0.04em;
-  --tracking-tight: -0.025em;
-  --tracking-normal: -0.01em;
+  --tracking-tight:   -0.025em;
+  --tracking-normal:  -0.01em;
 
-  /* Spacing */
+  /* ── Spacing ──────────────────────────────────────────────────────────── */
   --space-2xs: 4px;
-  --space-xs: 8px;
-  --space-sm: 12px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 32px;
+  --space-xs:  8px;
+  --space-sm:  12px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
   --space-2xl: 48px;
   --space-3xl: 64px;
   --space-4xl: 96px;
 
-  /* Radii */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  /* ── Radii ────────────────────────────────────────────────────────────── */
+  --radius-sm:   4px;   /* Reduced — more editorial */
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --radius-xl:   16px;
   --radius-full: 9999px;
 
-  /* Shadows & Depth */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.45);
-  --shadow-mint: 0 0 24px rgba(8, 183, 79, 0.35);
+  /* ── Shadows ──────────────────────────────────────────────────────────── */
+  --shadow-sm:     0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md:     0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-lg:     0 8px 32px rgba(0, 0, 0, 0.55);
+  --shadow-mint:   0 0 24px var(--acid-glow);
+  /* Neo-brutalist hard offset shadows */
+  --shadow-offset:       3px 3px 0 var(--ink-4);
+  --shadow-offset-acid:  3px 3px 0 var(--acid);
+  --shadow-offset-paper: 3px 3px 0 var(--paper);
 
-  /* Transitions */
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  /* ── Transitions ──────────────────────────────────────────────────────── */
+  --transition-fast:   0.12s ease;
+  --transition-normal: 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.38s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Light Theme Variables */
+/* Light Theme (paper-dominant editorial mode) */
 [data-theme="light"] {
-  --code-night: #F6F8FA;
-  --open-gray: #FFFFFF;
-  --surface-raised: #FFFFFF;
-  --surface-border: #E1E4E8;
-  --surface-border-hover: #C5C9D0;
+  --ink:    #0D0D0D;
+  --ink-2:  #EFEBE3;
+  --ink-3:  #F5F1EB;
+  --ink-4:  #D8D3CB;
+  --ink-5:  #C2BDB4;
 
-  --text-primary: #1A1A1A;
-  --text-secondary: #586069;
-  --text-muted: #8B949E;
+  --code-night:        var(--chalk);
+  --open-gray:         var(--paper);
+  --surface-raised:    var(--chalk);
+  --surface-border:    var(--ink-4);
+  --surface-border-hover: var(--ink-5);
 
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.1);
-  --shadow-mint: 0 0 20px rgba(8, 183, 79, 0.2);
+  --text-primary:   #0D0D0D;
+  --text-secondary: #3D3A35;
+  --text-muted:     var(--dust);
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.09);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.11);
+  --shadow-offset:       3px 3px 0 var(--ink-4);
+  --shadow-offset-acid:  3px 3px 0 var(--acid);
+  --shadow-mint:         0 0 20px var(--acid-glow);
 }

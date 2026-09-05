@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { useTheme } from '../../context/ThemeContext';
 import { 
-  Sun, 
-  Moon, 
   Menu, 
   X, 
   Compass, 
@@ -18,7 +15,6 @@ import { useVibe, VIBES, VibeId } from '../../context/VibeContext';
 import { MascotIcon } from '../ui/MascotIcon';
 
 export const Navbar: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
   const { activeVibe, setVibe } = useVibe();
   const location = useLocation();
   const [vibeMenuOpen, setVibeMenuOpen] = useState(false);
@@ -178,16 +174,6 @@ export const Navbar: React.FC = () => {
             )}
           </div>
 
-          {/* Theme Toggle */}
-          <button 
-            onClick={toggleTheme} 
-            className="theme-toggle-btn" 
-            title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            aria-label="Toggle theme"
-          >
-            {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
-          </button>
-          
           {/* GitHub Repository Link Button */}
           <a 
             href="https://github.com/vertigotalks7/FOSS-RIT" 
@@ -198,7 +184,7 @@ export const Navbar: React.FC = () => {
           >
             <GitHubIcon size={14} />
             <span className="signin-text">GitHub</span>
-            <Star size={12} color="var(--byte-yellow)" />
+            <Star size={12} color="var(--gold)" />
           </a>
 
           {/* Mobile Hamburger Toggle */}

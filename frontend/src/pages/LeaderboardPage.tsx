@@ -117,9 +117,10 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
 
         {/* Page Banner / Hero Card */}
         <div style={{
-          background: 'var(--open-gray)',
-          border: '1px solid var(--surface-border)',
-          borderRadius: 'var(--radius-xl)',
+          background: 'var(--ink-2)',
+          border: '2px solid var(--ink-4)',
+          borderLeft: '5px solid var(--acid)',
+          borderRadius: 0,
           padding: 'var(--space-2xl)',
           marginBottom: 'var(--space-2xl)',
           display: 'flex',
@@ -129,12 +130,12 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
           gap: 'var(--space-lg)'
         }}>
           <div style={{ maxWidth: '640px' }}>
-            <span className="event-badge">Campus Hall of Fame</span>
-            <h1 style={{ marginTop: '8px', fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--acid)', marginBottom: '8px' }}>Campus Hall of Fame</div>
+            <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 900, letterSpacing: '-0.04em', color: 'var(--paper)' }}>
               Contributor Rankings
             </h1>
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
-              Recognizing both open source software builders and creative visual artists at <strong>RIT Kottayam</strong>.
+            <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginTop: '8px', lineHeight: 1.6 }}>
+              Recognizing both open source software builders and creative visual artists at <strong style={{ color: 'var(--paper)' }}>RIT Kottayam</strong>.
             </p>
           </div>
 
@@ -156,15 +157,15 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
           {/* Card 1: Code Contributors */}
           <div
             onClick={() => setActiveDomain('code')}
-            className="interactive-hover-card"
             style={{
-              background: 'var(--open-gray)',
-              border: activeDomain === 'code' ? '1.5px solid var(--foss-mint)' : '1px solid var(--surface-border)',
-              borderRadius: 'var(--radius-lg)',
+              background: 'var(--ink-2)',
+              border: activeDomain === 'code' ? '2px solid var(--acid)' : '2px solid var(--ink-4)',
+              borderRadius: 0,
               padding: 'var(--space-lg)',
               cursor: 'pointer',
-              boxShadow: activeDomain === 'code' ? '0 0 20px rgba(8, 183, 79, 0.12)' : 'none',
-              transition: 'all 0.2s ease'
+              boxShadow: activeDomain === 'code' ? 'var(--shadow-offset-acid)' : 'none',
+              transform: activeDomain === 'code' ? 'translate(-2px, -2px)' : 'none',
+              transition: 'all 0.15s ease'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
@@ -172,22 +173,22 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
                 <div style={{
                   width: '32px',
                   height: '32px',
-                  borderRadius: 'var(--radius-sm)',
-                  background: activeDomain === 'code' ? 'var(--foss-mint-subtle)' : 'var(--surface-raised)',
-                  color: activeDomain === 'code' ? 'var(--foss-mint)' : 'var(--text-muted)',
+                  borderRadius: 0,
+                  background: activeDomain === 'code' ? 'var(--acid)' : 'var(--ink-3)',
+                  color: activeDomain === 'code' ? 'var(--ink)' : 'var(--text-muted)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}>
                   <Code size={17} />
                 </div>
-                <h3 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700 }}>Code Contributors</h3>
+                <h3 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700, fontFamily: 'var(--font-display)' }}>Code Contributors</h3>
               </div>
-              <span className="tag-badge-pill" style={{ opacity: activeDomain === 'code' ? 1 : 0.6 }}>
+              <span className="tag-badge-pill" style={{ opacity: activeDomain === 'code' ? 1 : 0.5 }}>
                 {contributors.filter(c => (c.total_projects || 0) > 0).length} Devs
               </span>
             </div>
-            <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.4 }}>
+            <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>
               Ranked by peer repository forks, GitHub stars, and open source software shipped.
             </p>
           </div>
@@ -195,15 +196,15 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
           {/* Card 2: Creative Makers */}
           <div
             onClick={() => setActiveDomain('creative')}
-            className="interactive-hover-card"
             style={{
-              background: 'var(--open-gray)',
-              border: activeDomain === 'creative' ? '1.5px solid var(--pixel-blue)' : '1px solid var(--surface-border)',
-              borderRadius: 'var(--radius-lg)',
+              background: 'var(--ink-2)',
+              border: activeDomain === 'creative' ? '2px solid var(--cobalt)' : '2px solid var(--ink-4)',
+              borderRadius: 0,
               padding: 'var(--space-lg)',
               cursor: 'pointer',
-              boxShadow: activeDomain === 'creative' ? '0 0 20px rgba(56, 189, 248, 0.12)' : 'none',
-              transition: 'all 0.2s ease'
+              boxShadow: activeDomain === 'creative' ? '3px 3px 0 var(--cobalt)' : 'none',
+              transform: activeDomain === 'creative' ? 'translate(-2px, -2px)' : 'none',
+              transition: 'all 0.15s ease'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
@@ -211,28 +212,25 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
                 <div style={{
                   width: '32px',
                   height: '32px',
-                  borderRadius: 'var(--radius-sm)',
-                  background: activeDomain === 'creative' ? 'rgba(56, 189, 248, 0.12)' : 'var(--surface-raised)',
-                  color: activeDomain === 'creative' ? 'var(--pixel-blue)' : 'var(--text-muted)',
+                  borderRadius: 0,
+                  background: activeDomain === 'creative' ? 'var(--cobalt)' : 'var(--ink-3)',
+                  color: activeDomain === 'creative' ? '#fff' : 'var(--text-muted)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}>
                   <Palette size={17} />
                 </div>
-                <h3 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700 }}>Creative Makers</h3>
+                <h3 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700, fontFamily: 'var(--font-display)' }}>Creative Makers</h3>
               </div>
-              <span 
+              <span
                 className="category-badge-pill"
-                style={{ 
-                  opacity: activeDomain === 'creative' ? 1 : 0.6,
-                  borderColor: activeDomain === 'creative' ? 'var(--pixel-blue)' : 'var(--surface-border)'
-                }}
+                style={{ opacity: activeDomain === 'creative' ? 1 : 0.5 }}
               >
                 {contributors.filter(c => (c.total_creatives || 0) > 0).length} Creators
               </span>
             </div>
-            <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.4 }}>
+            <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>
               Ranked by UI/UX design systems, event frames, video aftermovies, and 3D renders.
             </p>
           </div>

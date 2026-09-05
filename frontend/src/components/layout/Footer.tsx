@@ -13,17 +13,18 @@ export const Footer: React.FC = () => {
               <div style={{
                 width: '44px',
                 height: '44px',
-                background: 'var(--foss-mint)',
-                borderRadius: 'var(--radius-md)',
+                background: 'var(--acid)',
+                borderRadius: 'var(--radius-sm)',
+                border: '2px solid var(--ink)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '8px'
+                marginBottom: '12px'
               }}>
                 <svg width="28" height="28" viewBox="0 0 32 32">
-                  <rect x="7" y="9" width="4" height="4" fill="#0F1710" />
-                  <rect x="21" y="9" width="4" height="4" fill="#0F1710" />
-                  <path d="M8 18 Q16 27 24 18" stroke="#0F1710" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+                  <rect x="7" y="9" width="4" height="4" fill="#0D0D0D" />
+                  <rect x="21" y="9" width="4" height="4" fill="#0D0D0D" />
+                  <path d="M8 18 Q16 27 24 18" stroke="#0D0D0D" strokeWidth="3.5" strokeLinecap="round" fill="none" />
                 </svg>
               </div>
               <h3 style={{ fontSize: '1.15rem' }}>FOSS Club RIT</h3>
@@ -86,7 +87,7 @@ export const Footer: React.FC = () => {
               href="https://github.com/vertigotalks7" 
               target="_blank" 
               rel="noopener noreferrer"
-              style={{ color: 'var(--foss-mint)', textDecoration: 'none', fontWeight: 600 }}
+              style={{ color: 'var(--moss, #2E6B4A)', textDecoration: 'none', fontWeight: 700 }}
               title="Created by @vertigotalks7"
             >
               @vertigotalks7

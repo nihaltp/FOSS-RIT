@@ -1,41 +1,53 @@
 /* ==========================================================================
    Pillars (About Club) Section Styles
+   Neo-Brutalist Edition
    ========================================================================== */
 
 .pillars-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--space-xl);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-lg);
 }
 
 .pillar-card {
-  background: var(--open-gray);
-  border: 1px solid var(--surface-border);
-  border-radius: var(--radius-lg);
+  background: var(--ink-2);
+  border: 2px solid var(--ink-4);
+  border-radius: 0;
   padding: var(--space-xl);
   display: flex;
   flex-direction: column;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.pillar-card:hover {
+  border-color: var(--acid);
+  box-shadow: var(--shadow-offset-acid);
+  transform: translate(-2px, -2px);
 }
 
 .pixel-icon-container {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: var(--surface-raised);
-  border: 1px solid var(--surface-border);
+  width: 44px;
+  height: 44px;
+  border-radius: 0;
+  background: var(--ink-3);
+  border: 2px solid var(--ink-4);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--foss-mint);
+  color: var(--acid);
   margin-bottom: var(--space-lg);
 }
 
 .pillar-title {
+  font-family: var(--font-display);
   margin-bottom: var(--space-xs);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--paper);
 }
 
 .pillar-desc {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
+  line-height: 1.6;
 }

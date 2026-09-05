@@ -1,31 +1,37 @@
 /* ==========================================================================
-   Projects & Creative Showcase Section Styles (Minimalist Architecture)
+   Projects & Creative Showcase Section Styles
+   Neo-Brutalist / Editorial Edition
    ========================================================================== */
 
+/* ── Project List ─────────────────────────────────────────────────────── */
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
+/* ── Project Row Card — Brutalist Bordered ────────────────────────────── */
 .project-row-card {
-  background: var(--open-gray);
-  border: 1px solid var(--surface-border);
-  border-radius: var(--radius-md);
+  background: var(--ink-2);
+  border: 2px solid var(--ink-4);
+  border-radius: 0;
   padding: var(--space-md) var(--space-lg);
-  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .project-row-card:hover {
-  border-color: rgba(255, 255, 255, 0.22);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  border-color: var(--acid);
+  box-shadow: var(--shadow-offset-acid);
+  transform: translate(-2px, -2px);
 }
 
 .project-row-main {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .project-row-header {
@@ -44,59 +50,60 @@
 }
 
 .project-row-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  text-decoration: none;
   font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--paper);
+  text-decoration: none;
   transition: color var(--transition-fast);
 }
 
-.project-row-title:hover {
-  color: var(--foss-mint);
-}
+.project-row-title:hover { color: var(--acid); }
+.creative-row-card .project-row-title:hover { color: var(--cobalt); }
 
-.creative-row-card .project-row-title:hover {
-  color: var(--pixel-blue);
-}
-
+/* ── Inline Badges ────────────────────────────────────────────────────── */
 .tag-badge-pill {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-family: var(--font-mono);
-  color: var(--foss-mint);
-  background: var(--foss-mint-subtle);
-  border: 1px solid var(--foss-mint-glow);
-  padding: 1px 7px;
-  border-radius: var(--radius-full);
-  transition: all 0.3s ease;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--acid);
+  background: var(--acid-dim);
+  border: 1px solid var(--acid);
+  padding: 2px 8px;
+  border-radius: 0;
 }
 
 .category-badge-pill {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 600;
-  padding: 1px 7px;
-  border-radius: var(--radius-full);
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  color: var(--pixel-blue);
-  text-transform: capitalize;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 0;
+  background: var(--cobalt-dim);
+  border: 1px solid var(--cobalt);
+  color: var(--cobalt);
 }
 
 .verified-student-badge {
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  background: var(--foss-mint-subtle);
-  color: var(--foss-mint);
-  border: 1px solid var(--foss-mint-glow);
-  border-radius: 4px;
-  padding: 1px 6px;
-  font-size: 0.68rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  background: var(--acid-dim);
+  color: var(--acid);
+  border: 1px solid var(--acid);
+  border-radius: 0;
+  padding: 2px 7px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
 }
 
+/* ── Row Actions / Stats ──────────────────────────────────────────────── */
 .project-row-actions {
   display: flex;
   align-items: center;
@@ -106,10 +113,17 @@
 .project-stats-inline {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 0.8rem;
+  gap: 14px;
+  font-size: 0.78rem;
   font-family: var(--font-mono);
+  font-weight: 600;
   color: var(--text-muted);
+}
+
+.project-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .project-view-btn {
@@ -117,12 +131,13 @@
   font-size: 0.75rem;
   height: 28px;
   gap: 4px;
+  border-radius: 0;
 }
 
 .project-row-desc {
   font-size: 0.88rem;
   color: var(--text-secondary);
-  line-height: 1.4;
+  line-height: 1.5;
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -137,41 +152,40 @@
   justify-content: space-between;
   gap: var(--space-md);
   flex-wrap: wrap;
-  padding-top: 4px;
+  padding-top: 6px;
+  border-top: 1px solid var(--ink-4);
 }
 
 .tags-row-inline {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 5px;
 }
 
 .project-author-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
-.project-author-link:hover {
-  color: var(--foss-mint);
-}
+.project-author-link:hover { color: var(--acid); }
 
 .project-author-pfp {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  border: 1px solid var(--surface-border);
+  border: 1px solid var(--ink-4);
   object-fit: cover;
   flex-shrink: 0;
 }
 
 /* ==========================================================================
-   Creative Showcase Horizontal Media Row Layout
+   Creative Showcase — Horizontal Media Row
    ========================================================================== */
 .creative-row-card {
   display: flex;
@@ -181,14 +195,20 @@
 
 .creative-thumb-wrapper {
   position: relative;
-  width: 140px;
-  height: 82px;
-  border-radius: var(--radius-sm);
+  width: 152px;
+  height: 90px;
+  border-radius: 0;
   overflow: hidden;
   flex-shrink: 0;
-  border: 1px solid var(--surface-border);
-  background: #050608;
+  border: 2px solid var(--ink-4);
+  background: var(--ink);
   cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.creative-thumb-wrapper:hover {
+  border-color: var(--acid);
+  box-shadow: 3px 3px 0 var(--acid);
 }
 
 .creative-thumb-img {
@@ -205,7 +225,7 @@
 .creative-play-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(13, 13, 13, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,20 +234,21 @@
 }
 
 .creative-thumb-wrapper:hover .creative-play-overlay {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(13, 13, 13, 0.15);
 }
 
 .creative-duration-pill {
   position: absolute;
   bottom: 4px;
   right: 4px;
-  background: rgba(0, 0, 0, 0.85);
-  color: #fff;
+  background: rgba(13, 13, 13, 0.9);
+  color: var(--paper);
   font-family: var(--font-mono);
-  font-size: 0.62rem;
-  padding: 1px 4px;
-  border-radius: 2px;
-  letter-spacing: 0.04em;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 0;
+  letter-spacing: 0.06em;
 }
 
 @media (max-width: 640px) {
@@ -237,6 +258,16 @@
   }
   .creative-thumb-wrapper {
     width: 100%;
-    height: 140px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 560px) {
+  .project-row-header {
+    gap: var(--space-xs);
+  }
+  .project-row-actions {
+    flex-wrap: wrap;
+    gap: var(--space-xs);
   }
 }

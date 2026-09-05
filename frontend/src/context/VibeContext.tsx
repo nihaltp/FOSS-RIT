@@ -119,7 +119,12 @@ export const VibeProvider: React.FC<{ children: React.ReactNode }> = ({ children
     root.style.setProperty('--vibe-glow', activeVibe.glow);
     root.style.setProperty('--vibe-subtle', activeVibe.subtle);
 
-    // Propagate dynamically to entire site brand/accent tokens
+    // Propagate to new acid token system (drives entire new design)
+    root.style.setProperty('--acid', activeVibe.color);
+    root.style.setProperty('--acid-dim', activeVibe.subtle);
+    root.style.setProperty('--acid-glow', activeVibe.glow);
+
+    // Legacy aliases (keeps old code working)
     root.style.setProperty('--foss-mint', activeVibe.color);
     root.style.setProperty('--foss-mint-hover', activeVibe.hover);
     root.style.setProperty('--foss-mint-glow', activeVibe.glow);
