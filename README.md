@@ -6,13 +6,29 @@ The official community platform for the Free and Open Source Software (FOSS) Clu
 
 **Motto:** *Learn. Share. Contribute.*
 
+<p align="center">
+  <img src="docs/assets/hero-banner.png" alt="FOSS Club RIT — Ship Free & Open Source" width="100%" />
+</p>
+
 ---
 
 ## What Can You Feature on the Platform?
 
 We showcase student makers and creative creators across campus:
-1. **Code Repositories (`content/projects/`):** Web apps, AI/ML models, mobile apps, hardware firmware, and automation scripts.
-2. **Creative Showcases (`content/creatives/`):** UI/UX design systems (Penpot/Figma), event photography series, video aftermovies/teasers (DaVinci Resolve/Kdenlive), and 3D artwork (Blender).
+
+### 1. 💻 Code Repositories (`content/projects/`)
+Web apps, AI/ML models, mobile apps, hardware firmware, CLI tools, and automation scripts. Each repository card highlights tech tags, real-time GitHub stars & forks, verified student stamps, and retro ticket barcodes.
+
+<p align="center">
+  <img src="docs/assets/projects-registry.png" alt="Campus Technical Registry — Verified Student Projects" width="100%" />
+</p>
+
+### 2. 🎨 Creative Showcases (`content/creatives/`)
+UI/UX design systems (Penpot/Figma), event photography series, video aftermovies/teasers (DaVinci Resolve/Kdenlive), typography specimens, and 3D artwork (Blender).
+
+<p align="center">
+  <img src="docs/assets/creative-archive.png" alt="Campus Creative Archive — Design & Media Specimens" width="100%" />
+</p>
 
 ---
 
@@ -20,16 +36,26 @@ We showcase student makers and creative creators across campus:
 
 ### 🎨 Method 1: Web Form (Fastest for Designers, Photographers & Video Creators)
 No local terminal setup or Git commands required:
-1. Open the [**Creative Showcase Submission Form**](https://github.com/vertigotalks7/FOSS-RIT/issues/new?template=creative-submission.yml) on GitHub.
+1. Open the [**Creative Showcase Submission Form**](https://github.com/vertigotalks7/FOSS-RIT/issues/new?template=creative-submission.yml) on GitHub or click **Feature Your Work** in the navigation header.
 2. Fill out your details (Title, Craft Category, Tools Used, Media URL, and KTU Roll No for verified status).
 3. Click **Submit new issue**.
 4. Once a club maintainer reviews and labels it `approved`, the automated bot commits your work and deploys it live in ~10 seconds!
 
 *(Requires a free GitHub account — takes < 2 minutes to create).*
 
+<p align="center">
+  <img src="docs/assets/submit-creative-modal.png" alt="Creative Showcase Submission Modal — Zero-Friction Web Form" width="75%" />
+</p>
+
 ---
 
 ### 💻 Method 2: Git Pull Request (For Developers & Code Projects)
+
+Follow the guided 3-step GitOps workflow directly in the web app or through standard Git commands:
+
+<p align="center">
+  <img src="docs/assets/submit-code-modal.png" alt="Code Repository Submission Modal — 3-Step Guided GitOps Flow" width="75%" />
+</p>
 
 #### Step 1: Fork This Repository
 Click the **Fork** button at the top right of this repository to create your copy on GitHub.
@@ -84,19 +110,23 @@ A modern, open design system for campus navigation and transit schedules.
 
 ---
 
-## Contributor Leaderboard & XP System
+## Contributor Leaderboard & RPG XP System
 
-XP and achievement badges are awarded to developers and creative creators equally:
+A transparent, XP-driven progression engine celebrating both software builders and creative artists. Contributor ranks are calculated directly from authentic project releases, peer engagement, and open-source tool adoption.
+
+<p align="center">
+  <img src="docs/assets/leaderboard-hall-of-fame.png" alt="Campus Contributor Rankings & Hall of Fame" width="100%" />
+</p>
 
 | Milestone / Metric | XP Award | Criteria |
 | :--- | :--- | :--- |
 | **Campus Verified** | `+50 XP` | Verified RIT student maker (via KTU ID) |
 | **First Submission** | `+100 XP` | First project or creative showcase featured |
-| **Additional Works** | `+75 XP` each | 2nd and 3rd featured works |
-| **Peer Forks** | `+20 XP` per fork | When peers fork your repository |
-| **GitHub Stars** | `+5 XP` per star | Capped at 100 XP per project |
-| **Tool / Tech Versatility** | `+15 XP` | Bonus for exploring diverse stacks & creative tools |
-| **Open Tool Bonus** | `+30 XP` | Work made with FOSS tools (Penpot, Blender, Krita, Kdenlive) |
+| **Progressive Works** | `+60 / +40 / +25 XP` | 2nd (+60), 3rd (+40), and 4th+ (+25 each) works |
+| **GitHub Stars** | `+10 XP` per star | Capped at 150 XP per project to prevent gaming |
+| **Peer Forks** | `+20 XP` per fork | Capped at 100 XP per project |
+| **Tool / Tech Versatility** | `+15 XP` per tech | Bonus for exploring diverse stacks & creative tools (max 60 XP) |
+| **Open Tool Bonus** | `+40 XP` | Work made with FOSS tools (*Penpot, Blender, Krita, Kdenlive*) |
 
 ### Contributor Levels:
 - **Level 1 (0 – 99 XP):** *Script Tinkerer*
@@ -104,6 +134,16 @@ XP and achievement badges are awarded to developers and creative creators equall
 - **Level 3 (300 – 699 XP):** *Byte Craftsman*
 - **Level 4 (700 – 1499 XP):** *Systems Architect*
 - **Level 5 (1500+ XP):** *Kernel Overlord*
+
+---
+
+## Campus Workshops & Events Radar
+
+In collaboration with [TinkerHub RIT](https://tinkerhub.org), all upcoming hackathons, hands-on bootcamps, and community meetups are automatically scraped and displayed live with direct registration passes:
+
+<p align="center">
+  <img src="docs/assets/events-radar.png" alt="TinkerHub RIT Sessions & Workshop Radar" width="100%" />
+</p>
 
 ---
 
