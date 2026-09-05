@@ -17,17 +17,19 @@ export const CreativesPage: React.FC<CreativesPageProps> = ({
       <div className="container">
         {/* Breadcrumb Navigation */}
         <div style={{ marginBottom: 'var(--space-lg)' }}>
-          <Link to="/" className="btn btn-ghost btn-sm" style={{ paddingLeft: 0 }}>
-            <ArrowLeft size={16} /> Back to Overview
+          <Link to="/" className="btn btn-ghost btn-sm" style={{ paddingLeft: '8px' }}>
+            <ArrowLeft size={15} /> [BACK TO OVERVIEW]
           </Link>
         </div>
 
-        {/* Page Banner */}
-        <div style={{
-          background: 'var(--open-gray)',
-          border: '1px solid var(--surface-border)',
-          borderRadius: 'var(--radius-xl)',
-          padding: 'var(--space-2xl)',
+        {/* Page Banner — Print Room Specimen Archive */}
+        <div className="page-header-banner" style={{
+          backgroundColor: 'var(--paper-lift)',
+          backgroundImage: 'var(--paper-grain)',
+          backgroundRepeat: 'repeat',
+          border: '2px solid var(--border-tech)',
+          boxShadow: '3px 3px 0 var(--border-tech)',
+          padding: 'var(--space-xl)',
           marginBottom: 'var(--space-2xl)',
           display: 'flex',
           justifyContent: 'space-between',
@@ -35,21 +37,19 @@ export const CreativesPage: React.FC<CreativesPageProps> = ({
           flexWrap: 'wrap',
           gap: 'var(--space-lg)'
         }}>
-          <div style={{ maxWidth: '640px' }}>
-            <span className="event-badge" style={{ background: 'rgba(56, 189, 248, 0.12)', color: 'var(--pixel-blue)', borderColor: 'rgba(56, 189, 248, 0.3)' }}>
-              Creative Studio
-            </span>
+          <div style={{ maxWidth: '660px' }}>
+            <div className="section-tag">[STUDIO // PRINT ROOM ARCHIVE]</div>
             <h1 style={{ marginTop: '8px', fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
-              Design & Media Showcase
+              Design &amp; Media Specimen
             </h1>
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
-              Explore UI/UX prototypes, event photography, aftermovies, and 3D artwork crafted by student creators across <strong>RIT Kottayam</strong>.
+            <p style={{ fontSize: '0.98rem', color: 'var(--ink-soft)', marginTop: '8px', lineHeight: 1.6 }}>
+              Explore UI/UX prototypes, event photography, typography specimens, and visual artwork crafted by student creators across <strong>RIT Kottayam</strong>.
             </p>
           </div>
 
           <button className="btn btn-primary" onClick={onOpenSubmitCreative}>
-            <Sparkles size={16} />
-            Submit Creative Work
+            <Sparkles size={15} />
+            Submit Creative Specimen
           </button>
         </div>
 
@@ -59,8 +59,8 @@ export const CreativesPage: React.FC<CreativesPageProps> = ({
           showSearch={true}
           showViewAll={false}
           onOpenSubmitCreative={onOpenSubmitCreative}
-          title="All Featured Works"
-          tagline="CAMPUS CREATIVE SHOWCASE"
+          title="Creative Archive Specimens"
+          tagline="[GALLERY // MEDIA REGISTRY]"
         />
       </div>
     </div>

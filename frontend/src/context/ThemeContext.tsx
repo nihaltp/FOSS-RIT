@@ -10,18 +10,16 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem('foss_theme') as Theme;
-    return saved || 'dark';
-  });
+  const [theme, setTheme] = useState<Theme>('dark');
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('foss_theme', theme);
-  }, [theme]);
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('foss_theme', 'dark');
+  }, []);
 
   const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+    // Dark mode is the permanent retro terminal aesthetic
+    setTheme('dark');
   };
 
   return (

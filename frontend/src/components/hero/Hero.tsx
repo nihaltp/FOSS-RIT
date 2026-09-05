@@ -8,27 +8,28 @@ export const Hero: React.FC = () => {
     <section className="hero-section">
       <div className="container hero-container">
         <div className="hero-centered">
-          {/* Stamp badge — square, acid-green outlined */}
-          <div className="hero-pill-badge">
-            <span className="hero-pill-dot"></span>
-            <span>RIT Kottayam • FOSS Community</span>
+          {/* Header Index Stamp — Vintage Computing Document Marker */}
+          <div className="hero-tech-stamp">
+            <span className="hero-tech-stamp-dot"></span>
+            <span>// DOC_REF: RIT-FOSS-2026 // CHAPTER 2160 // KOTTAYAM, KERALA</span>
           </div>
 
           <h1 className="hero-title">
             Ship Free &amp;<br />Open Source.
           </h1>
 
-          {/* Editorial ruled divider */}
+          {/* Technical Ruled Divider */}
           <div className="hero-editorial-rule">
-            <span className="hero-editorial-rule-label">About the Club</span>
+            <span className="hero-editorial-rule-label">[ SEC. 01 // ABOUT THE COMMUNITY ]</span>
           </div>
 
           <p className="hero-description">
-            The student Free and Open Source Software community at <strong>Rajiv Gandhi Institute of Technology (RIT), Kottayam</strong>, in active collaboration with <strong>TinkerHub</strong>. We believe knowledge should be free, open, and accessible to everyone.
+            The student Free and Open Source Software community at <strong>Rajiv Gandhi Institute of Technology (RIT), Kottayam</strong>, in active collaboration with <strong>TinkerHub</strong>. We believe knowledge, source code, and creative tools should be free, open, and accessible to everyone.
           </p>
 
+          {/* Pull-Quote with Classic Double Border / Physical Paper Framing */}
           <blockquote className="hero-quote">
-            <Quote className="quote-icon" size={20} />
+            <Quote className="quote-icon" size={18} />
             <p className="hero-quote-text">
               "Information flow is what the Internet is about. Information sharing is power. If you don't share your ideas, smart people can't do anything about them, and you'll remain anonymous and powerless."
             </p>
@@ -37,22 +38,23 @@ export const Hero: React.FC = () => {
             </cite>
           </blockquote>
 
+          {/* Tactile Inverted CTA Cluster */}
           <div className="hero-cta-group">
             <Link to="/projects" className="btn btn-primary">
-              <Layers size={17} />
+              <Layers size={15} />
               Explore Projects
             </Link>
             <a href="#events" className="btn btn-secondary">
-              <Compass size={17} />
+              <Compass size={15} />
               View Workshops
             </a>
             <Link to="/manifesto" className="btn btn-ghost">
-              Manifesto <ArrowRight size={15} />
+              Manifesto <ArrowRight size={14} />
             </Link>
           </div>
         </div>
 
-        {/* Live Metrics Ribbon */}
+        {/* Live Metrics Ribbon — Hardware Diagnostic Gauge / Punchcard Block */}
         <StatsRibbon />
       </div>
     </section>

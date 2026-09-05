@@ -30,22 +30,23 @@ export const Navbar: React.FC = () => {
     <header className="navbar">
       <div className="container nav-container">
         {/* Left: Brand Logo */}
-        <Link to="/" className="brand-logo">
+        <Link to="/" className="brand-logo" title="FOSS Club RIT - Free & Open Source Software">
           <div className="brand-logo-icon">
             <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
-              <rect width="32" height="32" rx="6" fill="var(--foss-mint)" />
-              <rect x="7" y="9" width="4" height="4" fill="#0F1710" />
-              <rect x="21" y="9" width="4" height="4" fill="#0F1710" />
-              <path d="M8 18 Q16 27 24 18" stroke="#0F1710" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+              <rect width="32" height="32" fill="var(--ink-black)" />
+              <rect x="2" y="2" width="28" height="28" fill="var(--paper-base)" />
+              <rect x="6" y="8" width="5" height="5" fill="var(--ink-black)" />
+              <rect x="21" y="8" width="5" height="5" fill="var(--ink-black)" />
+              <path d="M7 19 H25 V23 H7 Z" fill="var(--vibe-accent)" />
             </svg>
           </div>
           <div className="brand-logo-text">
-            <span className="brand-logo-title">FOSS Club RIT</span>
-            <span className="brand-logo-sub">x TinkerHub</span>
+            <span className="brand-logo-title">FOSS CLUB RIT</span>
+            <span className="brand-logo-sub">[SYS.2160 // TINKERHUB]</span>
           </div>
         </Link>
 
-        {/* Center: Desktop Navigation Links */}
+        {/* Center: Desktop Navigation Links with Technical Index */}
         <nav className="desktop-nav">
           <ul className="nav-links">
             <li>
@@ -54,7 +55,7 @@ export const Navbar: React.FC = () => {
                 end
                 className={({ isActive }) => `nav-link ${isActive && !location.hash ? 'active-nav-link' : ''}`}
               >
-                Overview
+                <span className="nav-index">01</span>Overview
               </NavLink>
             </li>
             <li>
@@ -62,7 +63,7 @@ export const Navbar: React.FC = () => {
                 to="/projects" 
                 className={({ isActive }) => `nav-link ${isActive ? 'active-nav-link' : ''}`}
               >
-                Projects
+                <span className="nav-index">02</span>Projects
               </NavLink>
             </li>
             <li>
@@ -70,7 +71,7 @@ export const Navbar: React.FC = () => {
                 to="/studio" 
                 className={({ isActive }) => `nav-link ${isActive ? 'active-nav-link' : ''}`}
               >
-                Studio
+                <span className="nav-index">03</span>Studio
               </NavLink>
             </li>
             <li>
@@ -78,7 +79,7 @@ export const Navbar: React.FC = () => {
                 to="/leaderboard" 
                 className={({ isActive }) => `nav-link ${isActive ? 'active-nav-link' : ''}`}
               >
-                Leaderboard
+                <span className="nav-index">04</span>Leaderboard
               </NavLink>
             </li>
             <li>
@@ -86,7 +87,7 @@ export const Navbar: React.FC = () => {
                 to="/manifesto" 
                 className={({ isActive }) => `nav-link ${isActive ? 'active-nav-link' : ''}`}
               >
-                Manifesto
+                <span className="nav-index">05</span>Manifesto
               </NavLink>
             </li>
           </ul>
@@ -94,24 +95,19 @@ export const Navbar: React.FC = () => {
 
         {/* Right: Actions & Theme Controls */}
         <div className="nav-actions">
-          {/* Builder Vibe Persona Switcher Pill */}
+          {/* Builder Persona Switcher (Styled as DIP Switch / System Mode) */}
           <div style={{ position: 'relative' }}>
             <button
               onClick={() => setVibeMenuOpen(!vibeMenuOpen)}
-              className="theme-toggle-btn"
-              style={{
-                width: 'auto',
-                padding: '0 10px',
-                gap: '6px',
-                borderColor: `${activeVibe.color}66`,
-                boxShadow: `0 0 12px ${activeVibe.glow}`,
-                transition: 'all 0.25s ease'
-              }}
-              title={`Builder Vibe: ${activeVibe.name} (Click to switch theme)`}
-              aria-label="Switch builder vibe theme"
+              className="vibe-switch-btn"
+              title={`System Mode: ${activeVibe.name} (Click to toggle)`}
+              aria-label="Switch builder persona theme"
             >
-              <MascotIcon vibe={activeVibe.id} size={18} color={activeVibe.color} />
-              <span style={{ fontSize: '0.78rem', fontFamily: 'var(--font-mono)', color: activeVibe.color, fontWeight: 700 }}>
+              <MascotIcon vibe={activeVibe.id} size={15} color={activeVibe.color} />
+              <span className="vibe-switch-label">
+                SYS: {activeVibe.id.toUpperCase()}
+              </span>
+              <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: activeVibe.color, fontWeight: 700 }}>
                 {activeVibe.emoticon}
               </span>
             </button>
@@ -122,9 +118,9 @@ export const Navbar: React.FC = () => {
                 style={{ minWidth: '240px', right: 0 }}
                 onClick={() => setVibeMenuOpen(false)}
               >
-                <div style={{ padding: '8px 12px', borderBottom: '1px solid var(--surface-border)' }}>
-                  <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
-                    CHOOSE BUILDER VIBE
+                <div style={{ padding: '8px 12px', borderBottom: '1px solid var(--border-tech)', background: 'var(--paper-warm)' }}>
+                  <div style={{ fontSize: '0.68rem', fontWeight: 700, color: 'var(--ink-black)', fontFamily: 'var(--font-mono)', letterSpacing: '0.08em' }}>
+                    // SELECT SYSTEM PERSONA
                   </div>
                 </div>
                 <div style={{ padding: '6px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -141,29 +137,30 @@ export const Navbar: React.FC = () => {
                         }}
                         className="dropdown-item"
                         style={{
-                          background: isCur ? `${v.color}22` : 'transparent',
-                          border: `1px solid ${isCur ? v.color : 'transparent'}`,
-                          borderRadius: 'var(--radius-sm)',
+                          background: isCur ? 'var(--ink-black)' : 'transparent',
+                          color: isCur ? 'var(--paper-base)' : 'var(--ink-black)',
+                          border: `1px solid ${isCur ? 'var(--ink-black)' : 'transparent'}`,
+                          borderRadius: 0,
                           padding: '6px 10px',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'space-between',
                           cursor: 'pointer',
-                          transition: 'all 0.15s ease'
+                          transition: 'all 0.12s ease'
                         }}
                       >
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                          <MascotIcon vibe={id} size={20} color={v.color} />
+                          <MascotIcon vibe={id} size={18} color={isCur ? 'var(--paper-base)' : v.color} />
                           <div>
-                            <div style={{ fontSize: '0.82rem', fontWeight: 600, color: isCur ? v.color : 'var(--text-primary)' }}>
+                            <div style={{ fontSize: '0.8rem', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
                               {v.name}
                             </div>
-                            <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+                            <div style={{ fontSize: '0.68rem', color: isCur ? '#D4CDC0' : 'var(--ink-muted)' }}>
                               {v.role}
                             </div>
                           </div>
                         </div>
-                        <span style={{ fontSize: '0.78rem', fontFamily: 'var(--font-mono)', color: v.color, fontWeight: 700 }}>
+                        <span style={{ fontSize: '0.74rem', fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
                           {v.emoticon}
                         </span>
                       </button>
@@ -178,13 +175,13 @@ export const Navbar: React.FC = () => {
           <a 
             href="https://github.com/vertigotalks7/FOSS-RIT" 
             target="_blank" 
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" 
             className="btn btn-secondary btn-sm nav-signin-btn"
             title="Star and contribute on GitHub"
           >
             <GitHubIcon size={14} />
-            <span className="signin-text">GitHub</span>
-            <Star size={12} color="var(--gold)" />
+            <span className="signin-text">GITHUB</span>
+            <Star size={12} color="var(--amber-crt)" />
           </a>
 
           {/* Mobile Hamburger Toggle */}
@@ -208,35 +205,35 @@ export const Navbar: React.FC = () => {
               className={({ isActive }) => `mobile-nav-link ${isActive && !location.hash ? 'active' : ''}`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              <Compass size={16} /> Overview
+              <Compass size={16} /> [01] OVERVIEW
             </NavLink>
             <NavLink 
               to="/projects" 
               className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              <Layers size={16} /> Projects Radar
+              <Layers size={16} /> [02] PROJECTS RADAR
             </NavLink>
             <NavLink 
               to="/studio" 
               className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              <Palette size={16} /> Creative Studio
+              <Palette size={16} /> [03] CREATIVE STUDIO
             </NavLink>
             <NavLink 
               to="/leaderboard" 
               className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              <Trophy size={16} /> Leaderboard
+              <Trophy size={16} /> [04] LEADERBOARD
             </NavLink>
             <NavLink 
               to="/manifesto" 
               className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              <ShieldAlert size={16} /> Manifesto
+              <ShieldAlert size={16} /> [05] MANIFESTO
             </NavLink>
 
             {/* Mobile GitHub Link */}
@@ -245,15 +242,15 @@ export const Navbar: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="mobile-nav-link"
-              style={{ color: 'var(--foss-mint)', fontWeight: 600 }}
+              style={{ color: 'var(--vibe-accent)', fontWeight: 700 }}
             >
-              <GitHubIcon size={16} /> Star on GitHub ★
+              <GitHubIcon size={16} /> [REPO] STAR ON GITHUB ★
             </a>
 
             {/* Mobile Builder Persona Selector */}
-            <div style={{ marginTop: 'var(--space-md)', paddingTop: 'var(--space-md)', borderTop: '1px solid var(--surface-border)' }}>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', marginBottom: '8px', fontWeight: 600 }}>
-                BUILDER PERSONA
+            <div style={{ marginTop: 'var(--space-md)', paddingTop: 'var(--space-md)', borderTop: '2px solid var(--border-tech)' }}>
+              <div style={{ fontSize: '0.68rem', color: 'var(--ink-black)', fontFamily: 'var(--font-mono)', marginBottom: '8px', fontWeight: 700, letterSpacing: '0.06em' }}>
+                // BUILDER PERSONA
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '6px' }}>
                 {(Object.keys(VIBES) as VibeId[]).map(id => {
@@ -267,21 +264,23 @@ export const Navbar: React.FC = () => {
                         setMobileMenuOpen(false);
                       }}
                       style={{
-                        background: isCur ? `${v.color}22` : 'var(--surface-raised)',
-                        borderColor: isCur ? v.color : 'var(--surface-border)',
-                        border: '1px solid',
-                        borderRadius: 'var(--radius-sm)',
+                        background: isCur ? 'var(--ink-black)' : 'var(--paper-lift)',
+                        color: isCur ? 'var(--paper-base)' : 'var(--ink-black)',
+                        borderColor: 'var(--border-tech)',
+                        border: '1px solid var(--border-tech)',
+                        borderRadius: 0,
                         padding: '8px 4px',
                         cursor: 'pointer',
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
-                        gap: '4px'
+                        gap: '4px',
+                        boxShadow: isCur ? 'none' : '1px 1px 0 var(--border-tech)'
                       }}
                     >
-                      <MascotIcon vibe={id} size={22} color={v.color} />
-                      <span style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: isCur ? v.color : 'var(--text-secondary)', fontWeight: 600 }}>
-                        {id.charAt(0).toUpperCase() + id.slice(1)}
+                      <MascotIcon vibe={id} size={18} color={isCur ? 'var(--paper-base)' : v.color} />
+                      <span style={{ fontSize: '0.65rem', fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
+                        {id.toUpperCase()}
                       </span>
                     </button>
                   );

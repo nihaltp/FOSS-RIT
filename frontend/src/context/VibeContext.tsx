@@ -12,6 +12,7 @@ export interface VibeData {
   rgb: string;
   glow: string;
   subtle: string;
+  contrast: string;
   quote: string;
   tips: string[];
 }
@@ -22,11 +23,12 @@ export const VIBES: Record<VibeId, VibeData> = {
     name: 'The Happy Hacker',
     role: 'Open Source Explorer',
     emoticon: ':)',
-    color: '#08B74F',
-    hover: '#069e43',
-    rgb: '8, 183, 79',
-    glow: 'rgba(8, 183, 79, 0.35)',
-    subtle: 'rgba(8, 183, 79, 0.12)',
+    color: '#519F50',
+    hover: '#689D6A',
+    contrast: '#1C1B19',
+    rgb: '81, 159, 80',
+    glow: 'rgba(81, 159, 80, 0.35)',
+    subtle: 'rgba(81, 159, 80, 0.12)',
     quote: 'Every master was once a beginner who refused to stop tinkering.',
     tips: [
       'git commit --amend lets you quickly fix your last commit message or staging without a messy extra commit!',
@@ -40,11 +42,12 @@ export const VIBES: Record<VibeId, VibeData> = {
     name: 'The Systems Master',
     role: 'Systems & Backend Architect',
     emoticon: ';)',
-    color: '#2B7FFF',
-    hover: '#1a6be6',
-    rgb: '43, 127, 255',
-    glow: 'rgba(43, 127, 255, 0.35)',
-    subtle: 'rgba(43, 127, 255, 0.12)',
+    color: '#2C78BF',
+    hover: '#5DA5E8',
+    contrast: '#FCE8C3',
+    rgb: '44, 120, 191',
+    glow: 'rgba(44, 120, 191, 0.35)',
+    subtle: 'rgba(44, 120, 191, 0.12)',
     quote: 'Talk is cheap. Show me the code.',
     tips: [
       'grep -rnw . -e "search_term" searches recursively across code files in seconds.',
@@ -58,11 +61,12 @@ export const VIBES: Record<VibeId, VibeData> = {
     name: 'The Vibe Coder',
     role: 'UI/UX & Creative Craftsman',
     emoticon: '^_^',
-    color: '#F5C040',
-    hover: '#e0ab28',
-    rgb: '245, 192, 64',
-    glow: 'rgba(245, 192, 64, 0.35)',
-    subtle: 'rgba(245, 192, 64, 0.12)',
+    color: '#FBB829',
+    hover: '#FED06E',
+    contrast: '#1C1B19',
+    rgb: '251, 184, 41',
+    glow: 'rgba(251, 184, 41, 0.35)',
+    subtle: 'rgba(251, 184, 41, 0.12)',
     quote: 'Good software is functional. Great software is a joy to experience.',
     tips: [
       'console.table(data) renders arrays of objects into neat inspectable tables in devtools.',
@@ -76,11 +80,12 @@ export const VIBES: Record<VibeId, VibeData> = {
     name: 'The Kernel Debugger',
     role: 'Low-Level & OS Hacker',
     emoticon: ':|',
-    color: '#E84A36',
-    hover: '#d03825',
-    rgb: '232, 74, 54',
-    glow: 'rgba(232, 74, 54, 0.35)',
-    subtle: 'rgba(232, 74, 54, 0.12)',
+    color: '#EF2F27',
+    hover: '#F75341',
+    contrast: '#FCE8C3',
+    rgb: '239, 47, 39',
+    glow: 'rgba(239, 47, 39, 0.35)',
+    subtle: 'rgba(239, 47, 39, 0.12)',
     quote: "There is no cloud, just someone else's Linux computer.",
     tips: [
       'strace -c <command> profiles system calls to pinpoint I/O and latency bottlenecks.',
@@ -115,21 +120,28 @@ export const VibeProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // Set builder vibe CSS variables
     root.style.setProperty('--vibe-accent', activeVibe.color);
     root.style.setProperty('--vibe-hover', activeVibe.hover);
+    root.style.setProperty('--vibe-contrast', activeVibe.contrast);
     root.style.setProperty('--vibe-rgb', activeVibe.rgb);
     root.style.setProperty('--vibe-glow', activeVibe.glow);
     root.style.setProperty('--vibe-subtle', activeVibe.subtle);
 
-    // Propagate to new acid token system (drives entire new design)
+    // Retro technical & editorial accents (now fully reactive to selected vibe)
+    root.style.setProperty('--forest-tech', activeVibe.color);
+    root.style.setProperty('--moss-tech', activeVibe.hover);
+    root.style.setProperty('--border-active', activeVibe.color);
+
+    // Propagate to acid token system
     root.style.setProperty('--acid', activeVibe.color);
     root.style.setProperty('--acid-dim', activeVibe.subtle);
     root.style.setProperty('--acid-glow', activeVibe.glow);
 
-    // Legacy aliases (keeps old code working)
+    // Legacy aliases
     root.style.setProperty('--foss-mint', activeVibe.color);
     root.style.setProperty('--foss-mint-hover', activeVibe.hover);
     root.style.setProperty('--foss-mint-glow', activeVibe.glow);
     root.style.setProperty('--foss-mint-subtle', activeVibe.subtle);
-    root.style.setProperty('--shadow-mint', `0 0 24px ${activeVibe.glow}`);
+    root.style.setProperty('--shadow-mint', `2px 2px 0 ${activeVibe.color}`);
+    root.style.setProperty('--shadow-offset-acid', `2px 2px 0 ${activeVibe.color}`);
 
     localStorage.setItem('foss_builder_vibe', vibeId);
   }, [activeVibe, vibeId]);

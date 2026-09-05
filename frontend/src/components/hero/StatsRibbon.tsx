@@ -19,18 +19,22 @@ export const StatsRibbon: React.FC = () => {
   return (
     <div className="stats-ribbon">
       <div className="stat-item">
+        <div className="stat-index-code">REG: PRJ_01</div>
         <div className="stat-number">{stats.projects_built}<span>+</span></div>
         <div className="stat-label">Campus FOSS Projects</div>
       </div>
       <div className="stat-item">
+        <div className="stat-index-code">REG: WKS_02</div>
         <div className="stat-number">{stats.workshops_hosted || 20}<span>+</span></div>
         <div className="stat-label">TinkerHub RIT Sessions</div>
       </div>
       <div className="stat-item">
+        <div className="stat-index-code">REG: CH_2160</div>
         <div className="stat-number">2160</div>
         <div className="stat-label">TinkerHub Chapter ID</div>
       </div>
       <div className="stat-item">
+        <div className="stat-index-code">REG: LBR_100</div>
         <div className="stat-number">100<span>%</span></div>
         <div className="stat-label">Free & Open Source</div>
       </div>

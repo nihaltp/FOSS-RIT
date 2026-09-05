@@ -21,21 +21,23 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenRsvp, refreshKey }
         </div>
 
         {/* Page Banner */}
-        <div style={{
-          background: 'var(--open-gray)',
-          border: '1px solid var(--surface-border)',
-          borderRadius: 'var(--radius-xl)',
-          padding: 'var(--space-2xl)',
+        <div className="page-header-banner" style={{
+          backgroundColor: 'var(--paper-lift)',
+          backgroundImage: 'var(--paper-grain)',
+          backgroundRepeat: 'repeat',
+          border: '2px solid var(--border-tech)',
+          boxShadow: '3px 3px 0 var(--border-tech)',
+          borderRadius: 0,
+          padding: 'var(--space-xl)',
           marginBottom: 'var(--space-2xl)',
           position: 'relative',
-          overflow: 'hidden'
         }}>
           <div style={{ maxWidth: '680px' }}>
-            <span className="event-badge">Campus Schedule</span>
+            <div className="section-tag">[CAMPUS SCHEDULE // SESSIONS]</div>
             <h1 style={{ marginTop: '8px', fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
-              Workshops, Hackathons & Bootcamps
+              Workshops, Hackathons &amp; Bootcamps
             </h1>
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
+            <p style={{ fontSize: '0.98rem', color: 'var(--ink-soft)', marginTop: '8px', lineHeight: 1.6 }}>
               Explore hands-on technical sessions organized by <strong>FOSS Club RIT Kottayam</strong> in collaboration with <strong>TinkerHub</strong>. All sessions are 100% free and beginner-friendly.
             </p>
           </div>

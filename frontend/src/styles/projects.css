@@ -1,6 +1,6 @@
 /* ==========================================================================
    Projects & Creative Showcase Section Styles
-   Neo-Brutalist / Editorial Edition
+   Authentic Retro Computing & Technical Archive Edition
    ========================================================================== */
 
 /* ── Project List ─────────────────────────────────────────────────────── */
@@ -10,21 +10,25 @@
   gap: var(--space-sm);
 }
 
-/* ── Project Row Card — Brutalist Bordered ────────────────────────────── */
+/* ── Project Row Card — Archival Catalogue Spec Sheet ─────────────────── */
 .project-row-card {
-  background: var(--ink-2);
-  border: 2px solid var(--ink-4);
+  background-color: var(--paper-lift);
+  background-image: var(--paper-grain);
+  background-repeat: repeat;
+  border: 1.5px solid var(--border-tech);
   border-radius: 0;
+  box-shadow: 2px 2px 0 var(--border-tech);
   padding: var(--space-md) var(--space-lg);
   transition:
     transform var(--transition-fast),
-    border-color var(--transition-fast),
-    box-shadow var(--transition-fast);
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+  position: relative;
 }
 
 .project-row-card:hover {
-  border-color: var(--acid);
-  box-shadow: var(--shadow-offset-acid);
+  border-color: var(--border-tech);
+  box-shadow: 4px 4px 0 var(--border-tech);
   transform: translate(-2px, -2px);
 }
 
@@ -49,61 +53,61 @@
   flex-wrap: wrap;
 }
 
-.project-row-title {
+/* Archival Catalogue ID Badge */
+.project-cat-id {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  color: var(--paper);
-  text-decoration: none;
-  transition: color var(--transition-fast);
+  color: var(--vibe-accent);
+  letter-spacing: 0.05em;
+  background: var(--paper-warm);
+  padding: 1px 5px;
+  border: 1px solid var(--border-subtle);
 }
 
-.project-row-title:hover { color: var(--acid); }
-.creative-row-card .project-row-title:hover { color: var(--cobalt); }
+.project-row-title {
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  letter-spacing: 0.02em;
+}
 
-/* ── Inline Badges ────────────────────────────────────────────────────── */
+.project-row-title:hover {
+  color: var(--vibe-accent);
+  text-decoration: underline;
+}
+
+/* ── Technical Metadata Stamps & Badges ───────────────────────────────── */
 .tag-badge-pill {
-  font-size: 0.66rem;
+  font-size: 0.62rem;
   font-family: var(--font-mono);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--acid);
-  background: var(--acid-dim);
-  border: 1px solid var(--acid);
-  padding: 2px 8px;
+  color: var(--ink-black);
+  background: var(--paper-warm);
+  border: 1px solid var(--border-tech);
+  padding: 1px 6px;
   border-radius: 0;
 }
 
 .category-badge-pill {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 2px 8px;
+  padding: 1px 6px;
   border-radius: 0;
-  background: var(--cobalt-dim);
-  border: 1px solid var(--cobalt);
-  color: var(--cobalt);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid var(--cobalt-tech);
+  color: var(--cobalt-tech);
 }
 
-.verified-student-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  background: var(--acid-dim);
-  color: var(--acid);
-  border: 1px solid var(--acid);
-  border-radius: 0;
-  padding: 2px 7px;
-  font-size: 0.66rem;
-  font-weight: 700;
-  font-family: var(--font-mono);
-  letter-spacing: 0.04em;
-}
-
-/* ── Row Actions / Stats ──────────────────────────────────────────────── */
+/* ── Row Actions / Stats — Monospaced Telemetry ───────────────────────── */
 .project-row-actions {
   display: flex;
   align-items: center;
@@ -113,11 +117,11 @@
 .project-stats-inline {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 0.78rem;
+  gap: 12px;
+  font-size: 0.76rem;
   font-family: var(--font-mono);
-  font-weight: 600;
-  color: var(--text-muted);
+  font-weight: 700;
+  color: var(--ink-muted);
 }
 
 .project-stat {
@@ -127,17 +131,17 @@
 }
 
 .project-view-btn {
-  padding: 4px 10px;
-  font-size: 0.75rem;
-  height: 28px;
+  padding: 3px 8px;
+  font-size: 0.72rem;
+  height: 26px;
   gap: 4px;
   border-radius: 0;
 }
 
 .project-row-desc {
   font-size: 0.88rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
+  color: var(--ink-soft);
+  line-height: 1.55;
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -152,40 +156,43 @@
   justify-content: space-between;
   gap: var(--space-md);
   flex-wrap: wrap;
-  padding-top: 6px;
-  border-top: 1px solid var(--ink-4);
+  padding-top: 8px;
+  border-top: 1px dashed var(--border-dashed);
 }
 
 .tags-row-inline {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 4px;
 }
 
 .project-author-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  gap: 5px;
+  font-size: 0.72rem;
+  color: var(--ink-muted);
   font-family: var(--font-mono);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
-.project-author-link:hover { color: var(--acid); }
+.project-author-link:hover {
+  color: var(--vibe-accent);
+  text-decoration: underline;
+}
 
 .project-author-pfp {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid var(--ink-4);
+  width: 18px;
+  height: 18px;
+  border-radius: 0;
+  border: 1px solid var(--border-tech);
   object-fit: cover;
   flex-shrink: 0;
 }
 
 /* ==========================================================================
-   Creative Showcase — Horizontal Media Row
+   Creative Showcase — Design Lab & Print Room Specimen
    ========================================================================== */
 .creative-row-card {
   display: flex;
@@ -196,36 +203,32 @@
 .creative-thumb-wrapper {
   position: relative;
   width: 152px;
-  height: 90px;
+  height: 92px;
   border-radius: 0;
   overflow: hidden;
   flex-shrink: 0;
-  border: 2px solid var(--ink-4);
-  background: var(--ink);
+  border: 1.5px solid var(--border-tech);
+  background: var(--paper-warm);
   cursor: pointer;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 2px 2px 0 var(--border-tech);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .creative-thumb-wrapper:hover {
-  border-color: var(--acid);
-  box-shadow: 3px 3px 0 var(--acid);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--border-tech);
 }
 
 .creative-thumb-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.creative-thumb-wrapper:hover .creative-thumb-img {
-  transform: scale(1.06);
 }
 
 .creative-play-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(13, 13, 13, 0.45);
+  background: rgba(18, 19, 20, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -234,21 +237,21 @@
 }
 
 .creative-thumb-wrapper:hover .creative-play-overlay {
-  background: rgba(13, 13, 13, 0.15);
+  background: rgba(18, 19, 20, 0.15);
 }
 
 .creative-duration-pill {
   position: absolute;
-  bottom: 4px;
-  right: 4px;
-  background: rgba(13, 13, 13, 0.9);
-  color: var(--paper);
+  bottom: 3px;
+  right: 3px;
+  background: var(--ink-black);
+  color: var(--paper-base);
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 700;
-  padding: 2px 5px;
+  padding: 1px 4px;
   border-radius: 0;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
 }
 
 @media (max-width: 640px) {

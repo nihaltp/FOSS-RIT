@@ -1,70 +1,152 @@
 /* ==========================================================================
    FOSS Club Design System - Tokens & CSS Variables
-   Neo-Brutalist / Editorial / Creative Technology Edition
+   Dark Gruvbox / Warm Retro Terminal Edition with Nothing OS NDot
    ========================================================================== */
 
+/* ── Nothing OS Dot Matrix Typography ─────────────────────────────────────── */
+@font-face {
+  font-family: 'NDot57';
+  src: url('/fonts/Ndot57-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NDot55';
+  src: url('/fonts/Ndot55-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NDot';
+  src: url('/fonts/Ndot57-Regular.otf') format('opentype'),
+       url('/fonts/Ndot55-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  /* ── Core Palette ─────────────────────────────────────────────────────── */
-  --ink:    #0D0D0D;       /* Primary dark background */
-  --ink-2:  #161616;       /* Slightly lifted dark surface */
-  --ink-3:  #1F1F1F;       /* Card surface */
-  --ink-4:  #2A2A2A;       /* Card border / dividers */
-  --ink-5:  #3D3D3D;       /* Muted border */
+  /* ── Core Dark Gruvbox / Warm Charcoal Surfaces ────────────────────────── */
+  --bg-dark:        #1F1C18;     /* Warmer deep espresso-charcoal background */
+  --bg-lift:        #28241F;     /* Warm lifted card / window surface */
+  --bg-surface:     #231F1A;     /* Warm intermediate section surface */
+  --bg-darker:      #171511;     /* Warm recessed well / input background */
 
-  --paper:  #F5F1EB;       /* Warm off-white — editorial key tone */
-  --chalk:  #FAFAF7;       /* Lighter paper */
-  --dust:   #8A8780;       /* Muted text on light backgrounds */
+  /* ── Hard Terminal Borders ─────────────────────────────────────────────── */
+  --border-tech:    #453E36;     /* Warmer terminal border / ruled divider */
+  --border-subtle:  #332D26;     /* Subtle interior divider */
+  --border-dashed:  #594F45;     /* Dashed terminal separator */
+  --border-active:  #FBB829;     /* Active terminal highlight */
 
-  --forest: #1A3D2B;       /* Deep green surface */
-  --moss:   #2E6B4A;       /* Mid green accent */
+  /* ── Tactile Dark Paper Grain Texture (SVG Noise) ───────────────────────── */
+  --paper-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.9 0 0 0 0.05  0 0.82 0 0 0.04  0 0 0.7 0 0.03  0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
 
-  /* --acid is driven by the Builder Vibe switcher via VibeContext.
-     Default is electric lime (hacker vibe). Changed at runtime via JS. */
-  --vibe-accent:  #BEFF5A;
-  --vibe-hover:   #A8E847;
-  --vibe-glow:    rgba(190, 255, 90, 0.35);
-  --vibe-subtle:  rgba(190, 255, 90, 0.12);
+  /* ── Warm Terminal Foreground / Typography ─────────────────────────────── */
+  --text-primary:   #FFF1D6;     /* Warm ivory cream foreground */
+  --text-secondary: #DFCBB1;     /* Warm parchment beige text */
+  --text-muted:     #9E8D7C;     /* Warm stone / comment gray */
+  --text-faint:     #594E44;     /* Faint grid / crosshairs */
 
-  --acid:     var(--vibe-accent);
-  --acid-dim: var(--vibe-subtle);
-  --acid-glow: var(--vibe-glow);
+  /* ── Srcery 16-Color Terminal Palette ──────────────────────────────────── */
+  --srcery-black:   #1C1B19;
+  --srcery-red:     #EF2F27;     /* Bright terminal red */
+  --srcery-green:   #519F50;     /* Hacker green */
+  --srcery-yellow:  #FBB829;     /* Warm amber / gold cursor */
+  --srcery-blue:    #2C78BF;     /* Systems cobalt */
+  --srcery-magenta: #E02C6D;     /* Magenta / pink */
+  --srcery-cyan:    #0AAEB3;     /* Cyan / teal */
+  --srcery-white:   #BAA67F;     /* Sand / light beige */
 
-  --rust:   #C94B2B;       /* Warm red accent */
-  --rust-dim: rgba(201, 75, 43, 0.12);
-  --gold:   #E8B84B;       /* Warm gold (replaces byte-yellow) */
-  --gold-dim: rgba(232, 184, 75, 0.12);
-  --cobalt: #3B6EF0;       /* Electric blue (replaces pixel-blue) */
-  --cobalt-dim: rgba(59, 110, 240, 0.12);
+  --srcery-bright-black:   #2D2B28;
+  --srcery-bright-red:     #F75341;
+  --srcery-bright-green:   #98971A;
+  --srcery-bright-yellow:  #FED06E;
+  --srcery-bright-blue:    #5DA5E8;
+  --srcery-bright-magenta: #FF5C8F;
+  --srcery-bright-cyan:    #2BE4D0;
+  --srcery-bright-white:   #FCE8C3;
 
-  /* ── Legacy aliases (keeps old code working) ──────────────────────────── */
-  --foss-mint:         var(--acid);
-  --foss-mint-hover:   #A8E847;
-  --foss-mint-glow:    var(--acid-glow);
-  --foss-mint-subtle:  var(--acid-dim);
-  --code-night:        var(--ink);
-  --open-gray:         var(--ink-2);
-  --surface-raised:    var(--ink-3);
-  --surface-border:    var(--ink-4);
-  --surface-border-hover: var(--ink-5);
-  --libre-white:       var(--paper);
-  --text-primary:      var(--paper);
-  --text-secondary:    #B0ADA8;
-  --text-muted:        #6B6864;
-  --pixel-blue:        var(--cobalt);
-  --pixel-blue-subtle: var(--cobalt-dim);
-  --flame-red:         var(--rust);
-  --flame-red-subtle:  var(--rust-dim);
-  --byte-yellow:       var(--gold);
-  --byte-yellow-subtle: var(--gold-dim);
+  /* ── Builder Vibe Dynamic Accent ───────────────────────────────────────── */
+  --vibe-accent:   #519F50;       /* Default: Srcery Green */
+  --vibe-hover:    #689D6A;
+  --vibe-contrast: #1C1B19;
+  --vibe-rgb:      81, 159, 80;
+  --vibe-glow:     rgba(81, 159, 80, 0.35);
+  --vibe-subtle:   rgba(81, 159, 80, 0.12);
 
-  /* ── Typography ───────────────────────────────────────────────────────── */
-  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono:    'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --acid:          var(--vibe-accent);
+  --acid-dim:      var(--vibe-subtle);
+  --acid-glow:     var(--vibe-glow);
 
-  --tracking-tighter: -0.04em;
-  --tracking-tight:   -0.025em;
-  --tracking-normal:  -0.01em;
+  /* ── Legacy Aliases (Seamless Component Compatibility) ─────────────────── */
+  --paper-base:    var(--bg-dark);
+  --paper-lift:    var(--bg-lift);
+  --paper-warm:    var(--bg-surface);
+  --paper-dark:    var(--bg-darker);
+
+  --ink-black:     var(--text-primary);
+  --ink-soft:      var(--text-secondary);
+  --ink-muted:     var(--text-muted);
+  --ink-faint:     var(--text-faint);
+
+  --forest-tech:   var(--vibe-accent);
+  --moss-tech:     var(--vibe-hover);
+  --border-active: var(--vibe-accent);
+  --accent-signal: var(--srcery-bright-red);
+  --amber-crt:     var(--srcery-yellow);
+  --cobalt-tech:   var(--srcery-blue);
+  --crimson-stamp: var(--srcery-red);
+
+  --ink:          var(--bg-dark);
+  --ink-2:        var(--bg-lift);
+  --ink-3:        var(--bg-surface);
+  --ink-4:        var(--border-tech);
+  --ink-5:        var(--border-active);
+  --paper:        var(--text-primary);
+  --chalk:        var(--text-primary);
+  --dust:         var(--text-muted);
+  --forest:       var(--srcery-green);
+  --moss:         var(--srcery-bright-green);
+  --rust:         var(--srcery-bright-red);
+  --rust-dim:     rgba(247, 83, 65, 0.15);
+  --gold:         var(--srcery-yellow);
+  --gold-dim:     rgba(251, 184, 41, 0.15);
+  --cobalt:       var(--srcery-blue);
+  --cobalt-dim:   rgba(44, 120, 191, 0.15);
+
+  --foss-mint:         var(--vibe-accent);
+  --foss-mint-hover:   var(--vibe-hover);
+  --foss-mint-glow:    var(--vibe-glow);
+  --foss-mint-subtle:  var(--vibe-subtle);
+  --code-night:        var(--bg-dark);
+  --open-gray:         var(--bg-surface);
+  --surface-raised:    var(--bg-lift);
+  --surface-border:    var(--border-tech);
+  --surface-border-hover: var(--srcery-yellow);
+  --libre-white:       var(--text-primary);
+  --pixel-blue:        var(--srcery-blue);
+  --pixel-blue-subtle: rgba(44, 120, 191, 0.15);
+  --flame-red:         var(--srcery-red);
+  --flame-red-subtle:  rgba(239, 47, 39, 0.15);
+  --byte-yellow:       var(--srcery-yellow);
+  --byte-yellow-subtle: rgba(251, 184, 41, 0.15);
+
+  /* ── Typography (NDot Nothing OS + Space Mono + Space Grotesk) ────────── */
+  --font-ndot:     'NDot57', 'NDot55', 'NDot', monospace;
+  --font-display:  'Space Mono', 'JetBrains Mono', monospace;
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-sans:     'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:     'Space Mono', 'JetBrains Mono', monospace;
+
+  --tracking-tighter: -0.03em;
+  --tracking-tight:   -0.015em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.06em;
+  --tracking-widest:  0.12em;
 
   /* ── Spacing ──────────────────────────────────────────────────────────── */
   --space-2xs: 4px;
@@ -77,51 +159,26 @@
   --space-3xl: 64px;
   --space-4xl: 96px;
 
-  /* ── Radii ────────────────────────────────────────────────────────────── */
-  --radius-sm:   4px;   /* Reduced — more editorial */
-  --radius-md:   6px;
-  --radius-lg:   10px;
-  --radius-xl:   16px;
-  --radius-full: 9999px;
+  /* ── Rectangular Retro Radii ──────────────────────────────────────────── */
+  --radius-sm:   0px;
+  --radius-md:   0px;
+  --radius-lg:   2px;
+  --radius-xl:   3px;
+  --radius-full: 0px;
 
-  /* ── Shadows ──────────────────────────────────────────────────────────── */
-  --shadow-sm:     0 2px 4px rgba(0, 0, 0, 0.3);
-  --shadow-md:     0 4px 16px rgba(0, 0, 0, 0.45);
-  --shadow-lg:     0 8px 32px rgba(0, 0, 0, 0.55);
-  --shadow-mint:   0 0 24px var(--acid-glow);
-  /* Neo-brutalist hard offset shadows */
-  --shadow-offset:       3px 3px 0 var(--ink-4);
-  --shadow-offset-acid:  3px 3px 0 var(--acid);
-  --shadow-offset-paper: 3px 3px 0 var(--paper);
+  /* ── Stepped Terminal Shadows ─────────────────────────────────────────── */
+  --shadow-sm:           1px 1px 0 #000000;
+  --shadow-md:           2px 2px 0 #000000;
+  --shadow-lg:           3px 3px 0 #000000;
+  --shadow-stepped:      2px 2px 0 #000000;
+  --shadow-stepped-lg:   4px 4px 0 #000000;
+  --shadow-offset:       2px 2px 0 #000000;
+  --shadow-offset-acid:  2px 2px 0 var(--vibe-accent);
+  --shadow-offset-paper: 2px 2px 0 var(--border-tech);
+  --shadow-mint:         2px 2px 0 var(--vibe-accent);
 
   /* ── Transitions ──────────────────────────────────────────────────────── */
-  --transition-fast:   0.12s ease;
-  --transition-normal: 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-smooth: 0.38s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Light Theme (paper-dominant editorial mode) */
-[data-theme="light"] {
-  --ink:    #0D0D0D;
-  --ink-2:  #EFEBE3;
-  --ink-3:  #F5F1EB;
-  --ink-4:  #D8D3CB;
-  --ink-5:  #C2BDB4;
-
-  --code-night:        var(--chalk);
-  --open-gray:         var(--paper);
-  --surface-raised:    var(--chalk);
-  --surface-border:    var(--ink-4);
-  --surface-border-hover: var(--ink-5);
-
-  --text-primary:   #0D0D0D;
-  --text-secondary: #3D3A35;
-  --text-muted:     var(--dust);
-
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.09);
-  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.11);
-  --shadow-offset:       3px 3px 0 var(--ink-4);
-  --shadow-offset-acid:  3px 3px 0 var(--acid);
-  --shadow-mint:         0 0 20px var(--acid-glow);
+  --transition-fast:   0.10s ease;
+  --transition-normal: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }

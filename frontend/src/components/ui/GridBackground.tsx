@@ -10,23 +10,23 @@ interface GridPoint {
   vy: number;
 }
 
-// ── 10 Curated Transit Line Colors (Each train gets a distinct signature) ─────
+// ── 10 Curated Srcery / Gruvbox Terminal Colors ──────────────────────────────
 interface MetroLinePalette {
   color: string;
   rgb: string;
 }
 
 const METRO_LINES: MetroLinePalette[] = [
-  { color: '#BEFF5A', rgb: '190, 255, 90' },  // Acid Lime (Hacker)
-  { color: '#00E5FF', rgb: '0, 229, 255' },   // Cyan Pulse (Systems)
-  { color: '#FBBF24', rgb: '251, 191, 36' },  // Solar Amber (Vibe)
-  { color: '#C084FC', rgb: '192, 132, 252' }, // Neon Violet
-  { color: '#FB7185', rgb: '251, 113, 133' }, // Coral Pink
-  { color: '#34D399', rgb: '52, 211, 153' },  // Emerald Mint
-  { color: '#38BDF8', rgb: '56, 189, 248' },  // Sky Blue
-  { color: '#F472B6', rgb: '244, 114, 182' }, // Soft Fuchsia
-  { color: '#FB923C', rgb: '251, 146, 60' },  // Warm Tangerine
-  { color: '#A3E635', rgb: '163, 230, 53' },  // Bright Chartreuse
+  { color: '#519F50', rgb: '81, 159, 80' },    // Srcery Green (Hacker)
+  { color: '#FBB829', rgb: '251, 184, 41' },  // Srcery Amber (Vibe)
+  { color: '#F75341', rgb: '247, 83, 65' },   // Srcery Bright Red (Kernel)
+  { color: '#2C78BF', rgb: '44, 120, 191' },  // Srcery Blue (Systems)
+  { color: '#0AAEB3', rgb: '10, 174, 179' },  // Srcery Cyan
+  { color: '#E02C6D', rgb: '224, 44, 109' },  // Srcery Magenta
+  { color: '#98971A', rgb: '152, 151, 26' },  // Bright Green
+  { color: '#FED06E', rgb: '254, 208, 110' }, // Gold
+  { color: '#5DA5E8', rgb: '93, 165, 232' },  // Sky Blue
+  { color: '#2BE4D0', rgb: '43, 228, 208' },  // Aqua
 ];
 
 interface Waypoint {
@@ -47,7 +47,7 @@ interface MetroTrain {
   fadingOut: boolean;
   age: number;
   maxLifetime: number;
-  turnRate: number;        // chance to turn at intersection (lower for express, higher for local)
+  turnRate: number;
   isExpress: boolean;
 }
 
@@ -61,7 +61,6 @@ const DIRS = [
 let nextTrainId = 1;
 
 // ── Sector-Based Anti-Clumping Spawner ─────────────────────────────────────────
-// Divides the screen into 3x3 sectors and spawns in the sector with lowest density.
 function getSparseSpawnPoint(cols: number, rows: number, existingTrains: MetroTrain[]) {
   const sectorCounts = new Array(9).fill(0);
 
@@ -74,13 +73,11 @@ function getSparseSpawnPoint(cols: number, rows: number, existingTrains: MetroTr
     }
   }
 
-  // Find lowest count
   let minCount = Infinity;
   for (let i = 0; i < 9; i++) {
     if (sectorCounts[i] < minCount) minCount = sectorCounts[i];
   }
 
-  // Collect sectors at or near the minimum
   const candidateSectors: number[] = [];
   for (let i = 0; i < 9; i++) {
     if (sectorCounts[i] <= minCount + 1) {
@@ -111,8 +108,8 @@ function createTrain(
   vibeColor?: string,
   vibeRgb?: string
 ): MetroTrain {
-  let color = '#BEFF5A';
-  let rgb = '190, 255, 90';
+  let color = '#519F50';
+  let rgb = '81, 159, 80';
 
   if (vibeColor && vibeRgb && !usedColors.has(vibeColor) && Math.random() < 0.4) {
     color = vibeColor;
@@ -129,11 +126,10 @@ function createTrain(
   const dir = DIRS[Math.floor(Math.random() * DIRS.length)];
   const { c0, r0 } = getSparseSpawnPoint(cols, rows, existingTrains);
 
-  // 35% of trains are "Express" (high speed, prefers long cross-screen lines)
   const isExpress = Math.random() < 0.35;
   const speed = isExpress
-    ? 3.2 + Math.random() * 0.9  // 3.2 – 4.1 cells/s
-    : 2.2 + Math.random() * 0.8; // 2.2 – 3.0 cells/s
+    ? 3.0 + Math.random() * 0.8
+    : 2.1 + Math.random() * 0.7;
 
   const turnRate = isExpress ? 0.12 : 0.24;
 
@@ -153,10 +149,10 @@ function createTrain(
     waypoints,
     dir,
     opacity: 0,
-    targetOpacity: 0.68 + Math.random() * 0.16,
+    targetOpacity: 0.72 + Math.random() * 0.18,
     fadingOut: false,
     age: 0,
-    maxLifetime: 35 + Math.random() * 30, // 35 - 65 seconds
+    maxLifetime: 35 + Math.random() * 30,
     turnRate,
     isExpress,
   };
@@ -177,7 +173,7 @@ export const GridBackground: React.FC = () => {
     let animationFrameId: number;
     const SPACING = 42;
     const MOUSE_RADIUS = 160;
-    const REPEL_STRENGTH = 45;
+    const REPEL_STRENGTH = 40;
     const SPRING_TENSION = 0.05;
     const DAMPING = 0.86;
 
@@ -248,7 +244,7 @@ export const GridBackground: React.FC = () => {
       };
     };
 
-    // ── Trains Setup (Expanded to 10 on desktop, 5 on mobile) ────────────────
+    // ── Trains Setup ─────────────────────────────────────────────────────────
     const MAX_TRAINS = mobile ? 5 : 10;
     let trains: MetroTrain[] = [];
 
@@ -256,8 +252,8 @@ export const GridBackground: React.FC = () => {
       const rgb = getComputedStyle(document.documentElement).getPropertyValue('--vibe-rgb').trim();
       const color = getComputedStyle(document.documentElement).getPropertyValue('--vibe-accent').trim();
       return {
-        rgb: rgb || activeVibe?.rgb || '190, 255, 90',
-        color: color || activeVibe?.color || '#BEFF5A',
+        rgb: rgb || activeVibe?.rgb || '81, 159, 80',
+        color: color || activeVibe?.color || '#519F50',
       };
     };
 
@@ -283,17 +279,15 @@ export const GridBackground: React.FC = () => {
     window.addEventListener('touchend', onTouchEnd);
     window.addEventListener('resize', initGrid);
 
-    // ── Advance Trains with Anti-Clustering & Repulsion ──────────────────────
+    // ── Advance Trains with Traffic Repulsion ────────────────────────────────
     const advanceTrains = (dt: number) => {
       for (const train of trains) {
         train.age += dt;
 
-        // Smooth fade-in on spawn
         if (!train.fadingOut && train.opacity < train.targetOpacity) {
           train.opacity = Math.min(train.opacity + dt * 1.0, train.targetOpacity);
         }
 
-        // Start fade-out when lifetime is reached
         if (train.age >= train.maxLifetime && !train.fadingOut) {
           train.fadingOut = true;
         }
@@ -302,14 +296,12 @@ export const GridBackground: React.FC = () => {
           train.opacity = Math.max(0, train.opacity - dt * 0.7);
         }
 
-        // Advance along track
         train.progress += dt * train.speed;
 
         while (train.progress >= 1) {
           train.progress -= 1;
           const reached = train.waypoints[train.waypoints.length - 1];
 
-          // Check for nearby trains (traffic repulsion to prevent clustering)
           let awayX = 0;
           let awayY = 0;
           let clusterCount = 0;
@@ -323,7 +315,6 @@ export const GridBackground: React.FC = () => {
             const dr = reached.r - otherHead.r;
             const distSq = dc * dc + dr * dr;
 
-            // If another train is within 6 cells, feel repulsion away from it
             if (distSq < 36 && distSq > 0) {
               const weight = 1 / Math.sqrt(distSq);
               awayX += dc * weight;
@@ -332,13 +323,11 @@ export const GridBackground: React.FC = () => {
             }
           }
 
-          // Options from current heading
           const currDir = train.dir;
           const straight = { dx: currDir.dx, dy: currDir.dy };
           const turnLeft = { dx: -currDir.dy, dy: currDir.dx };
           const turnRight = { dx: currDir.dy, dy: -currDir.dx };
 
-          // Keep within playable grid bounds with 2-cell buffer
           const margin = 2;
           const isValid = (c: number, r: number) =>
             c >= margin && c <= cols - margin && r >= margin && r <= rows - margin;
@@ -353,14 +342,12 @@ export const GridBackground: React.FC = () => {
 
           let chosenDir = straight;
 
-          // If close to other trains, steer in the direction that maximizes distance
           if (clusterCount > 0 && availableTurns.length > 0) {
             const candidates = straightOk ? [straight, ...availableTurns] : availableTurns;
             let bestScore = -Infinity;
             let bestCandidate = candidates[0];
 
             for (const cand of candidates) {
-              // Dot product with repulsion vector
               const score = cand.dx * awayX + cand.dy * awayY + (cand === straight ? 0.3 : 0);
               if (score > bestScore) {
                 bestScore = score;
@@ -369,7 +356,6 @@ export const GridBackground: React.FC = () => {
             }
             chosenDir = bestCandidate;
           } else {
-            // Normal transit routing
             if (!straightOk || (availableTurns.length > 0 && Math.random() < train.turnRate)) {
               if (availableTurns.length > 0) {
                 chosenDir = availableTurns[Math.floor(Math.random() * availableTurns.length)];
@@ -387,7 +373,6 @@ export const GridBackground: React.FC = () => {
             r: reached.r + chosenDir.dy,
           });
 
-          // Trim waypoint history
           if (train.waypoints.length > 12) {
             train.waypoints.shift();
           }
@@ -395,7 +380,7 @@ export const GridBackground: React.FC = () => {
       }
     };
 
-    // ── Continuous Polyline Distance Sampler ─────────────────────────────────
+    // ── Distance Sampler Along Waypoint Polyline ─────────────────────────────
     const getPosAtDistance = (train: MetroTrain, distBehindHead: number) => {
       const headIdx = train.waypoints.length - 2;
       const totalParam = headIdx + train.progress - distBehindHead;
@@ -422,33 +407,33 @@ export const GridBackground: React.FC = () => {
       };
     };
 
-    // ── Draw Sleek Mini-Metro Train ──────────────────────────────────────────
+    // ── Draw Srcery Terminal Data Signal ─────────────────────────────────────
     const drawTrain = (train: MetroTrain) => {
       if (train.opacity <= 0.01) return;
 
       const baseAlpha = train.opacity;
 
-      // ── 1. Tapered Fading Luminescent Trail (Comet Tail) ──
+      // 1. Tapered Glowing Trace Behind Train
       const trailPoints: { x: number; y: number }[] = [];
       const trailSamples = 7;
       for (let s = 0; s <= trailSamples; s++) {
-        const d = 1.35 + (s / trailSamples) * 1.5;
+        const d = 1.25 + (s / trailSamples) * 1.5;
         const sample = getPosAtDistance(train, d);
         trailPoints.push(sample.point);
       }
 
       if (trailPoints.length > 1) {
         ctx.save();
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
+        ctx.lineCap = 'square';
+        ctx.lineJoin = 'miter';
         for (let i = 0; i < trailPoints.length - 1; i++) {
           const tProgress = i / (trailPoints.length - 1);
-          const segAlpha = baseAlpha * (0.22 * (1 - tProgress));
+          const segAlpha = baseAlpha * (0.28 * (1 - tProgress));
           if (segAlpha <= 0.005) continue;
 
           ctx.beginPath();
           ctx.strokeStyle = `rgba(${train.rgb}, ${segAlpha})`;
-          ctx.lineWidth = 2.2 * (1 - tProgress * 0.5);
+          ctx.lineWidth = 1.8 * (1 - tProgress * 0.4);
           ctx.moveTo(trailPoints[i].x, trailPoints[i].y);
           ctx.lineTo(trailPoints[i + 1].x, trailPoints[i + 1].y);
           ctx.stroke();
@@ -456,11 +441,11 @@ export const GridBackground: React.FC = () => {
         ctx.restore();
       }
 
-      // ── 2. Render Sleek Train Carriages (Mini Metro style capsules) ──
+      // 2. Render Rectangular Terminal Signal Carriages
       const CAR_SPECS = [
-        { start: 0.04, end: 0.44, width: 4.8, alphaMul: 0.85, glow: 9 }, // Lead Engine
-        { start: 0.52, end: 0.88, width: 4.0, alphaMul: 0.58, glow: 6 }, // Mid Coach
-        { start: 0.96, end: 1.28, width: 3.4, alphaMul: 0.38, glow: 3 }, // Rear Coach
+        { start: 0.04, end: 0.42, width: 4.5, alphaMul: 0.95, glow: 8 }, // Lead Pen / Head
+        { start: 0.50, end: 0.84, width: 3.8, alphaMul: 0.70, glow: 5 }, // Mid Segment
+        { start: 0.92, end: 1.22, width: 3.0, alphaMul: 0.50, glow: 3 }, // Rear Segment
       ];
 
       for (const car of CAR_SPECS) {
@@ -468,18 +453,17 @@ export const GridBackground: React.FC = () => {
         const back = getPosAtDistance(train, car.end);
 
         ctx.save();
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
+        ctx.lineCap = 'butt';
+        ctx.lineJoin = 'miter';
         ctx.strokeStyle = train.color;
         ctx.lineWidth = car.width;
         ctx.globalAlpha = baseAlpha * car.alphaMul;
-        ctx.shadowColor = `rgba(${train.rgb}, 0.85)`;
+        ctx.shadowColor = `rgba(${train.rgb}, 0.6)`;
         ctx.shadowBlur = car.glow;
 
         ctx.beginPath();
         ctx.moveTo(front.point.x, front.point.y);
 
-        // Flex smoothly around 90° intersection turns
         if (front.segIdx !== undefined && back.segIdx !== undefined && front.segIdx !== back.segIdx) {
           const cornerW = train.waypoints[Math.max(front.segIdx, back.segIdx)];
           if (cornerW) {
@@ -493,16 +477,14 @@ export const GridBackground: React.FC = () => {
         ctx.restore();
       }
 
-      // ── 3. Lead Bright Headlight Pulse ──
+      // 3. Lead Terminal Pixel Dot / Headlight
       const headPos = getPosAtDistance(train, 0.02);
       ctx.save();
-      ctx.fillStyle = '#FFFFFF';
-      ctx.shadowColor = `rgba(${train.rgb}, 1)`;
-      ctx.shadowBlur = 10;
+      ctx.fillStyle = '#FCE8C3';
+      ctx.shadowColor = `rgba(${train.rgb}, 0.8)`;
+      ctx.shadowBlur = 6;
       ctx.globalAlpha = baseAlpha * 0.95;
-      ctx.beginPath();
-      ctx.arc(headPos.point.x, headPos.point.y, 2.2, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.fillRect(headPos.point.x - 2, headPos.point.y - 2, 4, 4);
       ctx.restore();
     };
 
@@ -535,7 +517,7 @@ export const GridBackground: React.FC = () => {
               p.vy += Math.sin(angle) * force * 0.25;
             }
 
-            const ambientWave = Math.sin(time + c * 0.2 + r * 0.2) * 0.12;
+            const ambientWave = Math.sin(time + c * 0.2 + r * 0.2) * 0.10;
             p.vy += ambientWave;
 
             p.vx = (p.vx + (p.originX - p.x) * SPRING_TENSION) * DAMPING;
@@ -554,30 +536,34 @@ export const GridBackground: React.FC = () => {
         }
       }
 
-      // ── 2. Interactive Cursor Spotlight ─────────────────────────────────────
+      // ── 2. Warm Terminal Cursor Spotlight ───────────────────────────────────
       if (!mobile && mouseX > -1000) {
-        const spotRadius = MOUSE_RADIUS * 1.6;
+        const spotRadius = MOUSE_RADIUS * 1.5;
         const grad = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, spotRadius);
-        grad.addColorStop(0, `rgba(${vi.rgb}, 0.16)`);
-        grad.addColorStop(0.45, `rgba(${vi.rgb}, 0.06)`);
-        grad.addColorStop(1, `rgba(${vi.rgb}, 0)`);
+        grad.addColorStop(0, `rgba(${vi.rgb}, 0.14)`);
+        grad.addColorStop(0.5, `rgba(${vi.rgb}, 0.04)`);
+        grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx.fillStyle = grad;
         ctx.beginPath();
         ctx.arc(mouseX, mouseY, spotRadius, 0, Math.PI * 2);
         ctx.fill();
 
+        // Technical crosshair around cursor
         ctx.beginPath();
-        ctx.arc(mouseX, mouseY, 32, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(${vi.rgb}, 0.22)`;
+        ctx.arc(mouseX, mouseY, 28, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(${vi.rgb}, 0.3)`;
         ctx.lineWidth = 1;
+        ctx.setLineDash([3, 3]);
         ctx.stroke();
+        ctx.setLineDash([]);
       }
 
-      // ── 3. Subtle Technical Grid Lines ──────────────────────────────────────
-      ctx.lineWidth = 1.5;
+      // ── 3. Subtle Warm Cream Terminal Grid Lines ───────────────────────────
+      ctx.lineWidth = 1.0;
 
       // Horizontal lines
       for (let r = 0; r < rows; r++) {
+        const isMajor = r % 5 === 0;
         for (let c = 0; c < cols - 1; c++) {
           const p1 = points[r][c];
           const p2 = points[r][c + 1];
@@ -585,12 +571,12 @@ export const GridBackground: React.FC = () => {
           const midY = (p1.y + p2.y) / 2;
           const mouseDist = Math.hypot(midX - mouseX, midY - mouseY);
 
-          let alpha = 0.06;
-          if (!mobile && mouseDist < MOUSE_RADIUS * 1.5) {
-            alpha += (1 - mouseDist / (MOUSE_RADIUS * 1.5)) * 0.45;
+          let alpha = isMajor ? 0.08 : 0.04;
+          if (!mobile && mouseDist < MOUSE_RADIUS * 1.4) {
+            alpha += (1 - mouseDist / (MOUSE_RADIUS * 1.4)) * 0.26;
           }
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
+          ctx.strokeStyle = `rgba(255, 241, 214, ${alpha})`;
           ctx.moveTo(p1.x, p1.y);
           ctx.lineTo(p2.x, p2.y);
           ctx.stroke();
@@ -600,49 +586,47 @@ export const GridBackground: React.FC = () => {
       // Vertical lines
       for (let r = 0; r < rows - 1; r++) {
         for (let c = 0; c < cols; c++) {
+          const isMajor = c % 5 === 0;
           const p1 = points[r][c];
           const p2 = points[r + 1][c];
           const midX = (p1.x + p2.x) / 2;
           const midY = (p1.y + p2.y) / 2;
           const mouseDist = Math.hypot(midX - mouseX, midY - mouseY);
 
-          let alpha = 0.06;
-          if (!mobile && mouseDist < MOUSE_RADIUS * 1.5) {
-            alpha += (1 - mouseDist / (MOUSE_RADIUS * 1.5)) * 0.45;
+          let alpha = isMajor ? 0.08 : 0.04;
+          if (!mobile && mouseDist < MOUSE_RADIUS * 1.4) {
+            alpha += (1 - mouseDist / (MOUSE_RADIUS * 1.4)) * 0.26;
           }
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
+          ctx.strokeStyle = `rgba(255, 241, 214, ${alpha})`;
           ctx.moveTo(p1.x, p1.y);
           ctx.lineTo(p2.x, p2.y);
           ctx.stroke();
         }
       }
 
-      // Junction dots near cursor
+      // Registration grid dots near cursor
       if (!mobile) {
         for (let r = 0; r < rows; r++) {
           for (let c = 0; c < cols; c++) {
             const p = points[r][c];
             const mouseDist = Math.hypot(p.x - mouseX, p.y - mouseY);
-            if (mouseDist < MOUSE_RADIUS) {
-              const pAlpha = (1 - mouseDist / MOUSE_RADIUS) * 0.75;
-              ctx.fillStyle = `rgba(${vi.rgb}, ${pAlpha})`;
-              ctx.beginPath();
-              ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-              ctx.fill();
+            if (mouseDist < MOUSE_RADIUS * 0.9) {
+              const pAlpha = (1 - mouseDist / (MOUSE_RADIUS * 0.9)) * 0.40;
+              ctx.fillStyle = `rgba(255, 241, 214, ${pAlpha})`;
+              ctx.fillRect(p.x - 1, p.y - 1, 2, 2);
             }
           }
         }
       }
 
-      // ── 4. Advance & Render Sleek Metro Trains ───────────────────────────────
+      // ── 4. Advance & Render Terminal Data Signals ────────────────────────────
       advanceTrains(dt);
 
       for (const train of trains) {
         drawTrain(train);
       }
 
-      // Clean up dead trains and spawn into sparse sectors
       trains = trains.filter(t => !t.fadingOut || t.opacity > 0.01);
       while (trains.length < MAX_TRAINS) {
         trains.push(createTrain(cols, rows, trains, usedColors(), vi.color, vi.rgb));

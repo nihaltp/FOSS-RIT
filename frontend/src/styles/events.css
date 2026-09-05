@@ -1,5 +1,6 @@
 /* ==========================================================================
    Events & Workshops Section Styles
+   Authentic Retro Computing & Technical Archive Edition
    ========================================================================== */
 
 .events-grid {
@@ -9,19 +10,22 @@
 }
 
 .event-card {
-  background: var(--ink-2);
-  border: 2px solid var(--ink-4);
+  background-color: var(--paper-lift);
+  background-image: var(--paper-grain);
+  background-repeat: repeat;
+  border: 1.5px solid var(--border-tech);
   border-radius: 0;
   padding: var(--space-xl);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 2px 2px 0 var(--border-tech);
   transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .event-card:hover {
-  border-color: var(--acid);
-  box-shadow: var(--shadow-offset-acid);
+  border-color: var(--border-tech);
+  box-shadow: 4px 4px 0 var(--border-tech);
   transform: translate(-2px, -2px);
 }
 
@@ -34,15 +38,15 @@
   align-items: center;
   gap: 4px;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: 2px 8px;
   border-radius: 0;
-  background: var(--acid-dim);
-  color: var(--acid);
-  border: 1px solid var(--acid);
+  background: var(--paper-warm);
+  color: var(--vibe-accent);
+  border: 1px solid var(--vibe-accent);
 }
 
 .event-badge-upcoming {
@@ -50,21 +54,20 @@
   align-items: center;
   gap: 4px;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: 2px 8px;
   border-radius: 0;
-  background: var(--rust-dim);
-  color: var(--rust);
-  border: 1px solid var(--rust);
-  animation: acidPulse 2.5s infinite ease-in-out;
+  background: rgba(217, 72, 15, 0.08);
+  color: var(--accent-signal);
+  border: 1px solid var(--accent-signal);
 }
 
 .event-card.is-upcoming {
-  border-color: var(--rust);
-  box-shadow: 3px 3px 0 var(--rust);
+  border-color: var(--accent-signal);
+  box-shadow: 3px 3px 0 var(--accent-signal);
 }
 
 .event-badge-collab {
@@ -72,28 +75,28 @@
   align-items: center;
   gap: 5px;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: 2px 8px;
   border-radius: 0;
-  background: rgba(232, 184, 75, 0.12);
-  color: var(--gold);
-  border: 1px solid var(--gold);
+  background: rgba(217, 119, 6, 0.08);
+  color: var(--amber-crt);
+  border: 1px solid var(--amber-crt);
 }
 
 .event-badge-type {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  padding: 3px 8px;
+  padding: 2px 6px;
   border-radius: 0;
-  background: var(--ink-3);
-  color: var(--text-muted);
-  border: 1px solid var(--ink-4);
+  background: var(--paper-warm);
+  color: var(--ink-muted);
+  border: 1px solid var(--border-subtle);
 }
 
 .event-card-banner {
@@ -102,29 +105,34 @@
   object-fit: cover;
   border-radius: 0;
   margin-bottom: var(--space-md);
-  border: 1px solid var(--ink-4);
+  border: 1px solid var(--border-tech);
 }
 
 .event-title {
-  font-size: 1.25rem;
+  font-family: var(--font-headline);
+  font-size: 1.15rem;
   font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ink-black);
   margin-bottom: var(--space-2xs);
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 .event-tagline {
-  font-size: 0.9rem;
-  color: var(--text-muted);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
   margin-bottom: var(--space-md);
+  line-height: 1.5;
 }
 
 .event-meta-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   margin-bottom: var(--space-lg);
-  font-size: 0.88rem;
-  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  color: var(--ink-muted);
 }
 
 .event-meta-item {
@@ -136,22 +144,12 @@
 .tags-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 5px;
   margin-bottom: var(--space-lg);
-}
-
-.tag-badge {
-  background: var(--surface-raised);
-  border: 1px solid var(--surface-border);
-  color: var(--text-secondary);
-  font-size: 0.75rem;
-  padding: 2px 8px;
-  border-radius: var(--radius-sm);
-  font-family: var(--font-mono);
 }
 
 .filter-btn-group {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
 }

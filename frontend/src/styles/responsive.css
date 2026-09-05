@@ -41,7 +41,7 @@
   }
 
   .container {
-    padding: 0 14px;
+    padding: 0 16px;
   }
 
   /* Typography on small mobile */
@@ -169,6 +169,16 @@
   /* Hero & Page Banners */
   .hero-section {
     padding: var(--space-xl) 0;
+  }
+
+  .hero-centered {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .page-header-banner {
+    padding: 16px 14px !important;
+    margin-bottom: var(--space-xl) !important;
   }
 
   .hero-cta-group {

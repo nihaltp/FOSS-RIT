@@ -116,12 +116,13 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
         </div>
 
         {/* Page Banner / Hero Card */}
-        <div style={{
-          background: 'var(--ink-2)',
-          border: '2px solid var(--ink-4)',
-          borderLeft: '5px solid var(--acid)',
-          borderRadius: 0,
-          padding: 'var(--space-2xl)',
+        <div className="page-header-banner" style={{
+          backgroundColor: 'var(--paper-lift)',
+          backgroundImage: 'var(--paper-grain)',
+          backgroundRepeat: 'repeat',
+          border: '2px solid var(--border-tech)',
+          boxShadow: '3px 3px 0 var(--border-tech)',
+          padding: 'var(--space-xl)',
           marginBottom: 'var(--space-2xl)',
           display: 'flex',
           justifyContent: 'space-between',
@@ -129,19 +130,19 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
           flexWrap: 'wrap',
           gap: 'var(--space-lg)'
         }}>
-          <div style={{ maxWidth: '640px' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--acid)', marginBottom: '8px' }}>Campus Hall of Fame</div>
-            <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 900, letterSpacing: '-0.04em', color: 'var(--paper)' }}>
+          <div style={{ maxWidth: '660px' }}>
+            <div className="section-tag">[HALL OF FAME // CAMPUS LEDGER]</div>
+            <h1 style={{ fontFamily: 'var(--font-ndot)', fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 400, letterSpacing: '0.03em', color: 'var(--ink-black)', textTransform: 'uppercase', marginTop: '6px' }}>
               Contributor Rankings
             </h1>
-            <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginTop: '8px', lineHeight: 1.6 }}>
-              Recognizing both open source software builders and creative visual artists at <strong style={{ color: 'var(--paper)' }}>RIT Kottayam</strong>.
+            <p style={{ fontSize: '0.98rem', color: 'var(--ink-soft)', marginTop: '8px', lineHeight: 1.6 }}>
+              Recognizing both open source software builders and creative visual artists at <strong>RIT Kottayam</strong>. All metrics computed from verified peer contributions.
             </p>
           </div>
 
           {onOpenSubmitProject && (
             <button className="btn btn-primary" onClick={onOpenSubmitProject}>
-              <Sparkles size={16} />
+              <Sparkles size={15} />
               Feature Your Work
             </button>
           )}
@@ -158,14 +159,13 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
           <div
             onClick={() => setActiveDomain('code')}
             style={{
-              background: 'var(--ink-2)',
-              border: activeDomain === 'code' ? '2px solid var(--acid)' : '2px solid var(--ink-4)',
-              borderRadius: 0,
+              background: activeDomain === 'code' ? 'var(--paper-warm)' : 'var(--paper-lift)',
+              border: '2px solid var(--border-tech)',
               padding: 'var(--space-lg)',
               cursor: 'pointer',
-              boxShadow: activeDomain === 'code' ? 'var(--shadow-offset-acid)' : 'none',
+              boxShadow: activeDomain === 'code' ? '4px 4px 0 var(--border-tech)' : '2px 2px 0 var(--border-tech)',
               transform: activeDomain === 'code' ? 'translate(-2px, -2px)' : 'none',
-              transition: 'all 0.15s ease'
+              transition: 'all 0.12s ease'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
@@ -174,21 +174,22 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
                   width: '32px',
                   height: '32px',
                   borderRadius: 0,
-                  background: activeDomain === 'code' ? 'var(--acid)' : 'var(--ink-3)',
-                  color: activeDomain === 'code' ? 'var(--ink)' : 'var(--text-muted)',
+                  background: activeDomain === 'code' ? 'var(--ink-black)' : 'var(--paper-warm)',
+                  color: activeDomain === 'code' ? 'var(--paper-base)' : 'var(--ink-black)',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
+                  border: '1px solid var(--border-tech)'
                 }}>
                   <Code size={17} />
                 </div>
-                <h3 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700, fontFamily: 'var(--font-display)' }}>Code Contributors</h3>
+                <h3 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700, fontFamily: 'var(--font-display)', textTransform: 'uppercase' }}>[01] Code Architects</h3>
               </div>
-              <span className="tag-badge-pill" style={{ opacity: activeDomain === 'code' ? 1 : 0.5 }}>
+              <span className="tag-badge-pill">
                 {contributors.filter(c => (c.total_projects || 0) > 0).length} Devs
               </span>
             </div>
-            <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>
+            <p style={{ fontSize: '0.84rem', color: 'var(--ink-soft)', margin: 0, lineHeight: 1.5 }}>
               Ranked by peer repository forks, GitHub stars, and open source software shipped.
             </p>
           </div>
@@ -197,14 +198,13 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
           <div
             onClick={() => setActiveDomain('creative')}
             style={{
-              background: 'var(--ink-2)',
-              border: activeDomain === 'creative' ? '2px solid var(--cobalt)' : '2px solid var(--ink-4)',
-              borderRadius: 0,
+              background: activeDomain === 'creative' ? 'var(--paper-warm)' : 'var(--paper-lift)',
+              border: '2px solid var(--border-tech)',
               padding: 'var(--space-lg)',
               cursor: 'pointer',
-              boxShadow: activeDomain === 'creative' ? '3px 3px 0 var(--cobalt)' : 'none',
+              boxShadow: activeDomain === 'creative' ? '4px 4px 0 var(--border-tech)' : '2px 2px 0 var(--border-tech)',
               transform: activeDomain === 'creative' ? 'translate(-2px, -2px)' : 'none',
-              transition: 'all 0.15s ease'
+              transition: 'all 0.12s ease'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
@@ -213,24 +213,22 @@ export const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ onOpenSubmitPr
                   width: '32px',
                   height: '32px',
                   borderRadius: 0,
-                  background: activeDomain === 'creative' ? 'var(--cobalt)' : 'var(--ink-3)',
-                  color: activeDomain === 'creative' ? '#fff' : 'var(--text-muted)',
+                  background: activeDomain === 'creative' ? 'var(--ink-black)' : 'var(--paper-warm)',
+                  color: activeDomain === 'creative' ? 'var(--paper-base)' : 'var(--ink-black)',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
+                  border: '1px solid var(--border-tech)'
                 }}>
                   <Palette size={17} />
                 </div>
-                <h3 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700, fontFamily: 'var(--font-display)' }}>Creative Makers</h3>
+                <h3 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700, fontFamily: 'var(--font-display)', textTransform: 'uppercase' }}>[02] Creative Makers</h3>
               </div>
-              <span
-                className="category-badge-pill"
-                style={{ opacity: activeDomain === 'creative' ? 1 : 0.5 }}
-              >
+              <span className="tag-badge-pill">
                 {contributors.filter(c => (c.total_creatives || 0) > 0).length} Creators
               </span>
             </div>
-            <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>
+            <p style={{ fontSize: '0.84rem', color: 'var(--ink-soft)', margin: 0, lineHeight: 1.5 }}>
               Ranked by UI/UX design systems, event frames, video aftermovies, and 3D renders.
             </p>
           </div>

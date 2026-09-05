@@ -188,13 +188,14 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({
           </div>
         ) : (
           <div className="projects-list">
-            {displayedProjects.map(proj => (
+            {displayedProjects.map((proj, idx) => (
               <div key={proj.id} className="project-row-card interactive-hover-card">
                 <div className="project-row-main">
                   {/* Top Line: Name, Badges, Stats & Repo Button */}
                   <div className="project-row-header">
                     <div className="project-row-title-group">
-                      <GitHubIcon size={17} color="var(--foss-mint)" style={{ flexShrink: 0 }} />
+                      <span className="project-cat-id">[CAT-{String(idx + 1).padStart(3, '0')}]</span>
+                      <GitHubIcon size={16} color="var(--vibe-accent)" style={{ flexShrink: 0 }} />
                       <a 
                         href={proj.repo_url} 
                         target="_blank" 
@@ -203,13 +204,13 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({
                       >
                         {proj.name}
                       </a>
-                      <span className="tag-badge-pill">Open Source</span>
+                      <span className="tag-badge-pill">LIBRE // OPEN</span>
                       {proj.is_verified_student && (
                         <span 
                           className="verified-student-badge"
                           title="Verified Student at Rajiv Gandhi Institute of Technology (RIT Kottayam)"
                         >
-                          <CheckCircle2 size={11} /> RIT Verified
+                          <CheckCircle2 size={11} /> RIT VERIFIED
                         </span>
                       )}
                     </div>

@@ -1,5 +1,6 @@
 /* ==========================================================================
    Interactive Physics Grid Canvas Background & Ambient Glow
+   Authentic Retro Computing Edition
    ========================================================================== */
 
 .interactive-grid-bg {
@@ -18,7 +19,7 @@
   display: block;
 }
 
-/* Background Developer Ambient Glow (Seamless & Diffused) */
+/* Background Technical Paper Ambient Glow (Subtle & Warm) */
 .ambient-glow {
   position: absolute;
   top: 0;
@@ -26,14 +27,14 @@
   transform: translateX(-50%);
   width: 100vw;
   max-width: 1400px;
-  height: 700px;
+  height: 600px;
   background: radial-gradient(
-    ellipse 75% 55% at 50% 0%,
-    var(--vibe-glow, rgba(8, 183, 79, 0.18)) 0%,
-    var(--vibe-subtle, rgba(8, 183, 79, 0.06)) 35%,
-    transparent 75%
+    ellipse 75% 50% at 50% 0%,
+    rgba(217, 119, 6, 0.04) 0%,
+    rgba(26, 61, 43, 0.02) 40%,
+    transparent 70%
   );
-  filter: blur(40px);
+  filter: blur(50px);
   pointer-events: none;
   z-index: 0;
   transition: background 0.5s ease;
