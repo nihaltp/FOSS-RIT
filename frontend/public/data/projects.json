@@ -77,6 +77,29 @@
     "featured": true
   },
   {
+    "id": "proj-feedguard_extension",
+    "name": "FeedGuard",
+    "description": "A Chrome MV3 extension for real-time content moderation on X/Twitter, using a three-layer ML pipeline (heuristics, spam ML, toxicity ML, and an LLM fallback) to flag harmful content.",
+    "repo_url": "https://github.com/ari2387q/feedguard-ai",
+    "tech_stack": [
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "FastAPI",
+      "scikit-learn",
+      "Chrome Extension (MV3)",
+      "Next.js"
+    ],
+    "stars": 7,
+    "forks": 0,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "ari2387q",
+    "submitted_by_name": "Aryan Nair",
+    "batch": "2026",
+    "featured": true
+  },
+  {
     "id": "proj-gotodo",
     "name": "GoTodo",
     "description": "A lightweight command-line Todo application written in Go with persistent JSON storage and Linux AppImage support.",
@@ -93,29 +116,6 @@
     "is_verified_student": true,
     "submitted_by_username": "callmekriztal",
     "submitted_by_name": "Christy Cyril",
-    "batch": "2026",
-    "featured": true
-  },
-  {
-    "id": "proj-feedguard_extension",
-    "name": "FeedGuard",
-    "description": "A Chrome MV3 extension for real-time content moderation on X/Twitter, using a three-layer ML pipeline (heuristics, spam ML, toxicity ML, and an LLM fallback) to flag harmful content.",
-    "repo_url": "https://github.com/ari2387q/feedguard-ai",
-    "tech_stack": [
-      "TypeScript",
-      "Node.js",
-      "Express",
-      "FastAPI",
-      "scikit-learn",
-      "Chrome Extension (MV3)",
-      "Next.js"
-    ],
-    "stars": 4,
-    "forks": 0,
-    "open_issues": 0,
-    "is_verified_student": true,
-    "submitted_by_username": "ari2387q",
-    "submitted_by_name": "Aryan Nair",
     "batch": "2026",
     "featured": true
   },
