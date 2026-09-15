@@ -56,6 +56,25 @@
     "featured": true
   },
   {
+    "id": "proj-ani-js",
+    "name": "Ani-Js",
+    "description": "Ani-JS is a lightweight utility library that enhances Tailwind CSS with JavaScript-powered styling and interactive animations.",
+    "repo_url": "https://github.com/Srinanth/Ani-Js",
+    "tech_stack": [
+      "CSS",
+      "Javascript",
+      "NPM"
+    ],
+    "stars": 11,
+    "forks": 1,
+    "open_issues": 0,
+    "is_verified_student": true,
+    "submitted_by_username": "Srinanth",
+    "submitted_by_name": "Srinanth MV",
+    "batch": "2024",
+    "featured": true
+  },
+  {
     "id": "proj-foss-club-website",
     "name": "FOSS Club Website",
     "description": "Official web platform and campus open-source radar for FOSS Club at RIT Kottayam.",

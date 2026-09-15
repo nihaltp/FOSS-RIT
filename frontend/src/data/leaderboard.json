@@ -55,6 +55,51 @@
       "medal": "\ud83e\udd47"
     },
     {
+      "user_id": "usr-srinanth",
+      "username": "Srinanth",
+      "display_name": "Srinanth MV",
+      "avatar_url": "https://github.com/srinanth.png",
+      "is_verified_student": true,
+      "xp": 510,
+      "level": 3,
+      "title": "Byte Craftsman",
+      "min_xp": 300,
+      "max_xp": 699,
+      "progress": 52,
+      "total_projects": 2,
+      "total_creatives": 0,
+      "total_stars": 22,
+      "total_forks": 1,
+      "badges": [
+        {
+          "id": "verified",
+          "name": "Campus Verified",
+          "icon": "\ud83c\udf93",
+          "color": "#08B74F"
+        },
+        {
+          "id": "first_ship",
+          "name": "First Ship",
+          "icon": "\ud83d\ude80",
+          "color": "#2B7FFF"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "icon": "\u26a1",
+          "color": "#EC4899"
+        },
+        {
+          "id": "star_hunter",
+          "name": "Star Hunter",
+          "icon": "\u2b50",
+          "color": "#EAB308"
+        }
+      ],
+      "rank": 2,
+      "medal": "\ud83e\udd48"
+    },
+    {
       "user_id": "usr-nihaltp",
       "username": "nihaltp",
       "display_name": "Nihal T P",
@@ -90,8 +135,8 @@
           "color": "#EC4899"
         }
       ],
-      "rank": 2,
-      "medal": "\ud83e\udd48"
+      "rank": 3,
+      "medal": "\ud83e\udd49"
     },
     {
       "user_id": "usr-sabari-vijayan",
@@ -121,51 +166,6 @@
           "name": "First Ship",
           "icon": "\ud83d\ude80",
           "color": "#2B7FFF"
-        },
-        {
-          "id": "star_hunter",
-          "name": "Star Hunter",
-          "icon": "\u2b50",
-          "color": "#EAB308"
-        }
-      ],
-      "rank": 3,
-      "medal": "\ud83e\udd49"
-    },
-    {
-      "user_id": "usr-srinanth",
-      "username": "Srinanth",
-      "display_name": "Srinanth MV",
-      "avatar_url": "https://github.com/srinanth.png",
-      "is_verified_student": true,
-      "xp": 320,
-      "level": 3,
-      "title": "Byte Craftsman",
-      "min_xp": 300,
-      "max_xp": 699,
-      "progress": 5,
-      "total_projects": 1,
-      "total_creatives": 0,
-      "total_stars": 11,
-      "total_forks": 0,
-      "badges": [
-        {
-          "id": "verified",
-          "name": "Campus Verified",
-          "icon": "\ud83c\udf93",
-          "color": "#08B74F"
-        },
-        {
-          "id": "first_ship",
-          "name": "First Ship",
-          "icon": "\ud83d\ude80",
-          "color": "#2B7FFF"
-        },
-        {
-          "id": "polyglot",
-          "name": "Polyglot",
-          "icon": "\u26a1",
-          "color": "#EC4899"
         },
         {
           "id": "star_hunter",
